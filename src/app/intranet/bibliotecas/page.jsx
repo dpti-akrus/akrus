@@ -1,6 +1,26 @@
+'use client'
 import './style.css'
 
 export default function Page() {
+
+    function abrirCard(title, cover, direction, link) {
+        const card = document.getElementById("bookCard");
+        document.getElementById("bookTitle").innerText = title;
+        document.getElementById("bookCover").src = cover;
+        document.getElementById("bookDirection").innerText = direction;
+        document.getElementById("bookLink").href = link;
+
+        const isPodcast = title.toLowerCase().includes("podcast");
+
+        document.getElementById("bookLink").innerText = isPodcast
+            ? "Ouvir"
+            : "Comprar";
+
+        card.classList.remove("hide");
+        card.classList.add("show");
+        card.style.display = "block";
+    }
+
     return (
         <main>
             <header className="header">
@@ -60,7 +80,7 @@ export default function Page() {
 
                     <div
                         className="livro-item"
-                        // onClick="abrirCard('Anti-Frágil', '/intranet/images/Livro-01_Anti-Frágil.png', 'Inteligência Emocional', 'https://www.amazon.com.br/Antifr%C3%A1gil-Nova-edi%C3%A7%C3%A3o-Coisas-beneficiam/dp/8547001085')"
+                        onClick={() => abrirCard('Anti-Frágil', '/intranet/images/Livro-01_Anti-Frágil.png', 'Inteligência Emocional', 'https://www.amazon.com.br/Antifr%C3%A1gil-Nova-edi%C3%A7%C3%A3o-Coisas-beneficiam/dp/8547001085')}
                     >
                         <img
                             src="/intranet/images/Livro-01_Anti-Frágil.png"
@@ -71,7 +91,7 @@ export default function Page() {
 
                     <div
                         className="livro-item"
-                        // onClick="abrirCard('Comunicação Não Violenta', '/intranet/images/Comunicação-N_V.png', 'Inteligência Emocional', 'https://encurtador.com.br/2hz1I')"
+                    // onClick="abrirCard('Comunicação Não Violenta', '/intranet/images/Comunicação-N_V.png', 'Inteligência Emocional', 'https://encurtador.com.br/2hz1I')"
                     >
                         <img
                             src="/intranet/images/Comunicação-N_V.png"
@@ -82,7 +102,7 @@ export default function Page() {
 
                     <div
                         className="livro-item"
-                        // onClick="abrirCard('A Coragem de Ser Imperfeito', '/intranet/images/A coragem de ser imperfeito.png', 'Inteligência Emocional', 'https://www.amazon.com.br/coragem-ser-imperfeito-Bren%C3%A9-Brown/dp/8543104335')"
+                    // onClick="abrirCard('A Coragem de Ser Imperfeito', '/intranet/images/A coragem de ser imperfeito.png', 'Inteligência Emocional', 'https://www.amazon.com.br/coragem-ser-imperfeito-Bren%C3%A9-Brown/dp/8543104335')"
                     >
                         <img
                             src="/intranet/images/A coragem de ser imperfeito.png"
@@ -93,7 +113,7 @@ export default function Page() {
 
                     <div
                         className="livro-item"
-                        // onClick="abrirCard('A Única Coisa', '/intranet/images/A única coisa.png', 'Inteligência Emocional', 'https://encurtador.com.br/9Yokl')"
+                    // onClick="abrirCard('A Única Coisa', '/intranet/images/A única coisa.png', 'Inteligência Emocional', 'https://encurtador.com.br/9Yokl')"
                     >
                         <img
                             src="/intranet/images/A única coisa.png"
@@ -104,7 +124,7 @@ export default function Page() {
 
                     <div
                         className="livro-item"
-                        // onClick="abrirCard('Inteligência Positiva', '/intranet/images/Inteligência positiva.png', 'Inteligência Emocional', 'https://www.amazon.com.br/Intelig%C3%AAncia-positiva-Shirzad-Chamine/dp/8539004623')"
+                    // onClick="abrirCard('Inteligência Positiva', '/intranet/images/Inteligência positiva.png', 'Inteligência Emocional', 'https://www.amazon.com.br/Intelig%C3%AAncia-positiva-Shirzad-Chamine/dp/8539004623')"
                     >
                         <img
                             src="/intranet/images/Inteligência positiva.png"
@@ -121,7 +141,7 @@ export default function Page() {
 
                     <div
                         className="livro-item"
-                        // onClick="abrirCard('Gestão do Amanhã', '/intranet/images/Gestão_do_Amanhã.png', 'Liderança', 'https://abrir.link/jRZmd')"
+                    // onClick="abrirCard('Gestão do Amanhã', '/intranet/images/Gestão_do_Amanhã.png', 'Liderança', 'https://abrir.link/jRZmd')"
                     >
                         <img
                             src="/intranet/images/Gestão_do_Amanhã.png"
@@ -131,7 +151,7 @@ export default function Page() {
                     </div>
                     <div
                         className="livro-item"
-                        // onClick="abrirCard('17 princípios do trabalho em equipe', '/intranet/images/17-Princípios.png', 'Liderança', 'https://www.amazon.com.br/princ%C3%ADpios-trabalho-Cole%C3%A7%C3%A3o-Lideran%C3%A7a-Maxwell-ebook/dp/B009K8MSPI')"
+                    // onClick="abrirCard('17 princípios do trabalho em equipe', '/intranet/images/17-Princípios.png', 'Liderança', 'https://www.amazon.com.br/princ%C3%ADpios-trabalho-Cole%C3%A7%C3%A3o-Lideran%C3%A7a-Maxwell-ebook/dp/B009K8MSPI')"
                     >
                         <img
                             src="/intranet/images/17-Princípios.png"
@@ -142,7 +162,7 @@ export default function Page() {
 
                     <div
                         className="livro-item"
-                        // onClick="abrirCard('A Coragem para Liderar', '/intranet/images/Coragem_P-Liderar.png', 'Liderança', 'https://www.amazon.com.br/coragem-para-liderar-Bren%C3%A9-Brown/dp/8546501750')"
+                    // onClick="abrirCard('A Coragem para Liderar', '/intranet/images/Coragem_P-Liderar.png', 'Liderança', 'https://www.amazon.com.br/coragem-para-liderar-Bren%C3%A9-Brown/dp/8546501750')"
                     >
                         <img
                             src="/intranet/images/Coragem_P-Liderar.png"
@@ -153,7 +173,7 @@ export default function Page() {
 
                     <div
                         className="livro-item"
-                        // onClick="abrirCard('Liderança: A inteligência E. ', '/intranet/images/Liderança- A int.png', 'Liderança', 'https://www.amazon.com.br/Lideran%C3%A7a-intelig%C3%AAncia-emocional-forma%C3%A7%C3%A3o-sucesso-ebook/dp/B00SVEDD8S')"
+                    // onClick="abrirCard('Liderança: A inteligência E. ', '/intranet/images/Liderança- A int.png', 'Liderança', 'https://www.amazon.com.br/Lideran%C3%A7a-intelig%C3%AAncia-emocional-forma%C3%A7%C3%A3o-sucesso-ebook/dp/B00SVEDD8S')"
                     >
                         <img
                             src="/intranet/images/Liderança- A int.png"
@@ -164,7 +184,7 @@ export default function Page() {
 
                     <div
                         className="livro-item"
-                        // onClick="abrirCard('Empatia Assertiva', '/intranet/images/Lider-Incisivo.png', 'Liderança', 'https://encurtador.com.br/82w2r')"
+                    // onClick="abrirCard('Empatia Assertiva', '/intranet/images/Lider-Incisivo.png', 'Liderança', 'https://encurtador.com.br/82w2r')"
                     >
                         <img
                             src="/intranet/images/Lider-Incisivo.png"
@@ -181,7 +201,7 @@ export default function Page() {
 
                     <div
                         className="podcast-item"
-                        // onClick="abrirCard('Podcast 1', '/intranet/images/Plano-Marshall-Pod.png', 'História em 30', 'https://open.spotify.com/episode/5YaGxNRfd1pr0fmpc68Gzo')"
+                    // onClick="abrirCard('Podcast 1', '/intranet/images/Plano-Marshall-Pod.png', 'História em 30', 'https://open.spotify.com/episode/5YaGxNRfd1pr0fmpc68Gzo')"
                     >
                         <img
                             src="/intranet/images/Plano-Marshall-Pod.png"
@@ -192,7 +212,7 @@ export default function Page() {
 
                     <div
                         className="podcast-item"
-                        // onClick="abrirCard('Podcast 2', '/intranet/images/Psicologia na prática - Podcast.png', 'Psicologia na Prática', 'https://open.spotify.com/show/6UpJb8VGuMKQT8ZKUPGfr0')"
+                    // onClick="abrirCard('Podcast 2', '/intranet/images/Psicologia na prática - Podcast.png', 'Psicologia na Prática', 'https://open.spotify.com/show/6UpJb8VGuMKQT8ZKUPGfr0')"
                     >
                         <img
                             src="/intranet/images/Psicologia na prática - Podcast.png"
@@ -203,7 +223,7 @@ export default function Page() {
 
                     <div
                         className="podcast-item"
-                        // onClick="abrirCard('Podcast 3', '/intranet/images/Quinta Misteriosa- Podcast.png', 'Quinta Misteriosa-JF', 'https://open.spotify.com/episode/1064qEfLN7GdDU6LwIxMHB')"
+                    // onClick="abrirCard('Podcast 3', '/intranet/images/Quinta Misteriosa- Podcast.png', 'Quinta Misteriosa-JF', 'https://open.spotify.com/episode/1064qEfLN7GdDU6LwIxMHB')"
                     >
                         <img
                             src="/intranet/images/Quinta Misteriosa- Podcast.png"
@@ -214,7 +234,7 @@ export default function Page() {
 
                     <div
                         className="podcast-item"
-                        // onClick="abrirCard('Podcast 4', '/intranet/images/Faça o cliente voltar -Podcas.png', 'Faça o cliente voltar', 'https://open.spotify.com/episode/2zm0jbKbaaDKrsXBtwXs0k')"
+                    // onClick="abrirCard('Podcast 4', '/intranet/images/Faça o cliente voltar -Podcas.png', 'Faça o cliente voltar', 'https://open.spotify.com/episode/2zm0jbKbaaDKrsXBtwXs0k')"
                     >
                         <img
                             src="/intranet/images/Faça o cliente voltar -Podcas.png"
@@ -225,7 +245,7 @@ export default function Page() {
 
                     <div
                         className="podcast-item"
-                        // onClick="abrirCard('Podcast 5', '/intranet/images/Lobisomens - Podcst.png', 'Lobisomens', 'https://open.spotify.com/episode/0nzGzqLytOJyDlJeE7zNBz')"
+                    // onClick="abrirCard('Podcast 5', '/intranet/images/Lobisomens - Podcst.png', 'Lobisomens', 'https://open.spotify.com/episode/0nzGzqLytOJyDlJeE7zNBz')"
                     >
                         <img
                             src="/intranet/images/Lobisomens - Podcst.png"
@@ -236,7 +256,7 @@ export default function Page() {
 
                     <div
                         className="podcast-item"
-                        // onClick="abrirCard('Podcast 6', '/intranet/images/Inesvt-na_mente.png', 'Investe na mente', 'https://open.spotify.com/show/0NrGuZLUCTIdEqFurGfWak')"
+                    // onClick="abrirCard('Podcast 6', '/intranet/images/Inesvt-na_mente.png', 'Investe na mente', 'https://open.spotify.com/show/0NrGuZLUCTIdEqFurGfWak')"
                     >
                         <img
                             src="/intranet/images/Inesvt-na_mente.png"
@@ -247,7 +267,7 @@ export default function Page() {
 
                     <div
                         className="podcast-item"
-                        // onClick="abrirCard('Podcast 7', '/intranet/images/Inteligência-Podcast.png', 'O princípio está na sua Mente', 'https://open.spotify.com/show/14jalMOh1Jr77eTRUdN6X9')"
+                    // onClick="abrirCard('Podcast 7', '/intranet/images/Inteligência-Podcast.png', 'O princípio está na sua Mente', 'https://open.spotify.com/show/14jalMOh1Jr77eTRUdN6X9')"
                     >
                         <img
                             src="/intranet/images/Inteligência-Podcast.png"
@@ -258,7 +278,7 @@ export default function Page() {
 
                     <div
                         className="podcast-item"
-                        // onClick="abrirCard('Podcast 8', '/intranet/images/Economist-Po.png', 'Economist Podcasts', 'https://open.spotify.com/show/2ZFDmgDS2Z6xccP51s1zFQ')"
+                    // onClick="abrirCard('Podcast 8', '/intranet/images/Economist-Po.png', 'Economist Podcasts', 'https://open.spotify.com/show/2ZFDmgDS2Z6xccP51s1zFQ')"
                     >
                         <img
                             src="/intranet/images/Economist-Po.png"
@@ -269,7 +289,7 @@ export default function Page() {
 
                     <div
                         className="podcast-item"
-                        // onClick="abrirCard('Podcast 9', '/intranet/images/Global News- Podcast .png', 'Global News', 'https://open.spotify.com/show/3wBfqov60qDZbEVjPHo0a8')"
+                    // onClick="abrirCard('Podcast 9', '/intranet/images/Global News- Podcast .png', 'Global News', 'https://open.spotify.com/show/3wBfqov60qDZbEVjPHo0a8')"
                     >
                         <img
                             src="/intranet/images/Global News- Podcast .png"
@@ -281,7 +301,7 @@ export default function Page() {
 
                     <div
                         className="podcast-item"
-                        // onClick="abrirCard('Podcast 10', '/intranet/images/Café da manhã .png', 'G20 no Brasil', 'https://open.spotify.com/show/6WRTzGhq3uFxMrxHrHh1lo')"
+                    // onClick="abrirCard('Podcast 10', '/intranet/images/Café da manhã .png', 'G20 no Brasil', 'https://open.spotify.com/show/6WRTzGhq3uFxMrxHrHh1lo')"
                     >
                         <img
                             src="/intranet/images/Café da manhã .png"
