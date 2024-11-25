@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Site - Aenã Martinelli
 
-## Getting Started
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Intranet - AKRUS
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+![image](https://github.com/user-attachments/assets/a6478e45-31f7-4b51-ad34-88b9025f2aec)
+![news-intra](https://github.com/user-attachments/assets/4a1587f0-36a6-4150-8695-fefe70008486)
 
-## Learn More
+Descrição:
 
-To learn more about Next.js, take a look at the following resources:
+Este projeto é uma Intranet desenvolvida em HTML, CSS e JavaScript, com o objetivo de fornecer uma plataforma de comunicação interna para o grupo AKRUS.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Funcionalidades:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Navegação: Navegação intuitiva e responsiva para acesso fácil às informações.
+- Conteúdo: Estrutura de conteúdo organizada e fácil de manter.
+- Interatividade: Elementos interativos para melhorar a experiência do usuário.
 
-## Deploy on Vercel
+Tecnologias Utilizadas:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- HTML: Estruturação da página.
+- CSS: Estilização e layout.
+- JavaScript: Funcionalidades interativas.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Instalação:
+
+1. Clone o repositório.
+2. Abra o arquivo index.html no navegador.
+
+Autores:
+
+- Carlos André
+- Pablo Soares
+

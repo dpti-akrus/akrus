@@ -1,0 +1,216 @@
+/* Estilos gerais para todos os elementos */
+* {
+  margin: 0; /* Remove a margem padrão de todos os elementos */
+  padding: 0; /* Remove o preenchimento padrão de todos os elementos */
+  box-sizing: border-box; /* Inclui padding e bordas na largura e altura total do elemento */
+  font-family: "Inter", sans-serif; /* Define a fonte padrão para todos os elementos */
+}
+
+/* Estilos para o corpo da página */
+body {
+  background-image: url(/intranet/images/Preview_2.jpg); /* Define uma imagem de fundo */
+  background-size: cover; /* Faz com que a imagem de fundo cubra toda a área do corpo */
+  background-position: right; /* Alinha a imagem de fundo à direita */
+  background-color: #fffafa; /* Define uma cor de fundo alternativa */
+  overflow-x: hidden; /* Impede a rolagem horizontal */
+}
+
+/* Estilos para o cabeçalho */
+header {
+  display: flex; /* Usa flexbox para layout */
+  align-items: center; /* Alinha os itens verticalmente no centro */
+  justify-content: center; /* Centraliza os itens */
+  background-color: #181818; /* Define a cor de fundo do cabeçalho */
+  width: 100%;
+  padding: 10px 20px; /* Adiciona preenchimento interno ao cabeçalho */
+  height: 11vh; /* Define a altura do cabeçalho como 11% da altura da viewport */
+}
+
+/* Estilos para a imagem do logo no cabeçalho */
+.logo img {
+  max-height: 55px; /* Define a altura máxima da imagem do logo */
+  margin: 5px; /* Adiciona uma margem de 5px ao redor da imagem */
+  padding-left: 30px; /* Adiciona preenchimento à esquerda da imagem */
+  padding-bottom: 5px; /* Adiciona preenchimento na parte inferior da imagem */
+}
+
+/* Estilos para o elemento principal */
+main {
+  display: flex; /* Usa flexbox para layout */
+  justify-content: center; /* Centraliza os itens */
+  align-items: center; /* Alinha os itens verticalmente no centro */
+  height: 100vh; /* Define a altura como 80% da altura da viewport */
+  flex-direction: column;
+}
+
+/* Estilos para o cartão de login */
+.login-card {
+  background-color: #ffffff; /* Define a cor de fundo do cartão */
+  border-radius: 10px; /* Define o raio das bordas */
+  padding: 40px 20px; /* Define o preenchimento interno */
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.6); /* Adiciona uma sombra */
+  text-align: center; /* Alinha o texto ao centro */
+  max-width: 600px; /* Define a largura máxima */
+  width: 100%; /* Define a largura como 100% */
+}
+
+/* Estilos para a logo do cartão */
+.card-logo {
+  max-width: 200px; /* Define a largura máxima */
+  margin-top: -15px; /* Define a margem superior negativa */
+  margin-bottom: 20px; /* Define a margem inferior */
+}
+
+/* Estilos para o título */
+.title {
+  font-family: "Cairo", sans-serif; /* Define a fonte */
+  color: #181818; /* Define a cor do texto */
+  font-size: 24px; /* Define o tamanho da fonte */
+  margin-top: 30px; /* Define a margem superior */
+  margin-bottom: 20px; /* Define a margem inferior */
+  letter-spacing: 1px; /* Define o espaçamento entre letras */
+}
+
+/* Estilos para o título da intranet */
+.ch-akrus h2 {
+  font-family: "Cairo", sans-serif; /* Define a fonte */
+  color: #181818; /* Define a cor do texto */
+  font-size: 20px; /* Define o tamanho da fonte */
+  margin-bottom: 25px; /* Define a margem inferior */
+  letter-spacing: 1px; /* Define o espaçamento entre letras */
+  animation: fadeIn 1s ease-in-out; /* Adiciona animação de fade-in */
+}    
+
+/* Animação de fade-in */
+@keyframes fadeIn {
+  from {
+      opacity: 0; /* Define opacidade inicial */
+  }
+  to {
+      opacity: 1; /* Define opacidade final */
+  }
+}
+
+/* Estilos para o campo de entrada de texto */
+.input-field1 {
+  width: 400px; /* Define a largura */
+  padding: 10px; /* Define o preenchimento interno */
+  margin: 10px 0; /* Define margens superior e inferior */
+  margin-top: -20px; /* Define margem superior negativa */
+  border-radius: 20px; /* Define o raio das bordas */
+  border: 1px solid #000000; /* Define a borda */
+  outline: none; /* Remove o contorno padrão */
+  font-size: 16px; /* Define o tamanho da fonte */
+}
+
+/* Estilos para o campo de entrada de senha */
+.input-field2 {
+  width: 400px; /* Define a largura */
+  padding: 10px; /* Define o preenchimento interno */
+  margin: 10px 0; /* Define margens superior e inferior */
+  margin-top: -20px; /* Define margem superior negativa */
+  border-radius: 20px; /* Define o raio das bordas */
+  border: 1px solid #000000; /* Define a borda */
+  outline: none; /* Remove o contorno padrão */
+  font-size: 16px; /* Define o tamanho da fonte */
+}
+
+/* Estilos para o botão de envio */
+.submit-button {
+  padding: 8px 20px; /* Define o preenchimento interno */
+  background-color: #000; /* Define a cor de fundo */
+  color: #fff; /* Define a cor do texto */
+  border: none; /* Remove a borda padrão */
+  border-radius: 25px; /* Define o raio das bordas */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra */
+  font-size: 16px; /* Define o tamanho da fonte */
+  cursor: pointer; /* Define o cursor como ponteiro */
+  margin-top: 15px; /* Define a margem superior */
+  transition: background-color 0.4s; /* Adiciona transição de cor de fundo */
+}
+
+/* Estilos para o estado de hover do botão de envio */
+.submit-button:hover {
+  background-color: #3a3a3a; /* Altera a cor de fundo ao passar o mouse */
+  box-shadow: black; /* Altera a sombra */
+}
+.button-link {
+  color: #fff; /* Define a cor do texto */
+  text-decoration: none; /* Remove o sublinhado */
+  display: block; /* Faz o link ocupar todo o espaço do botão */
+  width: 100%; /* Define a largura como 100% */
+  height: 100%; /* Define a altura como 100% */
+  line-height: 1.5; /* Define a altura da linha */
+}
+
+
+
+/* Estilos para o rodapé */
+.footer {
+  display: flex; /* Usa flexbox para layout */
+  background-color: #181818; /* Define a cor de fundo */
+  height: 6rem; /* Define a altura */
+  width: 100%; /* Define a largura */
+  justify-content: center; /* Centraliza os itens */
+  align-items: center; /* Alinha os itens ao centro */
+}
+
+/* Estilos para a logo do rodapé */
+#logofooter {
+  max-height: 55px; /* Define a altura máxima */
+  height: 55px; /* Define a altura */
+  padding-left: 30px; /* Define o preenchimento à esquerda */
+  margin: 5px; /* Define a margem */
+}
+
+/* Estilos para a seção de empresas no rodapé */
+#empresas {
+  height: 30px; /* Define a altura */
+  padding-right: 30px; /* Define o preenchimento à direita */
+}
+
+/* Estilos responsivos para telas menores */
+@media (max-width: 600px) {
+  .logo {
+      width: auto; /* Define a largura automaticamente */
+  }
+
+  .login-card {
+      max-width: 80%; /* Define a largura máxima */
+      padding: 20px 15px; /* Define o preenchimento interno */
+  }
+
+  .title {
+      font-size: 20px; /* Define o tamanho da fonte */
+      margin-bottom: 30px; /* Define a margem inferior */
+  }
+
+  .ch-akrus h2 {
+      font-size: 18px; /* Define o tamanho da fonte */
+      margin-bottom: 20px; /* Define a margem inferior */
+  }
+
+  .submit-button {
+      padding: 8px 15px; /* Define o preenchimento interno */
+      font-size: 14px; /* Define o tamanho da fonte */
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+      flex-direction: column; /* Direciona os itens em coluna */
+      align-items: center; /* Alinha os itens ao centro */
+      text-align: center; /* Alinha o texto ao centro */
+      width: 100%;
+  }
+
+  #logofooter,
+  #empresas {
+      padding: 5px; /* Define o preenchimento */
+      margin: 5px 0; /* Define as margens superior e inferior */
+  }
+}
+
+footer {
+  width: 100%;
+}

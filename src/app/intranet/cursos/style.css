@@ -1,0 +1,243 @@
+/* Estilos gerais para todos os elementos */
+* {
+  margin: 0; /* Remove a margem padrão de todos os elementos */
+  padding: 0; /* Remove o preenchimento padrão de todos os elementos */
+  box-sizing: border-box; /* Inclui padding e bordas na largura e altura total do elemento */
+  font-family: "Inter", sans-serif; /* Define a fonte padrão para todos os elementos */
+}
+
+/* Estilos para o corpo da página */
+body {
+  background-color: #fffafa; /* Define a cor de fundo da página */
+  overflow-x: hidden; /* Impede a rolagem horizontal */
+}
+
+/* Estilos para o cabeçalho */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  padding: 40px;
+  color: white;
+}
+
+.logo img {
+  width: 150px; /* Tamanho da logo, pode ser ajustado conforme necessário */
+}
+
+.nav-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #f1f1f1;
+}
+
+/* Hamburger menu (invisível por padrão em desktop) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  width: 30px;
+  height: 4px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+/* Estilo para a seção do banner */
+.banner {
+  width: 100%; /* Define a largura do banner como 100% do contêiner pai */
+  height: 24vh; /* Define a altura do banner como 24% da altura da viewport */
+  overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do banner */
+}
+
+/* Estilo para a imagem dentro do banner */
+.banner img {
+  width: 100%; /* Define a largura da imagem como 100% do contêiner do banner */
+  height: 100%; /* Define a altura da imagem como 100% do contêiner do banner */
+  object-fit: cover; /* Faz com que a imagem cubra o contêiner, mantendo a proporção */
+}
+
+/* Estilo para a seção de cursos */
+.courses-section {
+  background-image: url(/intranet/images/48982e53-ec1b-455c-84e0-c4d0be71b657.jpg); /* Define a imagem de fundo da seção de cursos */
+  background-position-x: right; /* Alinha a imagem de fundo à direita */
+  padding: 45px; /* Define o preenchimento interno da seção */
+  margin-bottom: 24px; /* Define a margem inferior */
+  gap: 40px; /* Define o espaçamento entre os itens */
+  display: flex; /* Usa layout flexível */
+  flex-direction: column; /* Direciona os itens em coluna */
+  align-items: center; /* Alinha os itens ao centro */
+}
+/* Estiliza os títulos das categorias */
+.category-01 h3,
+.category-02 h3,
+.category-03 h3 {
+  margin-bottom: 12px; /* Define a margem inferior */
+}
+
+/* Estiliza o título da seção */
+.section-title {
+  font-size: 24px; /* Define o tamanho da fonte */
+  text-align: center; /* Alinha o texto ao centro */
+  margin-bottom: 20px; /* Define a margem inferior */
+}
+
+/* Estiliza o contêiner de vídeos */
+.videos {
+  display: flex; /* Usa layout flexível */
+  justify-content: center; /* Centraliza os itens */
+  gap: 25px; /* Define o espaçamento entre os itens */
+  width: 100%; /* Define a largura como 100% */
+  overflow-y: hidden; /* Oculta o conteúdo que ultrapassa os limites no eixo Y */
+}
+
+/* Estiliza os cartões de vídeo */
+.video-card {
+  transition: transform 0.6s; /* Define a transição para transformação */
+  max-width: 400px; /* Define a largura máxima */
+  width: 350px; /* Define a largura */
+}
+
+/* Estiliza os iframes dentro dos cartões de vídeo */
+.video-card iframe {
+  width: 100%; /* Define a largura como 100% do contêiner pai */
+  height: auto; /* Define a altura como automática */
+  aspect-ratio: 16 / 9; /* Define a proporção da tela */
+}
+
+/* Ajusta o layout dos vídeos para telas menores */
+@media (max-width: 768px) {
+  .videos {
+    display: block; /* Exibe os vídeos em bloco */
+  }
+}
+
+/* Ajusta os cartões de vídeo para telas menores */
+@media (max-width: 768px) {
+  .video-card {
+    max-width: 300px; /* Define a largura máxima */
+    gap: 20px; /* Define o espaçamento entre os itens */
+  }
+}
+
+/* Ajusta os cartões de vídeo para telas muito menores */
+@media (max-width: 480px) {
+  .video-card {
+    max-width: 90%; /* Define a largura máxima */
+  }
+}
+
+/* Estiliza o rodapé */
+.footer {
+  display: flex; /* Usa layout flexível */
+  background-color: #181818; /* Define a cor de fundo */
+  height: 6rem; /* Define a altura */
+  width: 100%; /* Define a largura */
+  justify-content: space-between; /* Espaça os itens */
+  align-items: center; /* Alinha os itens ao centro */
+}
+
+/* Estiliza o logo do rodapé */
+#logofooter {
+  height: 35px; /* Define a altura */
+  padding-left: 30px; /* Define o preenchimento à esquerda */
+}
+
+/* Estiliza a seção de empresas no rodapé */
+#empresas {
+  height: 30px; /* Define a altura */
+  padding-right: 30px; /* Define o preenchimento à direita */
+}
+
+/* Ajusta o logo para telas menores */
+@media (max-width: 768px) {
+  .logo img {
+    max-height: 50px; /* Define a altura máxima */
+    padding-left: 20px; /* Define o preenchimento à esquerda */
+    padding-bottom: 3px; /* Define o preenchimento inferior */
+  }
+
+  .nav-menu {
+    display: none; /* Inicialmente não exibe o menu */
+    position: absolute; /* Define a posição absoluta */
+    top: 60px; /* Define a posição superior */
+    right: 0; /* Define a posição à direita */
+    background-color: #1b1b1b; /* Define a cor de fundo */
+    width: 100%; /* Define a largura */
+    padding: 20px 0; /* Define o preenchimento */
+    z-index: 1000; /* Define a ordem de empilhamento */
+  }
+
+  .nav-menu.active {
+    display: flex; /* Exibe o menu como flexível */
+    flex-direction: column; /* Direciona os itens em coluna */
+    align-items: center; /* Alinha os itens ao centro */
+  }
+
+  .nav-menu ul {
+    flex-direction: column; /* Direciona os itens em coluna */
+    align-items: center; /* Alinha os itens ao centro */
+  }
+
+  .nav-menu ul li {
+    margin: 10px 0; /* Define a margem superior e inferior */
+  }
+
+  .menu-toggle {
+    display: flex; /* Exibe o botão de alternância do menu */
+  }
+}
+
+/* Ajusta a altura do banner para telas muito pequenas */
+@media (max-width: 767px) {
+  .banner {
+    height: 90px; /* Define a altura */
+  }
+
+  .banner img {
+    object-fit: cover; /* Ajusta a imagem para cobrir o elemento */
+  }
+}
+
+/* Ajusta a altura do banner para telas pequenas */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .banner {
+    height: 200px; /* Define a altura */
+  }
+
+  .banner img {
+    object-fit: cover; /* Ajusta a imagem para cobrir o elemento */
+  }
+}
+
+/* Ajusta o rodapé para telas menores */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column; /* Direciona os itens em coluna */
+    align-items: center; /* Alinha os itens ao centro */
+    text-align: center; /* Alinha o texto ao centro */
+  }
+
+  #logofooter,
+  #empresas {
+    padding: 5px; /* Define o preenchimento */
+    margin: 5px 0; /* Define a margem superior e inferior */
+  }
+}

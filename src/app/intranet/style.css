@@ -1,0 +1,837 @@
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: black;
+  background: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  /* Espaçamento ao redor do body */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  padding: 40px;
+  color: white;
+}
+
+.logo img {
+  width: 150px; /* Tamanho da logo, pode ser ajustado conforme necessário */
+}
+
+.nav-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #f1f1f1;
+}
+
+/* Hamburger menu (invisível por padrão em desktop) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  width: 30px;
+  height: 4px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+.cards {
+  background-image: url(/intranet/images/Branco-T_geral.jpg);
+  background-size: cover;
+  padding: 70px;
+}
+
+.banner {
+  width: 100%;
+  height: 25vh;
+  overflow: hidden;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  max-width: 1080px; /* Limitar a largura máxima */
+  margin: 0 auto; /* Centralizar o container na página */
+}
+
+.box {
+  width: 47%; /* Padrão para desktop */
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 20px 20px 0 0;
+  background-color: #f9f9f9;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border-bottom: #0b3481 solid 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+.box:hover {
+  transform: scale(1.02); /* Efeito de ampliação leve */
+}
+
+.box-title {
+  margin-bottom: 15px;
+}
+.box-title a {
+  text-decoration: none;
+  color: #000;
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: 400px;
+  height: 450px;
+  border: #000000 solid 2px;
+  border-radius: 20px;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel img {
+  flex-shrink: 0;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+button.prev,
+button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+button.prev {
+  left: 10px;
+}
+
+button.next {
+  right: 10px;
+}
+.news-header-container {
+  max-width: 1080px; /* Alinha com a largura da .large-box */
+  padding-bottom: 25px; /* Espaço entre o título e a box */
+  margin: 0 auto;
+}
+
+.news-header {
+  font-size: 24px; /* Tamanho do título */
+  font-weight: bold;
+  color: #ffffff; /* Cor do texto */
+  text-align: left; /* Alinha o texto à esquerda */
+}
+.news-header-container a {
+  text-decoration: none;
+}
+.news {
+  padding: 70px;
+  background-color: #0b3481;
+}
+
+.news-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.large-box {
+  width: 65%;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Alinhamento centralizado */
+}
+#tampinhas {
+  height: 300px;
+}
+
+.news-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 30%;
+}
+
+.small-box {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Alinhamento centralizado */
+}
+
+.news-text {
+  text-align: justify; /* Alinha o texto de forma justificada */
+  font-size: 14px; /* Diminui o tamanho do texto */
+  line-height: 1.6; /* Aumenta o espaçamento entre as linhas para melhor leitura */
+}
+
+.news-text a {
+  text-decoration: none;
+  color: #000;
+}
+.news-title {
+  text-align: center; /* Centraliza o título */
+  font-size: 20px; /* Tamanho reduzido para o título */
+  font-weight: bold;
+  color: #fff; /* Cor do título */
+  margin-bottom: 10px; /* Adiciona um espaço abaixo do título */
+}
+.news-image {
+  display: flex;
+  justify-content: center; /* Centraliza a imagem horizontalmente */
+  align-items: center;
+  width: 100%;
+}
+
+.news-image img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.cursos {
+  padding: 70px; /* Reduzido o padding para diminuir a altura total da seção */
+  background-image: url(/intranet/images/Branco-T_geral.jpg);
+  background-size: cover;
+}
+
+.cursos-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 200px; /* Reduzido o espaçamento entre as boxes */
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.left-box {
+  width: 45%; /* Box à esquerda com tamanho médio */
+  padding: 10px; /* Reduzido o padding interno da box */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto; /* A altura vai se ajustar com o conteúdo */
+  transition: transform 0.2s ease-in-out;
+  position: relative;
+}
+.left-box:hover {
+  transform: scale(1.03);
+}
+
+.cursos-column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Reduzido o gap entre as boxes */
+  width: 50%; /* A coluna de boxes à direita ocupa 50% da largura */
+}
+
+.right-box {
+  width: 100%;
+  padding: 15px; /* Reduzido o padding interno da box */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto; /* A altura vai se ajustar com o conteúdo */
+  transition: transform 0.2s ease-in-out;
+}
+.right-box:hover {
+  transform: scale(1.03);
+}
+
+.cursos-text {
+  margin-bottom: 8px; /* Reduzido a margem inferior para o texto */
+  text-align: center; /* Centraliza o texto */
+  font-size: 0.9rem; /* Menor tamanho de fonte para compactar mais o texto */
+}
+
+.cursos-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.cursos-image img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+#img1 {
+  height: 230px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.dates {
+  padding: 70px;
+}
+
+.dates-container {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.dates-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section {
+  flex: 1;
+}
+
+.section h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.dates-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.date-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+.date-item:hover {
+  transform: scale(1.03);
+}
+.date-item p {
+  margin: 0;
+}
+
+.name {
+  font-weight: bold;
+  color: #555;
+}
+
+.date {
+  color: #777;
+}
+.calendario {
+  display: flex;
+  width: 200px;
+  border-radius: 25px;
+}
+.calendario img {
+  width: 200px;
+  object-fit: contain;
+  border-radius: 25px;
+}
+.empresas {
+  padding: 0 70px 70px;
+}
+
+.empresas-container {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.empresas-box {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px; /* Ajustei o padding para um visual mais equilibrado */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-image: url(/intranet/images/Branco-T_geral.jpg);
+  background-size: cover;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.empresas-box h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.empresas-carousel {
+  display: flex;
+  gap: 20px; /* Reduzi a distância entre as imagens */
+  justify-content: center;
+  overflow: hidden;
+}
+
+.empresa-logo {
+  width: 400px; /* Ajustei a largura para as imagens ficarem mais compactas */
+  height: auto;
+  object-fit: contain; /* Mantém a proporção da imagem */
+  transition: transform 0.3s ease-in-out; /* A transição está mais suave */
+  border-radius: 20px;
+}
+
+/* Efeito de hover nas logos das empresas */
+.empresa-logo:hover {
+  transform: scale(
+    1.15
+  ); /* Reduzi o efeito de aumento no hover para um visual mais sutil */
+  cursor: pointer; /* Indica que a imagem é interativa */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .empresas {
+    padding: 0 20px 50px; /* Menos padding para telas pequenas */
+  }
+
+  .empresas-box {
+    padding: 30px; /* Reduzi o padding interno do box */
+  }
+
+  .empresas-carousel {
+    gap: 10px; /* Menor espaço entre as imagens */
+  }
+
+  .empresa-logo {
+    width: 300px; /* Ajusta o tamanho da imagem para telas menores */
+  }
+}
+
+.fotos {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.fotos-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.fotos-container h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(250px, 1fr)
+  ); /* Grade responsiva */
+  gap: 20px; /* Espaço entre as fotos e vídeos */
+  margin-top: 20px;
+}
+
+.media-item {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.media-item:hover {
+  transform: scale(
+    1.05
+  ); /* Leve aumento nas imagens e vídeos ao passar o mouse */
+}
+
+.media-img,
+.media-video {
+  width: 100%; /* Ajusta a largura para 100% da div pai */
+  height: 100%; /* Garante que a altura ocupe totalmente a área disponível */
+  object-fit: cover; /* Garante que as imagens e vídeos se ajustem sem deformar */
+  border-radius: 8px;
+}
+
+.media-video {
+  max-height: 250px; /* Limita a altura do vídeo, garantindo consistência */
+  object-fit: cover; /* Garante que o vídeo ocupe totalmente a área da caixa sem deformar */
+}
+
+.footer {
+  display: flex;
+  background-color: #181818;
+  height: 6rem;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logofooter {
+  height: 35px;
+  padding-left: 30px;
+}
+
+#empresas {
+  height: 30px;
+  padding-right: 30px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Colocar as boxes em coluna */
+    align-items: center;
+  }
+
+  .box {
+    width: 80%; /* Boxes ocupam 80% da largura em telas pequenas */
+    margin-bottom: 20px; /* Espaço entre as boxes em coluna */
+  }
+}
+
+@media (max-width: 768px) {
+  .news-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .large-box,
+  .news-column {
+    width: 100%;
+  }
+
+  .news-image img {
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .cursos-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-box,
+  .cursos-column {
+    width: 100%; /* As boxes ocupam toda a largura em telas pequenas */
+  }
+
+  .cursos-image img {
+    height: auto; /* Ajusta automaticamente a altura da imagem */
+  }
+}
+@media (max-width: 768px) {
+  .dates-box {
+    flex-direction: column; /* Empilha as seções em telas menores */
+  }
+
+  .section {
+    width: 100%; /* As seções ocupam toda a largura em telas menores */
+  }
+}
+
+@media (max-width: 768px) {
+  .empresas-box {
+    width: 100%; /* A box ocupa toda a largura em telas menores */
+  }
+
+  .empresas-carousel {
+    flex-direction: column; /* Organiza as imagens em coluna em telas pequenas */
+    align-items: center; /* Alinha as imagens ao centro */
+  }
+
+  .empresa-logo {
+    width: 120px; /* Imagens menores em telas pequenas */
+  }
+}
+@media (max-width: 768px) {
+  .media-grid {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(200px, 1fr)
+    ); /* Ajusta o número de colunas para telas pequenas */
+  }
+
+  .media-video {
+    max-height: 200px; /* Ajusta a altura do vídeo em telas pequenas */
+  }
+}
+/* Continuação da responsividade */
+@media (max-width: 768px) {
+  .left-box,
+  .cursos-column {
+    width: 100%; /* As boxes ocupam toda a largura em telas pequenas */
+  }
+
+  .right-box {
+    width: 100%; /* Ajuste da largura da right-box para 100% */
+  }
+
+  .cursos-text {
+    font-size: 0.85rem; /* Reduz o tamanho da fonte para telas menores */
+  }
+
+  .media-grid {
+    grid-template-columns: 1fr; /* Em telas pequenas, exibe as fotos em uma coluna */
+  }
+
+  .media-item {
+    padding: 15px; /* Ajusta o padding para telas menores */
+  }
+
+  .media-video {
+    max-height: 200px; /* Limita a altura do vídeo */
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 15px; /* Reduz o padding para telas ainda menores */
+  }
+
+  .box,
+  .large-box,
+  .small-box {
+    width: 100%; /* Boxes ocupam 100% da largura */
+    margin-bottom: 15px; /* Adiciona um espaço entre as boxes */
+  }
+
+  .carousel-container,
+  .carousel {
+    width: 100%; /* Ajusta o tamanho do carrossel */
+    height: 300px; /* Ajuste na altura */
+  }
+
+  .carousel img {
+    width: 100%; /* Ajusta as imagens no carrossel para a largura total */
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .empresas-box {
+    padding: 20px; /* Ajuste no padding da caixa das empresas */
+  }
+
+  .empresas-carousel {
+    gap: 10px; /* Menor espaço entre as imagens */
+  }
+
+  .empresa-logo {
+    width: 250px; /* Ajuste no tamanho das logos das empresas */
+  }
+
+  .media-item {
+    padding: 8px; /* Menor padding para telas menores */
+  }
+
+  .media-img,
+  .media-video {
+    height: auto; /* Ajusta a altura das imagens e vídeos */
+  }
+}
+@media (max-width: 768px) {
+  .carousel-container {
+    width: 100%; /* Aumenta a largura do carrossel para ocupar 100% da tela */
+    padding: 0; /* Remove qualquer padding que possa estar causando bordas */
+    margin: 0; /* Remove a margem para ocupar toda a largura */
+  }
+
+  .carousel {
+    width: 100%; /* Faz o carrossel ocupar toda a largura */
+    display: block; /* Remove qualquer comportamento de flexbox ou grid que possa estar aplicando alinhamento */
+  }
+
+  .carousel img {
+    width: 100%; /* Ajusta as imagens para preencher toda a largura do carrossel */
+    height: auto; /* Ajusta a altura das imagens automaticamente */
+    object-fit: cover; /* Assegura que as imagens se ajustem sem distorção */
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Alinha os boxes verticalmente em telas menores */
+    padding: 0px; /* Diminui o padding */
+    align-items: stretch; /* Remove o alinhamento central */
+  }
+
+  .box {
+    width: 100%; /* Faz os boxes ocuparem 100% da largura da tela no mobile */
+    margin-bottom: 20px; /* Espaçamento entre os boxes */
+  }
+
+  .carousel-container {
+    width: 100%; /* Faz o carrossel ocupar toda a largura do box */
+    height: 300px; /* Ajusta a altura para telas menores */
+  }
+}
+
+@media (max-width: 480px) {
+  .box {
+    width: 100%; /* Ocupa 100% da largura em telas muito pequenas */
+  }
+
+  .carousel-container {
+    height: 250px; /* Ajusta ainda mais a altura do carrossel */
+  }
+}
+/* Responsividade: transformar o menu em hambúrguer em telas pequenas */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Esconde o menu de navegação */
+  }
+
+  .hamburger {
+    display: flex; /* Exibe o ícone de hambúrguer */
+  }
+
+  .nav-links.active {
+    display: block; /* Exibe o menu quando ele estiver ativo */
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: black;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .nav-links ul {
+    display: block;
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+    padding: 10px;
+    display: block;
+  }
+}
+@media (max-width: 767px) {
+  .banner {
+    height: 98px;
+  }
+
+  .banner img {
+    object-fit: cover;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .banner {
+    height: 200px;
+  }
+
+  .banner img {
+    object-fit: cover;
+  }
+}
+@media (max-width: 768px) {
+  .cursos-container {
+    gap: 30px;
+  }
+  .dates-box img {
+    margin-left: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column; /* Direciona os itens em coluna */
+    align-items: center; /* Alinha os itens ao centro */
+    text-align: center; /* Alinha o texto ao centro */
+  }
+
+  #logofooter,
+  #empresas {
+    padding: 5px; /* Define o preenchimento */
+    margin: 5px 0; /* Define a margem superior e inferior */
+  }
+}
