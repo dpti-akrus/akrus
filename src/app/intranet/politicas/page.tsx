@@ -1,6 +1,32 @@
+'use client'
+import { useEffect, useRef, useState } from "react";
 import './style.css'
+import { useRouter } from "next/navigation";
 
 export default function Page() {
+
+    const router = useRouter()
+
+    const accessRef = useRef(false)
+    const [CanAccess, setCanAccess] = useState(false);
+
+
+    useEffect(() => {
+        if (!accessRef.current) {
+            const response = prompt('Insira a senha para acessar essa página')
+            if (response != 'rWqcSep2DXBJ') {
+                alert('Você não tem permissão para acessar essa página')
+                setTimeout(() => {
+                    router.push('/intranet')
+                }, 1000);
+            } else setCanAccess(true)
+            accessRef.current = true
+        }
+
+    }, []);
+
+    if (!CanAccess) return null
+
     return (
         <main>
             <header className="header">
@@ -56,7 +82,7 @@ export default function Page() {
                         </a>
                     </div>
                 </div>
-                </section>
+            </section>
 
             <footer>
                 <div className="footer">
