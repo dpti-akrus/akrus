@@ -3,7 +3,6 @@
 
 
 
-
 # Intranet - AKRUS
 
 ![image](https://github.com/user-attachments/assets/a6478e45-31f7-4b51-ad34-88b9025f2aec)
