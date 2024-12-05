@@ -5,14 +5,17 @@ import React, { useEffect } from "react";
 
 export default function page() {
   useEffect(() => {
-    const hamburger = document.getElementById("hamburger");
-    const navLinks = document.querySelector(".nav-links");
+    if (typeof document != 'undefined') {
 
-    const handleHamburgerClick = () => {
-      navLinks.classList.toggle("active");
-    };
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.querySelector(".nav-links");
 
-    hamburger.addEventListener("click", handleHamburgerClick);
+      const handleHamburgerClick = () => {
+        navLinks.classList.toggle("active");
+      };
+
+      hamburger.addEventListener("click", handleHamburgerClick);
+    }
 
     // Remove o Event listener ao desmontar o componente
     return () => {
@@ -21,21 +24,24 @@ export default function page() {
   }, []);
 
   function abrirCard(title, cover, direction, link) {
-    const card = document.getElementById("bookCard");
-    document.getElementById("bookTitle").innerText = title;
-    document.getElementById("bookCover").src = cover;
-    document.getElementById("bookDirection").innerText = direction;
-    document.getElementById("bookLink").href = link;
+    if (typeof document != 'undefined') {
 
-    const isPodcast = title.toLowerCase().includes("podcast");
+      const card = document.getElementById("bookCard");
+      document.getElementById("bookTitle").innerText = title;
+      document.getElementById("bookCover").src = cover;
+      document.getElementById("bookDirection").innerText = direction;
+      document.getElementById("bookLink").href = link;
 
-    document.getElementById("bookLink").innerText = isPodcast
-      ? "Ouvir"
-      : "Comprar";
+      const isPodcast = title.toLowerCase().includes("podcast");
 
-    card.classList.remove("hide");
-    card.classList.add("show");
-    card.style.display = "block";
+      document.getElementById("bookLink").innerText = isPodcast
+        ? "Ouvir"
+        : "Comprar";
+
+      card.classList.remove("hide");
+      card.classList.add("show");
+      card.style.display = "block";
+    }
   }
 
   function fecharCard() {
@@ -50,11 +56,11 @@ export default function page() {
   }
 
   typeof document != "undefined" &&
-    addEventListener("scroll", function () {
+    document.addEventListener("scroll", function () {
       fecharCard();
     });
 
-  document.getElementById("bookLink").addEventListener("click", function () {
+  typeof document != "undefined" && document.getElementById("bookLink").addEventListener("click", function () {
     fecharCard();
   });
 
