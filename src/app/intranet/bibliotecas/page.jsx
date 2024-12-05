@@ -49,9 +49,10 @@ export default function page() {
     }, 500);
   }
 
-  window.addEventListener("scroll", function () {
-    fecharCard();
-  });
+  typeof document != "undefined" &&
+    addEventListener("scroll", function () {
+      fecharCard();
+    });
 
   document.getElementById("bookLink").addEventListener("click", function () {
     fecharCard();
