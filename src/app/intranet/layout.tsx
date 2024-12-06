@@ -1,23 +1,44 @@
 "use client";
+
+import { onAuthStateChanged } from "firebase/auth";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import { firebaseAuth } from "../firebase";
-import { getAuth } from "firebase/auth";
-import { useEffect } from "react";
 
 export default function IntranetLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  useEffect(() => {
-    console.log(firebaseAuth.currentUser);
-  }, []);
+  const router = useRouter();
+  const pathname = usePathname()
+  
+  const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState<any>(null);
 
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(firebaseAuth, (currentUser) => {
+      if (!currentUser) router.push("/intranet/login")
+      else setUser(currentUser);
+
+      setLoading(false);
+    });
+
+    return () => unsubscribe();
+  }, [router]);
+  
+  if (loading) return <div>Loading...</div>;
+
+  if(!user && !pathname.includes('login')) return null
+  
   return (
     <html>
       <head>
         <title>Intranet</title>
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+      </body>
     </html>
   );
 }

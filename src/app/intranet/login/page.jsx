@@ -2,7 +2,7 @@
 
 import "./style.css";
 import { useState } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { setPersistence, browserLocalPersistence, signInWithEmailAndPassword } from "firebase/auth";
 import { firebaseAuth } from "../../firebase";
 import { useRouter } from "next/navigation";
 
@@ -11,13 +11,15 @@ export default function Page() {
 
   const router = useRouter();
 
-  function handleLogin(e) {
+  async function handleLogin(e) {
     e.preventDefault();
 
     console.log(user);
+    await setPersistence(firebaseAuth, browserLocalPersistence);
 
     signInWithEmailAndPassword(firebaseAuth, user.email, user.password)
       .then((result) => {
+
         console.log("deu certo", result);
         router.push("/intranet");
       })

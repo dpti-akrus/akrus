@@ -7,20 +7,15 @@ export default function page() {
   useEffect(() => {
     if (typeof document != 'undefined') {
 
-      const hamburger = document.getElementById("hamburger");
-      const navLinks = document.querySelector(".nav-links");
+      const hamburger = document?.getElementById("hamburger");
+      const navLinks = document?.querySelector(".nav-links");
 
       const handleHamburgerClick = () => {
         navLinks.classList.toggle("active");
       };
 
-      hamburger.addEventListener("click", handleHamburgerClick);
+      hamburger?.addEventListener("click", handleHamburgerClick);
     }
-
-    // Remove o Event listener ao desmontar o componente
-    return () => {
-      hamburger.removeEventListener("click", handleHamburgerClick);
-    };
   }, []);
 
   function abrirCard(title, cover, direction, link) {
@@ -55,12 +50,12 @@ export default function page() {
     }, 500);
   }
 
-  typeof document != "undefined" &&
-    document.addEventListener("scroll", function () {
-      fecharCard();
-    });
 
-  typeof document != "undefined" && document.getElementById("bookLink").addEventListener("click", function () {
+  document?.addEventListener("scroll", function () {
+    fecharCard();
+  });
+
+  document?.getElementById("bookLink")?.addEventListener("click", function () {
     fecharCard();
   });
 

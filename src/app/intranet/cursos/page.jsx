@@ -39,8 +39,8 @@ export default function Page() {
 
     // Adiciona evento de clique ao botão de alternância do menu
     document
-      .querySelector(".menu-toggle")
-      .addEventListener("click", toggleMenu);
+      ?.querySelector(".menu-toggle")
+      ?.addEventListener("click", toggleMenu);
 
     // Adiciona eventos de hover aos cartões de vídeo
     document.querySelectorAll(".video-card").forEach((card) => {
@@ -58,11 +58,11 @@ export default function Page() {
       hamburger.removeEventListener("click", handleHamburgerClick);
       clearInterval(intervalId);
       document
-        .querySelector(".menu-toggle")
-        .removeEventListener("click", toggleMenu);
+        ?.querySelector(".menu-toggle")
+        ?.removeEventListener("click", toggleMenu);
       document.querySelectorAll(".video-card").forEach((card) => {
-        card.removeEventListener("mouseover", () => {});
-        card.removeEventListener("mouseout", () => {});
+        card.removeEventListener("mouseover", () => { });
+        card.removeEventListener("mouseout", () => { });
       });
     };
   }, []);
