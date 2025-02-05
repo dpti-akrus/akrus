@@ -15,7 +15,7 @@ export default function Page() {
         <nav className="nav-links">
           <ul>
             <li>
-              <a href="/intranaet">Home</a>
+              <a href="/intranet">Home</a>
             </li>
             <li>
               <a href="https://safrasulsementes.acelerato.com/">Suporte</a>
