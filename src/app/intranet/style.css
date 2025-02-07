@@ -22,11 +22,6 @@ body {
   box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  /* Espaçamento ao redor do body */
-}
-
 .header {
   display: flex;
   justify-content: space-between;

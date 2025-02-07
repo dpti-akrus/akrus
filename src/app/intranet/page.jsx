@@ -265,92 +265,76 @@ export default function Page() {
               <h2>Aniversariantes do Mês</h2>
               <div className="dates-list">
                 <div className="date-item">
-                  <p className="name">Pablo Padilha</p>
-                  <p className="date">01 de Dezembro</p>
+                  <p className="name">Thiago Casé</p>
+                  <p className="date">01 de Fevereiro</p>
                 </div>
                 <div className="date-item">
-                  <p className="name">João Paulo Carvalho</p>
-                  <p className="date">15 de Dezembro</p>
+                  <p className="name">Genivaldo Batista</p>
+                  <p className="date">04 de Fevereiro</p>
                 </div>
                 <div className="date-item">
-                  <p className="name">Tiago Julio Vieira</p>
-                  <p className="date">20 de Dezembro</p>
+                  <p className="name">Antonio Valder</p>
+                  <p className="date">05 de Fevereiro</p>
                 </div>
                 <div className="date-item">
-                  <p className="name">Naiara Camila</p>
-                  <p className="date">21 de Dezembro</p>
+                  <p className="name">Guilherme Ribeiro</p>
+                  <p className="date">05 de Fevereiro</p>
                 </div>
                 <div className="date-item">
-                  <p className="name">Juliano Henrique Segatto</p>
-                  <p className="date">22 de Dezembro</p>
+                  <p className="name">Maria de Jesus Dias</p>
+                  <p className="date">05 de Fevereiro</p>
                 </div>
                 <div className="date-item">
-                  <p className="name">Lucas Danillo Pereira</p>
-                  <p className="date">25 de Dezembro</p>
+                  <p className="name">Kamilla Munhoz</p>
+                  <p className="date">06 de Fevereiro</p>
                 </div>
                 <div className="date-item">
-                  <p className="name">Nilton Lopes</p>
-                  <p className="date">05 de Dezembro</p>
+                  <p className="name">Poliana das Graças Cunha</p>
+                  <p className="date">09 de Fevereiro</p>
                 </div>
                 <div className="date-item">
-                  <p className="name">Francisco Gabriel Benites</p>
-                  <p className="date">13 de Dezembro</p>
+                  <p className="name">Getulio do Amaral</p>
+                  <p className="date">12 de Fevereiro</p>
                 </div>
                 <div className="date-item">
-                  <p className="name">Edivar Braga</p>
-                  <p className="date">11 de Dezembro</p>
+                  <p className="name">Gilson Gonçalves</p>
+                  <p className="date">15 de Fevereiro</p>
                 </div>
                 <div className="date-item">
-                  <p className="name">Augusto Maldonado</p>
-                  <p className="date">13 de Dezembro</p>
+                  <p className="name">Gustavo Pires</p>
+                  <p className="date">15 de Fevereiro</p>
                 </div>
                 <div className="date-item">
-                  <p className="name">Vitória Cristina F. Pereira</p>
-                  <p className="date">16 de Dezembro</p>
+                  <p className="name">Tiago Coelho</p>
+                  <p className="date">16 de Fevereiro</p>
                 </div>
                 <div className="date-item">
-                  <p className="name">Edenilson Pereira </p>
-                  <p className="date">17 de Dezembro</p>
+                  <p className="name">Fernanda Paula </p>
+                  <p className="date">17 de Fevereiro</p>
                 </div>
                 <div className="date-item">
-                  <p className="name">Fábio Júnior Carneiro</p>
-                  <p className="date">18 de Dezembro</p>
+                  <p className="name">Thaynara Muhl</p>
+                  <p className="date">19 de Fevereiro</p>
                 </div>
                 <div className="date-item">
-                  <p className="name">Tiago Julio Vieira Nunes</p>
-                  <p className="date">20 de Dezembro</p>
+                  <p className="name">Marcio Salto</p>
+                  <p className="date">19 de Fevereiro</p>
                 </div>
                 <div className="date-item">
-                  <p className="name">Darlan Morais de Souza</p>
-                  <p className="date">22 de Dezembro</p>
+                  <p className="name">Isaac Benicio</p>
+                  <p className="date">22 de Fevereiro</p>
                 </div>
                 <div className="date-item">
-                  <p className="name">Janaína Aparecida</p>
-                  <p className="date">24 de Dezembro</p>
+                  <p className="name">Gissiene Gouveia</p>
+                  <p className="date">25 de Fevereiro</p>
                 </div>
                 <div className="date-item">
-                  <p className="name">Camila Ribeiro</p>
-                  <p className="date">28 de Dezembro</p>
+                  <p className="name">Luana Cristina</p>
+                  <p className="date">27 de Fevereiro</p>
                 </div>
                 <div className="date-item">
-                  <p className="name">Paulo Cavalcante </p>
-                  <p className="date">28 de Dezembro</p>
-                </div>
-                <div className="date-item">
-                  <p className="name">Fabrício dos Santos</p>
-                  <p className="date">29 de Dezembro</p>
-                </div>
-                <div className="date-item">
-                  <p className="name">Maicon Souza Barbosa</p>
-                  <p className="date">30 de Dezembro</p>
-                </div>
-                <div className="date-item">
-                  <p className="name">Wanderson Rodrigues</p>
-                  <p className="date">30 de Dezembro</p>
-                </div>
-                <div className="date-item">
-                  <p className="name">José Gregório G. Valdez</p>
-                  <p className="date">31 de Dezembro</p>
+                  <p className="name">Fagner Bispo </p>
+                  <p className="date">27 de Fevereiro</p>
                 </div>
               </div>
             </div>
@@ -361,12 +345,12 @@ export default function Page() {
               <h2>Datas Comemorativas</h2>
               <div className="dates-list">
                 <div className="date-item">
-                  <p className="name">Natal</p>
-                  <p className="date">25 de dezembro</p>
+                  <p className="name"></p>
+                  <p className="date"></p>
                 </div>
                 <div className="date-item">
-                  <p className="name">Ano Novo</p>
-                  <p className="date">01 de Janeiro</p>
+                  <p className="name"></p>
+                  <p className="date"></p>
                 </div>
               </div>
             </div>
