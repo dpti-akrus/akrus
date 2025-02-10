@@ -97,7 +97,7 @@ body {
 }
 
 .box {
-  width: 47%; /* Padrão para desktop */
+  width: 47%;
   padding: 20px;
   text-align: center;
   border: 1px solid #ccc;
@@ -465,25 +465,6 @@ button.next {
   cursor: pointer; /* Indica que a imagem é interativa */
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  .empresas {
-    padding: 0 20px 50px; /* Menos padding para telas pequenas */
-  }
-
-  .empresas-box {
-    padding: 30px; /* Reduzi o padding interno do box */
-  }
-
-  .empresas-carousel {
-    gap: 10px; /* Menor espaço entre as imagens */
-  }
-
-  .empresa-logo {
-    width: 300px; /* Ajusta o tamanho da imagem para telas menores */
-  }
-}
-
 .fotos {
   padding: 20px;
   background-color: #f9f9f9;
@@ -562,114 +543,14 @@ button.next {
   padding-right: 30px;
 }
 
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column; /* Colocar as boxes em coluna */
-    align-items: center;
-  }
-
-  .box {
-    width: 80%; /* Boxes ocupam 80% da largura em telas pequenas */
-    margin-bottom: 20px; /* Espaço entre as boxes em coluna */
-  }
-}
-
-@media (max-width: 768px) {
-  .news-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .large-box,
-  .news-column {
-    width: 100%;
-  }
-
-  .news-image img {
-    height: auto;
-  }
-}
-
-@media (max-width: 768px) {
-  .cursos-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .left-box,
-  .cursos-column {
-    width: 100%; /* As boxes ocupam toda a largura em telas pequenas */
-  }
-
-  .cursos-image img {
-    height: auto; /* Ajusta automaticamente a altura da imagem */
-  }
-}
-@media (max-width: 768px) {
-  .dates-box {
-    flex-direction: column; /* Empilha as seções em telas menores */
-  }
-
-  .section {
-    width: 100%; /* As seções ocupam toda a largura em telas menores */
-  }
-}
-
-@media (max-width: 768px) {
-  .empresas-box {
-    width: 100%; /* A box ocupa toda a largura em telas menores */
-  }
-
-  .empresas-carousel {
-    flex-direction: column; /* Organiza as imagens em coluna em telas pequenas */
-    align-items: center; /* Alinha as imagens ao centro */
-  }
-
-  .empresa-logo {
-    width: 120px; /* Imagens menores em telas pequenas */
-  }
-}
-@media (max-width: 768px) {
-  .media-grid {
-    grid-template-columns: repeat(
-      auto-fill,
-      minmax(200px, 1fr)
-    ); /* Ajusta o número de colunas para telas pequenas */
-  }
-
-  .media-video {
-    max-height: 200px; /* Ajusta a altura do vídeo em telas pequenas */
-  }
-}
-/* Continuação da responsividade */
-@media (max-width: 768px) {
-  .left-box,
-  .cursos-column {
-    width: 100%; /* As boxes ocupam toda a largura em telas pequenas */
-  }
-
-  .right-box {
-    width: 100%; /* Ajuste da largura da right-box para 100% */
-  }
-
-  .cursos-text {
-    font-size: 0.85rem; /* Reduz o tamanho da fonte para telas menores */
-  }
-
-  .media-grid {
-    grid-template-columns: 1fr; /* Em telas pequenas, exibe as fotos em uma coluna */
-  }
-
-  .media-item {
-    padding: 15px; /* Ajusta o padding para telas menores */
-  }
-
-  .media-video {
-    max-height: 200px; /* Limita a altura do vídeo */
-  }
-}
-
 @media (max-width: 480px) {
+  .box {
+    width: 100%; /* Ocupa 100% da largura em telas muito pequenas */
+  }
+
+  .carousel-container {
+    height: 250px; /* Ajusta ainda mais a altura do carrossel */
+  }
   .container {
     padding: 15px; /* Reduz o padding para telas ainda menores */
   }
@@ -714,7 +595,118 @@ button.next {
     height: auto; /* Ajusta a altura das imagens e vídeos */
   }
 }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .banner {
+    height: 200px;
+  }
+
+  .banner img {
+    object-fit: cover;
+  }
+}
+
 @media (max-width: 768px) {
+  .cards {
+    padding: 20px;
+  }
+  .news {
+    padding: 20px;
+  }
+  .cursos {
+    padding: 20px;
+  }
+  .dates {
+    padding: 20px;
+  }
+  .empresas {
+    padding: 0;
+  }
+  .container {
+    flex-direction: column; /* Colocar as boxes em coluna */
+    align-items: center;
+  }
+  .news-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .large-box,
+  .news-column {
+    width: 100%;
+  }
+
+  .news-image img {
+    height: auto;
+  }
+  .cursos-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-box,
+  .cursos-column {
+    width: 100%; /* As boxes ocupam toda a largura em telas pequenas */
+  }
+
+  .cursos-image img {
+    height: auto; /* Ajusta automaticamente a altura da imagem */
+  }
+  .dates-box {
+    flex-direction: column;
+    display: flex;
+    align-items: center; /* Empilha as seções em telas menores */
+  }
+
+  .section {
+    width: 100%; /* As seções ocupam toda a largura em telas menores */
+  }
+  .empresas-box {
+    width: 100%; /* A box ocupa toda a largura em telas menores */
+  }
+
+  .empresas-carousel {
+    flex-direction: column; /* Organiza as imagens em coluna em telas pequenas */
+    align-items: center; /* Alinha as imagens ao centro */
+  }
+
+  .empresa-logo {
+    width: 120px; /* Imagens menores em telas pequenas */
+  }
+  .media-grid {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(200px, 1fr)
+    ); /* Ajusta o número de colunas para telas pequenas */
+  }
+
+  .media-video {
+    max-height: 200px; /* Ajusta a altura do vídeo em telas pequenas */
+  }
+  .left-box,
+  .cursos-column {
+    width: 100%; /* As boxes ocupam toda a largura em telas pequenas */
+  }
+
+  .right-box {
+    width: 100%; /* Ajuste da largura da right-box para 100% */
+  }
+
+  .cursos-text {
+    font-size: 0.85rem; /* Reduz o tamanho da fonte para telas menores */
+  }
+
+  .media-grid {
+    grid-template-columns: 1fr; /* Em telas pequenas, exibe as fotos em uma coluna */
+  }
+
+  .media-item {
+    padding: 15px; /* Ajusta o padding para telas menores */
+  }
+
+  .media-video {
+    max-height: 200px; /* Limita a altura do vídeo */
+  }
   .carousel-container {
     width: 100%; /* Aumenta a largura do carrossel para ocupar 100% da tela */
     padding: 0; /* Remove qualquer padding que possa estar causando bordas */
@@ -731,8 +723,6 @@ button.next {
     height: auto; /* Ajusta a altura das imagens automaticamente */
     object-fit: cover; /* Assegura que as imagens se ajustem sem distorção */
   }
-}
-@media (max-width: 768px) {
   .container {
     flex-direction: column; /* Alinha os boxes verticalmente em telas menores */
     padding: 0px; /* Diminui o padding */
@@ -748,19 +738,6 @@ button.next {
     width: 100%; /* Faz o carrossel ocupar toda a largura do box */
     height: 300px; /* Ajusta a altura para telas menores */
   }
-}
-
-@media (max-width: 480px) {
-  .box {
-    width: 100%; /* Ocupa 100% da largura em telas muito pequenas */
-  }
-
-  .carousel-container {
-    height: 250px; /* Ajusta ainda mais a altura do carrossel */
-  }
-}
-/* Responsividade: transformar o menu em hambúrguer em telas pequenas */
-@media (max-width: 768px) {
   .nav-links {
     display: none; /* Esconde o menu de navegação */
   }
@@ -791,8 +768,6 @@ button.next {
     padding: 10px;
     display: block;
   }
-}
-@media (max-width: 767px) {
   .banner {
     height: 98px;
   }
@@ -800,26 +775,12 @@ button.next {
   .banner img {
     object-fit: cover;
   }
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  .banner {
-    height: 200px;
-  }
-
-  .banner img {
-    object-fit: cover;
-  }
-}
-@media (max-width: 768px) {
   .cursos-container {
     gap: 30px;
   }
   .dates-box img {
     margin-left: 15px;
   }
-}
-@media (max-width: 768px) {
   .footer {
     flex-direction: column; /* Direciona os itens em coluna */
     align-items: center; /* Alinha os itens ao centro */
@@ -830,5 +791,20 @@ button.next {
   #empresas {
     padding: 5px; /* Define o preenchimento */
     margin: 5px 0; /* Define a margem superior e inferior */
+  }
+  .empresas {
+    padding: 0 20px 50px; /* Menos padding para telas pequenas */
+  }
+
+  .empresas-box {
+    padding: 30px; /* Reduzi o padding interno do box */
+  }
+
+  .empresas-carousel {
+    gap: 10px; /* Menor espaço entre as imagens */
+  }
+
+  .empresa-logo {
+    width: 300px; /* Ajusta o tamanho da imagem para telas menores */
   }
 }

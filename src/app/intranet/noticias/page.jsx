@@ -1,8 +1,38 @@
 "use client";
 
 import "./style.css";
+import React, { useEffect } from "react";
 
 export default function Page() {
+  useEffect(() => {
+    console.log("typeof document:", typeof document);
+
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.querySelector(".nav-links");
+
+    const handleHamburgerClick = () => {
+      navLinks.classList.toggle("active");
+    };
+
+    hamburger?.addEventListener("click", handleHamburgerClick);
+
+    const toggleMenu = () => {
+      const navMenu = document.querySelector(".nav-menu");
+      navMenu.classList.toggle("active");
+    };
+
+    document
+      ?.querySelector(".menu-toggle")
+      ?.addEventListener("click", toggleMenu);
+
+    return () => {
+      hamburger.removeEventListener("click", handleHamburgerClick);
+      document
+        ?.querySelector(".menu-toggle")
+        ?.removeEventListener("click", toggleMenu);
+    };
+  }, []);
+
   return (
     <main>
       <header className="header">

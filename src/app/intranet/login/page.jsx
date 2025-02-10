@@ -2,7 +2,11 @@
 
 import "./style.css";
 import { useState } from "react";
-import { setPersistence, browserLocalPersistence, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  setPersistence,
+  browserLocalPersistence,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import { firebaseAuth } from "../../firebase";
 import { useRouter } from "next/navigation";
 
@@ -19,7 +23,6 @@ export default function Page() {
 
     signInWithEmailAndPassword(firebaseAuth, user.email, user.password)
       .then((result) => {
-
         console.log("deu certo", result);
         router.push("/intranet");
       })
@@ -30,7 +33,7 @@ export default function Page() {
   }
 
   return (
-    <main >
+    <main>
       <header>
         <div className="logo">
           <img
@@ -69,10 +72,6 @@ export default function Page() {
               className="input-field2"
               required
             />
-            <div>
-              <input type="checkbox" id="remember-me" name="remember-me" />
-              <label htmlFor="remember-me">Lembrar-me</label>
-            </div>
             <div className="butt-send">
               <button type="submit" className="submit-button">
                 Entrar

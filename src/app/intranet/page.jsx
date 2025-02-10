@@ -7,7 +7,6 @@ export default function Page() {
     const hamburger = document.getElementById("hamburger");
     const navLinks = document.querySelector(".nav-links");
 
-
     const handleHamburgerClick = () => {
       navLinks.classList.toggle("active");
     };
@@ -16,7 +15,6 @@ export default function Page() {
     document
       ?.querySelector(".menu-toggle")
       ?.addEventListener("click", toggleMenu);
-
 
     let autoSlideInterval;
     let currentIndex = {
@@ -36,8 +34,9 @@ export default function Page() {
         (currentIndex[carouselId] + direction + images.length) % images.length;
 
       // Aplica a transição
-      carousel.style.transform = `translateX(-${currentIndex[carouselId] * imageWidth
-        }px)`;
+      carousel.style.transform = `translateX(-${
+        currentIndex[carouselId] * imageWidth
+      }px)`;
     }
 
     // Função para iniciar o carrossel automático
@@ -360,17 +359,16 @@ export default function Page() {
               <img src="/intranet/images/sl_051623_57880_66.jpg" />
             </div>
             <div className="section comemorativas">
-              <h2>Datas Comemorativas</h2>
-              <div className="dates-list">
-                <div className="date-item">
+              {/*<h2>Datas Comemorativas</h2>
+                {/*<div className="date-item">
                   <p className="name"></p>
                   <p className="date"></p>
                 </div>
                 <div className="date-item">
                   <p className="name"></p>
                   <p className="date"></p>
-                </div>
-              </div>
+                </div> 
+              </div>*/}
             </div>
           </div>
         </div>

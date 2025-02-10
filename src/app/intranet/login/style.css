@@ -43,6 +43,8 @@ header {
   text-align: center; /* Alinha o texto ao centro */
   max-width: 600px; /* Define a largura máxima */
   width: 100%; /* Define a largura como 100% */
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .login-section {
@@ -76,15 +78,15 @@ header {
   margin-bottom: 25px; /* Define a margem inferior */
   letter-spacing: 1px; /* Define o espaçamento entre letras */
   animation: fadeIn 1s ease-in-out; /* Adiciona animação de fade-in */
-}    
+}
 
 /* Animação de fade-in */
 @keyframes fadeIn {
   from {
-      opacity: 0; /* Define opacidade inicial */
+    opacity: 0; /* Define opacidade inicial */
   }
   to {
-      opacity: 1; /* Define opacidade final */
+    opacity: 1; /* Define opacidade final */
   }
 }
 
@@ -94,7 +96,7 @@ header {
   padding: 10px; /* Define o preenchimento interno */
   margin: 10px 0; /* Define margens superior e inferior */
   margin-top: -20px; /* Define margem superior negativa */
-  border-radius: 20px; /* Define o raio das bordas */
+  border-radius: 15px; /* Define o raio das bordas */
   border: 1px solid #000000; /* Define a borda */
   outline: none; /* Remove o contorno padrão */
   font-size: 16px; /* Define o tamanho da fonte */
@@ -106,7 +108,7 @@ header {
   padding: 10px; /* Define o preenchimento interno */
   margin: 10px 0; /* Define margens superior e inferior */
   margin-top: -20px; /* Define margem superior negativa */
-  border-radius: 20px; /* Define o raio das bordas */
+  border-radius: 15px; /* Define o raio das bordas */
   border: 1px solid #000000; /* Define a borda */
   outline: none; /* Remove o contorno padrão */
   font-size: 16px; /* Define o tamanho da fonte */
@@ -140,8 +142,6 @@ header {
   line-height: 1.5; /* Define a altura da linha */
 }
 
-
-
 /* Estilos para o rodapé */
 .footer {
   display: flex; /* Usa flexbox para layout */
@@ -169,42 +169,42 @@ header {
 /* Estilos responsivos para telas menores */
 @media (max-width: 600px) {
   .logo {
-      width: auto; /* Define a largura automaticamente */
+    width: auto; /* Define a largura automaticamente */
   }
 
   .login-card {
-      max-width: 80%; /* Define a largura máxima */
-      padding: 20px 15px; /* Define o preenchimento interno */
+    max-width: 80%; /* Define a largura máxima */
+    padding: 20px 15px; /* Define o preenchimento interno */
   }
 
   .title {
-      font-size: 20px; /* Define o tamanho da fonte */
-      margin-bottom: 30px; /* Define a margem inferior */
+    font-size: 20px; /* Define o tamanho da fonte */
+    margin-bottom: 30px; /* Define a margem inferior */
   }
 
   .ch-akrus h2 {
-      font-size: 18px; /* Define o tamanho da fonte */
-      margin-bottom: 20px; /* Define a margem inferior */
+    font-size: 18px; /* Define o tamanho da fonte */
+    margin-bottom: 20px; /* Define a margem inferior */
   }
 
   .submit-button {
-      padding: 8px 15px; /* Define o preenchimento interno */
-      font-size: 14px; /* Define o tamanho da fonte */
+    padding: 8px 15px; /* Define o preenchimento interno */
+    font-size: 14px; /* Define o tamanho da fonte */
   }
 }
 
 @media (max-width: 768px) {
   .footer {
-      flex-direction: column; /* Direciona os itens em coluna */
-      align-items: center; /* Alinha os itens ao centro */
-      text-align: center; /* Alinha o texto ao centro */
-      width: 100%;
+    flex-direction: column; /* Direciona os itens em coluna */
+    align-items: center; /* Alinha os itens ao centro */
+    text-align: center; /* Alinha o texto ao centro */
+    width: 100%;
   }
 
   #logofooter,
   #empresas {
-      padding: 5px; /* Define o preenchimento */
-      margin: 5px 0; /* Define as margens superior e inferior */
+    padding: 5px; /* Define o preenchimento */
+    margin: 5px 0; /* Define as margens superior e inferior */
   }
 }
 
