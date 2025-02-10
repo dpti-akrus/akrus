@@ -168,6 +168,38 @@ body {
 
 /* Ajusta o logo para telas menores */
 @media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Esconde o menu de navegação */
+  }
+
+  .hamburger {
+    display: flex; /* Exibe o ícone de hambúrguer */
+  }
+
+  .nav-links.active {
+    display: block; /* Exibe o menu quando ele estiver ativo */
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: black;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    z-index: 1;
+
+  }
+
+  .nav-links ul {
+    display: block;
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+    padding: 10px;
+    display: block;
+  }
+  
   .logo img {
     max-height: 50px; /* Define a altura máxima */
     padding-left: 20px; /* Define o preenchimento à esquerda */

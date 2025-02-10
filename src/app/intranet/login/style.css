@@ -34,15 +34,6 @@ header {
   padding-bottom: 5px; /* Adiciona preenchimento na parte inferior da imagem */
 }
 
-/* Estilos para o elemento principal */
-main {
-  display: flex; /* Usa flexbox para layout */
-  justify-content: center; /* Centraliza os itens */
-  align-items: center; /* Alinha os itens verticalmente no centro */
-  height: 100vh; /* Define a altura como 80% da altura da viewport */
-  flex-direction: column;
-}
-
 /* Estilos para o cartão de login */
 .login-card {
   background-color: #ffffff; /* Define a cor de fundo do cartão */
@@ -52,6 +43,12 @@ main {
   text-align: center; /* Alinha o texto ao centro */
   max-width: 600px; /* Define a largura máxima */
   width: 100%; /* Define a largura como 100% */
+}
+
+.login-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 /* Estilos para a logo do cartão */
@@ -93,7 +90,7 @@ main {
 
 /* Estilos para o campo de entrada de texto */
 .input-field1 {
-  width: 400px; /* Define a largura */
+  width: 100%; /* Define a largura */
   padding: 10px; /* Define o preenchimento interno */
   margin: 10px 0; /* Define margens superior e inferior */
   margin-top: -20px; /* Define margem superior negativa */
@@ -105,7 +102,7 @@ main {
 
 /* Estilos para o campo de entrada de senha */
 .input-field2 {
-  width: 400px; /* Define a largura */
+  width: 100%; /* Define a largura */
   padding: 10px; /* Define o preenchimento interno */
   margin: 10px 0; /* Define margens superior e inferior */
   margin-top: -20px; /* Define margem superior negativa */
@@ -213,4 +210,11 @@ main {
 
 footer {
   width: 100%;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

@@ -7,9 +7,16 @@ export default function Page() {
     const hamburger = document.getElementById("hamburger");
     const navLinks = document.querySelector(".nav-links");
 
-    hamburger.addEventListener("click", () => {
+
+    const handleHamburgerClick = () => {
       navLinks.classList.toggle("active");
-    });
+    };
+
+    hamburger?.addEventListener("click", handleHamburgerClick);
+    document
+      ?.querySelector(".menu-toggle")
+      ?.addEventListener("click", toggleMenu);
+
 
     let autoSlideInterval;
     let currentIndex = {
@@ -29,9 +36,8 @@ export default function Page() {
         (currentIndex[carouselId] + direction + images.length) % images.length;
 
       // Aplica a transição
-      carousel.style.transform = `translateX(-${
-        currentIndex[carouselId] * imageWidth
-      }px)`;
+      carousel.style.transform = `translateX(-${currentIndex[carouselId] * imageWidth
+        }px)`;
     }
 
     // Função para iniciar o carrossel automático
@@ -78,6 +84,18 @@ export default function Page() {
     function stopAutoSlide() {
       clearInterval(SlideInterval);
     }
+
+    const toggleMenu = () => {
+      const navMenu = document.querySelector(".nav-menu");
+      navMenu.classList.toggle("active");
+    };
+
+    return () => {
+      hamburger.removeEventListener("click", handleHamburgerClick);
+      document
+        ?.querySelector(".menu-toggle")
+        ?.removeEventListener("click", toggleMenu);
+    };
   }, []);
 
   return (

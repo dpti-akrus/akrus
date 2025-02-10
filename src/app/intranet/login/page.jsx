@@ -30,7 +30,7 @@ export default function Page() {
   }
 
   return (
-    <main>
+    <main >
       <header>
         <div className="logo">
           <img
@@ -40,7 +40,7 @@ export default function Page() {
         </div>
       </header>
 
-      <main>
+      <section className="login-section">
         <div className="login-card">
           <img
             src="/intranet/images/akrus_page-0001.jpg"
@@ -80,7 +80,8 @@ export default function Page() {
             </div>
           </form>
         </div>
-      </main>
+      </section>
+
       <footer>
         <div className="footer">
           <img

@@ -1,21 +1,35 @@
 "use client";
-import "./style.css";
-
 import React, { useEffect } from "react";
+import "./style.css";
 
 export default function page() {
   useEffect(() => {
-    if (typeof document != 'undefined') {
+    console.log('typeof document:', typeof document)
 
-      const hamburger = document?.getElementById("hamburger");
-      const navLinks = document?.querySelector(".nav-links");
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.querySelector(".nav-links");
 
-      const handleHamburgerClick = () => {
-        navLinks.classList.toggle("active");
-      };
+    const handleHamburgerClick = () => {
+      navLinks.classList.toggle("active");
+    };
 
-      hamburger?.addEventListener("click", handleHamburgerClick);
-    }
+    hamburger?.addEventListener("click", handleHamburgerClick);
+
+    const toggleMenu = () => {
+      const navMenu = document.querySelector(".nav-menu");
+      navMenu.classList.toggle("active");
+    };
+
+    document
+      ?.querySelector(".menu-toggle")
+      ?.addEventListener("click", toggleMenu);
+
+    return () => {
+      hamburger.removeEventListener("click", handleHamburgerClick);
+      document
+        ?.querySelector(".menu-toggle")
+        ?.removeEventListener("click", toggleMenu);
+    };
   }, []);
 
   function abrirCard(title, cover, direction, link) {
