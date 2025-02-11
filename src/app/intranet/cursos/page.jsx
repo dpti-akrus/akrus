@@ -61,8 +61,8 @@ export default function Page() {
         ?.querySelector(".menu-toggle")
         ?.removeEventListener("click", toggleMenu);
       document.querySelectorAll(".video-card").forEach((card) => {
-        card.removeEventListener("mouseover", () => { });
-        card.removeEventListener("mouseout", () => { });
+        card.removeEventListener("mouseover", () => {});
+        card.removeEventListener("mouseout", () => {});
       });
     };
   }, []);
@@ -145,14 +145,15 @@ export default function Page() {
             <div className="videos">
               <div className="video-card">
                 <iframe
-                  src="https://sementessafrasul-my.sharepoint.com/personal/ti3_akrus_com_br/_layouts/15/embed.aspx?UniqueId=00a2e57d-5357-4086-8c59-51c4ed9b6752&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create"
-                  width="640"
-                  height="360"
-                  frameBorder="0"
-                  scrolling="no"
-                  allowFullScreen
-                  title="Roteirização.mp4"
-                />
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/J-EcavMIigs?si=rpb61wuVpKWjYjTH"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
               </div>
               <div className="video-card">
                 <iframe
