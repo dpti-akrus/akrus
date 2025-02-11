@@ -79,6 +79,7 @@ body {
   background-image: url(/intranet/images/48982e53-ec1b-455c-84e0-c4d0be71b657.jpg); /* Define a imagem de fundo da seção */
   padding: 45px; /* Define o preenchimento interno da seção */
   margin-bottom: 15px; /* Define a margem inferior */
+  margin-top: 25px;
   gap: 40px; /* Define o espaçamento entre os itens */
   display: flex; /* Usa layout flexível */
   flex-direction: column; /* Direciona os itens em coluna */
@@ -155,7 +156,6 @@ body {
     text-align: center;
     padding: 20px 0;
     z-index: 1;
-
   }
 
   .nav-links ul {
@@ -212,9 +212,18 @@ body {
   }
 
   .banner img {
-    object-fit: cover; /* Ajusta a imagem para cobrir o elemento */
+    object-fit: fill; /* Ajusta a imagem para cobrir o elemento */
   }
 }
+/*@media (max-width: 767px) {
+  .banner {
+    height: 90px; /* Define a altura 
+  }
+  .banner img {
+    object-fit: cover; /* Ajusta a imagem para cobrir o elemento
+    
+    */
+/*Estado anterior à alteração do object-fit*/
 
 /* Ajusta o rodapé para telas menores */
 @media (max-width: 768px) {

@@ -108,6 +108,12 @@ export default function Page() {
                 </div>
                 <button className="share-btn">Compartilhar</button>
               </div>
+              <div className="box">
+                <div className="content">
+                  <img src="/intranet/images/Analista_de_Gestão.png" />
+                </div>
+                <button className="share-btn">Compartilhar</button>
+              </div>
 
               <div className="box">
                 <div className="content">

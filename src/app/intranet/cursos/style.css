@@ -97,6 +97,7 @@ body {
   font-size: 24px; /* Define o tamanho da fonte */
   text-align: center; /* Alinha o texto ao centro */
   margin-bottom: 20px; /* Define a margem inferior */
+  margin-top: 25px;
 }
 
 /* Estiliza o contêiner de vídeos */
@@ -186,7 +187,6 @@ body {
     text-align: center;
     padding: 20px 0;
     z-index: 1;
-
   }
 
   .nav-links ul {
@@ -199,7 +199,7 @@ body {
     padding: 10px;
     display: block;
   }
-  
+
   .logo img {
     max-height: 50px; /* Define a altura máxima */
     padding-left: 20px; /* Define o preenchimento à esquerda */
@@ -244,9 +244,19 @@ body {
   }
 
   .banner img {
-    object-fit: cover; /* Ajusta a imagem para cobrir o elemento */
+    object-fit: fill; /* Ajusta a imagem para cobrir o elemento, mas sem cortar.
+    O object-fit em modo cover estava cortando alguns banners. */
   }
 }
+/*@media (max-width: 767px) {
+  .banner {
+    height: 90px; /* Define a altura 
+  }
+  .banner img {
+    object-fit: cover; /* Ajusta a imagem para cobrir o elemento
+    
+    */
+/*Estado anterior à alteração do object-fit*/
 
 /* Ajusta a altura do banner para telas pequenas */
 @media (min-width: 768px) and (max-width: 1024px) {

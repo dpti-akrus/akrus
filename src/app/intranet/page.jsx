@@ -17,25 +17,27 @@ export default function Page() {
       ?.addEventListener("click", toggleMenu);
 
     let autoSlideInterval;
-    let currentIndex = {
-      "avisos-carousel": 0,
-      "vagas-carousel": 0,
-      "empresas-carousel": 0,
-    };
+    let currentIndex = { "avisos-carousel": 0, "vagas-carousel": 0 };
 
     // Função para avançar o slide
     function changeSlide(carouselId, direction) {
       const carousel = document.getElementById(carouselId);
+      if (!carousel) return; // Verifica se existe o carrossel
+
       const images = carousel.querySelectorAll("img");
-      const imageWidth = images[0].clientWidth;
+      const totalSlides = images.length;
+      if (totalSlides === 0) return; // Se não houver imagens, não faz nada
 
-      // Atualiza o índice com base na direção (-1 para voltar, 1 para avançar)
+      const carouselContainer = carousel.parentElement;
+      const containerWidth = carouselContainer.clientWidth;
+
+      // Atualiza o índice garantindo que ele esteja dentro do limite
       currentIndex[carouselId] =
-        (currentIndex[carouselId] + direction + images.length) % images.length;
+        (currentIndex[carouselId] + direction + totalSlides) % totalSlides;
 
-      // Aplica a transição
+      // Move o carrossel
       carousel.style.transform = `translateX(-${
-        currentIndex[carouselId] * imageWidth
+        currentIndex[carouselId] * containerWidth
       }px)`;
     }
 
@@ -44,22 +46,44 @@ export default function Page() {
       autoSlideInterval = setInterval(() => {
         changeSlide("avisos-carousel", 1);
         changeSlide("vagas-carousel", 1);
-        changeSlide("empresas-carousel", 1);
       }, 10000);
     }
 
     // Função para reiniciar o temporizador ao interagir
+    function resetAutoSlide() {
+      clearInterval(autoSlideInterval);
+      startAutoSlide();
+    }
+
+    // Adiciona os eventos para os botões
+    document.querySelectorAll(".next").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        const carouselId = e.target.dataset.carousel;
+        changeSlide(carouselId, 1);
+        resetAutoSlide();
+      });
+    });
+
+    document.querySelectorAll(".prev").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        const carouselId = e.target.dataset.carousel;
+        changeSlide(carouselId, -1);
+        resetAutoSlide();
+      });
+    });
+
+    // Inicia o carrossel automático
+    startAutoSlide();
+
+    // Inicia o carrossel automático
+    startAutoSlide();
+
+    // Inicia o carrossel automático ao carregar
+    startAutoSlide();
     let slideIndex = 0;
 
     function moveSlide(n) {
       let slides = document.querySelectorAll(".slide"); // Seleciona todas as imagens
-
-      // Oculta todas as imagens
-      slides.forEach((slide) => {
-        slide.style.display = "none";
-      });
-
-      // Atualiza o índice do slide
       slideIndex += n;
 
       // Garante que o índice de slide se mantenha dentro dos limites
@@ -67,6 +91,11 @@ export default function Page() {
         slideIndex = 0; // Volta para o primeiro slide
       } else if (slideIndex < 0) {
         slideIndex = slides.length - 1; // Volta para o último slide
+      }
+
+      // Oculta todas as imagens
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
       }
 
       // Exibe a imagem atual
@@ -77,11 +106,15 @@ export default function Page() {
     moveSlide(0);
 
     // Muda automaticamente a cada 7 segundos
-    let SlideInterval = setInterval(() => moveSlide(1), 7000);
+    setInterval(() => moveSlide(1), 7000);
 
-    // Se precisar limpar o intervalo (ex.: ao desmontar em SPA)
-    function stopAutoSlide() {
-      clearInterval(SlideInterval);
+    // Funções para navegação manual (caso deseje adicionar botões para avançar ou voltar)
+    function nextSlide() {
+      moveSlide(1);
+    }
+
+    function prevSlide() {
+      moveSlide(-1);
     }
 
     const toggleMenu = () => {
@@ -163,7 +196,10 @@ export default function Page() {
             <div className="carousel-container">
               <a href="/intranet/vagas">
                 <div id="vagas-carousel" className="carousel">
-                  <img src="/intranet/images/vaga1.jpg" alt="Vaga 1" />
+                  <img
+                    src="/intranet/images/Analista_de_Gestão.png"
+                    alt="Vaga 1"
+                  />
                   <img src="/intranet/images/vaga2.jpg" alt="Vaga 2" />
                   <img src="/intranet/images/vaga3.jpg" alt="Vaga 3" />
                 </div>
@@ -306,7 +342,7 @@ export default function Page() {
                   <p className="date">06 de Fevereiro</p>
                 </div>
                 <div className="date-item">
-                  <p className="name">Poliana das Graças Cunha</p>
+                  <p className="name">Poliana das Graças</p>
                   <p className="date">09 de Fevereiro</p>
                 </div>
                 <div className="date-item">
@@ -356,7 +392,7 @@ export default function Page() {
               </div>
             </div>
             <div className="calendario">
-              <img src="/intranet/images/sl_051623_57880_66.jpg" />
+              <img src="/intranet/images/Calendário2025.png" />
             </div>
             <div className="section comemorativas">
               {/*<h2>Datas Comemorativas</h2>
