@@ -117,25 +117,27 @@ export default function Page() {
             <div className="videos">
               <div className="video-card">
                 <iframe
-                  src="https://sementessafrasul-my.sharepoint.com/personal/ti3_akrus_com_br/_layouts/15/embed.aspx?UniqueId=d3e6d872-fd91-4897-96fa-d8311b4b8601&nav=%7B%22playbackOptions%22%3A%7B%22startTimeInSeconds%22%3A0%7D%7D&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create"
-                  width="640"
-                  height="360"
-                  frameBorder="0"
-                  scrolling="no"
-                  allowFullScreen
-                  title="CADASTRO_DE_CLIENTE.mp4"
-                />
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/9kjLowFN5TE?si=QA8MCu9LU-SH3-ub"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
               </div>
               <div className="video-card">
                 <iframe
-                  src="https://sementessafrasul-my.sharepoint.com/personal/ti3_akrus_com_br/_layouts/15/embed.aspx?UniqueId=d0d60648-3cac-4340-9871-5937931b98d1&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create"
-                  width="640"
-                  height="360"
-                  frameBorder="0"
-                  scrolling="no"
-                  allowFullScreen
-                  title="CADASTRO_DE_VENDEDOR.mp4"
-                />
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/9kjLowFN5TE?si=nyyGdZs5zoPwd6YC"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
               </div>
             </div>
           </div>
