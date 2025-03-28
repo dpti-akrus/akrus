@@ -1,484 +1,591 @@
 "use client";
-import React, { use, useEffect } from "react";
+
+import React, { useEffect } from "react";
 import "./style.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 export default function Page() {
   useEffect(() => {
-    const hamburger = document.getElementById("hamburger");
-    const navLinks = document.querySelector(".nav-links");
+    const header = document.querySelector("header");
+    const nav = document.querySelector("nav");
+    let timeout;
 
-    const handleHamburgerClick = () => {
-      navLinks.classList.toggle("active");
-    };
+    if (header && nav) {
+      const handleScroll = () => {
+        header.classList.add("translucent");
+        nav.classList.add("translucent");
 
-    hamburger?.addEventListener("click", handleHamburgerClick);
-    document
-      ?.querySelector(".menu-toggle")
-      ?.addEventListener("click", toggleMenu);
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+          header.classList.remove("translucent");
+          nav.classList.remove("translucent");
+        }, 300);
+      };
 
-    let autoSlideInterval;
-    let currentIndex = { "avisos-carousel": 0, "vagas-carousel": 0 };
+      window.addEventListener("scroll", handleScroll);
 
-    // Função para avançar o slide
-    function changeSlide(carouselId, direction) {
-      const carousel = document.getElementById(carouselId);
-      if (!carousel) return; // Verifica se existe o carrossel
-
-      const images = carousel.querySelectorAll("img");
-      const totalSlides = images.length;
-      if (totalSlides === 0) return; // Se não houver imagens, não faz nada
-
-      const carouselContainer = carousel.parentElement;
-      const containerWidth = carouselContainer.clientWidth;
-
-      // Atualiza o índice garantindo que ele esteja dentro do limite
-      currentIndex[carouselId] =
-        (currentIndex[carouselId] + direction + totalSlides) % totalSlides;
-
-      // Move o carrossel
-      carousel.style.transform = `translateX(-${
-        currentIndex[carouselId] * containerWidth
-      }px)`;
+      return () => window.removeEventListener("scroll", handleScroll);
     }
+  }, []);
 
-    // Função para iniciar o carrossel automático
-    function startAutoSlide() {
-      autoSlideInterval = setInterval(() => {
-        changeSlide("avisos-carousel", 1);
-        changeSlide("vagas-carousel", 1);
-      }, 10000);
-    }
+  useEffect(() => {
+    class MobileNavbar {
+      constructor(mobileMenuSelector, navListSelector, navLinksSelector) {
+        this.mobileMenu = document.querySelector(mobileMenuSelector);
+        this.navList = document.querySelector(navListSelector);
+        this.navLinks = document.querySelectorAll(navLinksSelector);
+        this.activeClass = "active";
 
-    // Função para reiniciar o temporizador ao interagir
-    function resetAutoSlide() {
-      clearInterval(autoSlideInterval);
-      startAutoSlide();
-    }
-
-    // Adiciona os eventos para os botões
-    document.querySelectorAll(".next").forEach((btn) => {
-      btn.addEventListener("click", (e) => {
-        const carouselId = e.target.dataset.carousel;
-        changeSlide(carouselId, 1);
-        resetAutoSlide();
-      });
-    });
-
-    document.querySelectorAll(".prev").forEach((btn) => {
-      btn.addEventListener("click", (e) => {
-        const carouselId = e.target.dataset.carousel;
-        changeSlide(carouselId, -1);
-        resetAutoSlide();
-      });
-    });
-
-    // Inicia o carrossel automático
-    startAutoSlide();
-
-    // Inicia o carrossel automático
-    startAutoSlide();
-
-    // Inicia o carrossel automático ao carregar
-    startAutoSlide();
-    let slideIndex = 0;
-
-    function moveSlide(n) {
-      let slides = document.querySelectorAll(".slide"); // Seleciona todas as imagens
-      slideIndex += n;
-
-      // Garante que o índice de slide se mantenha dentro dos limites
-      if (slideIndex >= slides.length) {
-        slideIndex = 0; // Volta para o primeiro slide
-      } else if (slideIndex < 0) {
-        slideIndex = slides.length - 1; // Volta para o último slide
+        this.handleClick = this.handleClick.bind(this);
       }
 
-      // Oculta todas as imagens
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+      handleClick() {
+        if (this.navList && this.mobileMenu) {
+          this.navList.classList.toggle(this.activeClass);
+          this.mobileMenu.classList.toggle(this.activeClass);
+        }
       }
 
-      // Exibe a imagem atual
-      slides[slideIndex].style.display = "block";
+      addClickEvent() {
+        if (this.mobileMenu) {
+          this.mobileMenu.addEventListener("click", this.handleClick);
+        }
+        if (this.navLinks.length > 0) {
+          this.navLinks.forEach((link) =>
+            link.addEventListener("click", () => {
+              if (this.navList) this.navList.classList.remove(this.activeClass);
+            })
+          );
+        }
+      }
+
+      init() {
+        if (this.mobileMenu) {
+          this.addClickEvent();
+        }
+      }
     }
 
-    // Inicializa o carrossel
-    moveSlide(0);
-
-    // Muda automaticamente a cada 7 segundos
-    setInterval(() => moveSlide(1), 7000);
-
-    // Funções para navegação manual (caso deseje adicionar botões para avançar ou voltar)
-    function nextSlide() {
-      moveSlide(1);
-    }
-
-    function prevSlide() {
-      moveSlide(-1);
-    }
-
-    const toggleMenu = () => {
-      const navMenu = document.querySelector(".nav-menu");
-      navMenu.classList.toggle("active");
-    };
+    const mobileNavbar = new MobileNavbar(
+      ".mobile-menu",
+      ".nav-list",
+      ".nav-list li"
+    );
+    mobileNavbar.init();
 
     return () => {
-      hamburger.removeEventListener("click", handleHamburgerClick);
-      document
-        ?.querySelector(".menu-toggle")
-        ?.removeEventListener("click", toggleMenu);
+      if (mobileNavbar.mobileMenu) {
+        mobileNavbar.mobileMenu.removeEventListener(
+          "click",
+          mobileNavbar.handleClick
+        );
+      }
     };
   }, []);
 
   return (
-    <main>
-      <header className="header">
-        <div className="logo">
-          <img
-            src="/intranet/images/logo_akrus_branco_Prancheta 1.png"
-            alt="Logo"
-          />
-        </div>
-        <nav className="nav-links">
-          <ul>
+    <>
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet"
+        />
+        <script
+          src="https://kit.fontawesome.com/279bf110e3.js"
+          crossorigin="anonymous"
+        ></script>
+        <title>Intranet</title>
+      </head>
+      <header>
+        <nav>
+          <a href="/">
+            <img
+              className="logo"
+              src="/intranet/images/logo_akrus_branco.png"
+              alt="Logo Akrus"
+            />
+          </a>
+          <div className="mobile-menu">
+            <div className="line1"></div>
+            <div className="line2"></div>
+            <div className="line3"></div>
+          </div>
+          <ul className="nav-list">
             <li>
-              <a href="/intranet">Home</a>
+              <a href="/intranet">Início</a>
             </li>
             <li>
-              <a href="https://safrasulsementes.acelerato.com/">Suporte</a>
+              <a href="#">Chamados TI</a>
             </li>
             <li>
-              <a href="/intranet/politicas">Políticas</a>
+              <a href="/intranet/politicas">Políticas da empresa</a>
             </li>
             <li>
-              <a href="https://teams.microsoft.com/l/team/19%3AFDaFqDpMD2SFdY7Cbc3sffQVRb4OxGQs8NtGz3itloo1%40thread.tacv2/conversations?groupId=7d63b9f2-258f-4b95-aed8-6f49be10b56a&tenantId=00a7b357-a2ba-4b32-b04f-2fef849a08b4">
-                Teams
-              </a>
+              <a href="#">Chat TEAMS</a>
             </li>
           </ul>
         </nav>
-        <div className="hamburger" id="hamburger">
-          <span className="bar"></span>
-          <span className="bar"></span>
-          <span className="bar"></span>
-        </div>
       </header>
-      <div className="banner">
-        <img src="/intranet/images/banner_site_1920x420px_home_intranet_akrus.jpg" />
-      </div>
-      <section className="cards">
-        <div className="container">
-          <div className="box">
-            <div className="box-title">
-              <h2>Mural de Avisos</h2>
-            </div>
-            <div className="carousel-container">
-              <div id="avisos-carousel" className="carousel">
-                <img src="/intranet/images/azul.jpg" alt="Aviso 1" />
-                <img src="/intranet/images/confraterniza.jpg" alt="Aviso 2" />
-                <img src="/intranet/images/cartinha.jpg" alt="Aviso 3" />
-              </div>
-              <button className="prev" data-carousel="avisos-carousel">
-                ❮
-              </button>
-              <button className="next" data-carousel="avisos-carousel">
-                ❯
-              </button>
-            </div>
+      <div className="bannerHome"></div>
+      <section className="description">
+        <div className="values-container">
+          <div className="mission">
+            <h1>Missão</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptate, repudiandae!
+            </p>
           </div>
-
-          <div className="box">
-            <div className="box-title">
-              <a href="/intranet/vagas">
-                <h2>Vagas</h2>
-              </a>
-            </div>
-            <div className="carousel-container">
-              <a href="/intranet/vagas">
-                <div id="vagas-carousel" className="carousel">
-                  <img
-                    src="/intranet/images/Analista_de_Gestão.png"
-                    alt="Vaga 1"
-                  />
-                  <img src="/intranet/images/vaga2.jpg" alt="Vaga 2" />
-                  <img src="/intranet/images/vaga3.jpg" alt="Vaga 3" />
-                </div>
-              </a>
-              <button className="prev" data-carousel="vagas-carousel">
-                ❮
-              </button>
-              <button className="next" data-carousel="vagas-carousel">
-                ❯
-              </button>
-            </div>
+          <div className="vision">
+            <h1>Visão</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptate, repudiandae!
+            </p>
+          </div>
+          <div className="values">
+            <h1>Valores</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptate, repudiandae!
+            </p>
           </div>
         </div>
       </section>
+      <section className="Alert">
+        <h1>Mural de Avisos</h1>
+        <div className="Alert-container">
+          <div className="Alert-box-1"></div>
+          <div className="Alert-box-2"></div>
+          <div className="Alert-box-3"></div>
+        </div>
+      </section>
+      <a href="/intranet/vagas">
+        <div className="bannerVagas"></div>
+      </a>
       <section className="news">
-        <div className="news-header-container">
-          <a href="/intranet/noticias">
-            <h1 className="news-header">Notícias</h1>
-          </a>
-        </div>
+        <h1>
+          <a href="/intranet/noticias">Notícias</a>
+        </h1>
         <div className="news-container">
-          <div className="news-box large-box">
-            <div className="news-image">
-              <img
-                id="tampinhas"
-                src="/intranet/images/tampinhas.png"
-                alt="Imagem Principal"
-              />
-            </div>
-            <div className="news-text">
+          <div className="news-box"></div>
+          <div className="news-text">
+            <h2>
               <a href="/intranet/noticias">
-                <h2>Semeando Sorrisos - Tampinhas que Transformam</h2>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Perferendis, sint.
               </a>
-              <p>
-                Estamos animados para compartilhar nosso novo projeto. Junte-se
-                a nós nessa jornada de solidariedade!
-              </p>
-            </div>
-          </div>
+            </h2>
 
-          <div className="news-column">
-            <div className="news-box small-box">
-              <div className="news-image">
-                <img src="/intranet/images/1729775540445.jpg" alt="Imagem 1" />
-              </div>
-              <div className="news-text">
-                <h3>Nós com elas 2023</h3>
-              </div>
-            </div>
-            <div className="news-box small-box">
-              <div className="news-image">
-                <img
-                  src="/intranet/images/1729775540564 (1).jpg"
-                  alt="Imagem 2"
-                />
-              </div>
-              <div className="news-text">
-                <h3>Nós com elas 2023</h3>
-              </div>
-            </div>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione
+              laborum accusantium, adipisci harum consectetur nesciunt vero.
+              Incidunt quidem hic consectetur, dicta excepturi mollitia,
+              accusamus repudiandae officiis, porro pariatur laborum possimus?
+              Minus, fugiat quidem esse exercitationem a officiis dolores ipsum
+              est consequuntur ipsam, possimus, magnam minima necessitatibus
+              dolorem laboriosam blanditiis maxime eligendi ipsa. Quo, rerum
+              nisi et consequuntur explicabo laborum quaerat asperiores,
+            </p>
           </div>
         </div>
       </section>
-      <section className="cursos">
-        <div className="cursos-container">
-          <div className="cursos-box left-box">
-            <div className="cursos-text">
-              <h2>Cursos</h2>
-            </div>
-            <a href="/intranet/cursos">
-              <div className="cursos-image">
-                <img
-                  id="img1"
-                  src="/intranet/images/Cursos.jpg"
-                  alt="Imagem do Curso"
-                />
-              </div>
-            </a>
-          </div>
-
-          <div className="cursos-column">
-            <div className="cursos-box right-box">
-              <div className="cursos-text">
-                <h3>Biblioteca</h3>
-              </div>
-              <div className="cursos-image">
-                <a href="/intranet/bibliotecas">
-                  <img
-                    src="/intranet/images/IMG_Biblioteca_Banner.jpg"
-                    alt="Imagem do Curso 2"
-                  />
-                </a>
-              </div>
-            </div>
-            <div className="cursos-box right-box">
-              <div className="cursos-text">
-                <h3>Iluminakrus</h3>
-              </div>
-              <div className="cursos-image">
-                <a href="/intranet/iluminakros">
-                  <img
-                    src="/intranet/images/IluminAkrus.jpg"
-                    alt="Imagem do Curso 3"
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
+      <section className="multisections">
+        <div className="multisections-container">
+          <a href="/intranet/cursos" className="multisections-box">
+            <h1>Cursos</h1>
+            <div className="img-cursos"></div>
+          </a>
+          <a href="/intranet/podcast" className="multisections-box">
+            <h1>Podcast</h1>
+            <div className="img-Podcast"></div>
+          </a>
+          <a href="/intranet/bibliotecas" className="multisections-box">
+            <h1>Biblioteca</h1>
+            <div className="img-Biblioteca"></div>
+          </a>
+          <a href="/intranet/iluminakrus" className="multisections-box">
+            <h1>Iluminakrus</h1>
+            <div className="img-iluminakrus"></div>
+          </a>
         </div>
       </section>
 
       <section className="dates">
         <div className="dates-container">
           <div className="dates-box">
-            <div className="section aniversariantes">
+            <div className="section-aniversariantes">
               <h2>Aniversariantes do Mês</h2>
               <div className="dates-list">
                 <div className="date-item">
-                  <p className="name">Thiago Casé</p>
-                  <p className="date">01 de Fevereiro</p>
+                  <p className="name">Igor Maia</p>
+                  <p className="date">01 de Março</p>
                 </div>
                 <div className="date-item">
-                  <p className="name">Genivaldo Batista</p>
-                  <p className="date">04 de Fevereiro</p>
+                  <p className="name">Andre luiz Lopes</p>
+                  <p className="date">02 de Março</p>
                 </div>
                 <div className="date-item">
-                  <p className="name">Antonio Valder</p>
-                  <p className="date">05 de Fevereiro</p>
+                  <p className="name">Adriana Santos</p>
+                  <p className="date">03 de Março</p>
                 </div>
                 <div className="date-item">
-                  <p className="name">Guilherme Ribeiro</p>
-                  <p className="date">05 de Fevereiro</p>
+                  <p className="name">Tallison Muhl</p>
+                  <p className="date">03 de Março</p>
                 </div>
                 <div className="date-item">
-                  <p className="name">Maria de Jesus Dias</p>
-                  <p className="date">05 de Fevereiro</p>
+                  <p className="name">Igor Davi</p>
+                  <p className="date">05 de Março</p>
                 </div>
                 <div className="date-item">
                   <p className="name">Kamilla Munhoz</p>
-                  <p className="date">06 de Fevereiro</p>
+                  <p className="date">06 de Março</p>
                 </div>
                 <div className="date-item">
                   <p className="name">Poliana das Graças</p>
-                  <p className="date">09 de Fevereiro</p>
+                  <p className="date">09 de Março</p>
                 </div>
                 <div className="date-item">
                   <p className="name">Getulio do Amaral</p>
-                  <p className="date">12 de Fevereiro</p>
+                  <p className="date">12 de Março</p>
                 </div>
                 <div className="date-item">
                   <p className="name">Gilson Gonçalves</p>
-                  <p className="date">15 de Fevereiro</p>
+                  <p className="date">15 de Março</p>
                 </div>
                 <div className="date-item">
                   <p className="name">Gustavo Pires</p>
-                  <p className="date">15 de Fevereiro</p>
+                  <p className="date">15 de Março</p>
                 </div>
                 <div className="date-item">
                   <p className="name">Tiago Coelho</p>
-                  <p className="date">16 de Fevereiro</p>
+                  <p className="date">16 de Março</p>
                 </div>
                 <div className="date-item">
                   <p className="name">Fernanda Paula </p>
-                  <p className="date">17 de Fevereiro</p>
+                  <p className="date">17 de Março</p>
                 </div>
                 <div className="date-item">
                   <p className="name">Thaynara Muhl</p>
-                  <p className="date">19 de Fevereiro</p>
+                  <p className="date">19 de Março</p>
                 </div>
                 <div className="date-item">
                   <p className="name">Marcio Salto</p>
-                  <p className="date">19 de Fevereiro</p>
+                  <p className="date">19 de Março</p>
                 </div>
                 <div className="date-item">
                   <p className="name">Isaac Benicio</p>
-                  <p className="date">22 de Fevereiro</p>
+                  <p className="date">22 de Março</p>
                 </div>
                 <div className="date-item">
                   <p className="name">Gissiene Gouveia</p>
-                  <p className="date">25 de Fevereiro</p>
+                  <p className="date">25 de Março</p>
                 </div>
                 <div className="date-item">
                   <p className="name">Luana Cristina</p>
-                  <p className="date">27 de Fevereiro</p>
+                  <p className="date">27 de Março</p>
                 </div>
                 <div className="date-item">
                   <p className="name">Fagner Bispo </p>
-                  <p className="date">27 de Fevereiro</p>
+                  <p className="date">27 de Março</p>
                 </div>
               </div>
             </div>
             <div className="calendario">
-              <img src="/intranet/images/Calendário2025.png" />
+              <img
+                src="/intranet/images/Calendário2025.png"
+                alt="Calendário 2025"
+              />
             </div>
-            <div className="section comemorativas">
-              {/*<h2>Datas Comemorativas</h2>
-                {/*<div className="date-item">
-                  <p className="name"></p>
-                  <p className="date"></p>
+            <div className="section-comemorativas">
+              <div className="dates-list">
+                <h2>Datas Comemorativas</h2>
+                <div className="date-item">
+                  <p className="name">Carnaval</p>
+                  <p className="date">03 de Março</p>
                 </div>
                 <div className="date-item">
-                  <p className="name"></p>
-                  <p className="date"></p>
-                </div> 
-              </div>*/}
+                  <p className="name">Dia das mulheres</p>
+                  <p className="date">08 de Março</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <section className="empresas">
-        <div className="empresas-container">
-          <div className="empresas-box">
-            <h2>Empresas</h2>
-            <div className="empresas-carousel" id="empresas-carousel">
-              <img
-                src="/intranet/images/LOGO_B&M_02-01.jpg"
-                alt="Empresa 1"
-                className="empresa-logo slide"
-              />
-              <img
-                src="/intranet/images/logos_grupo-03.jpg"
-                alt="Empresa 2"
-                className="empresa-logo slide"
-              />
-              <img
-                src="/intranet/images/logos_grupo-04.jpg"
-                alt="Empresa 3"
-                className="empresa-logo slide"
-              />
-              <img
-                src="/intranet/images/logos_grupo-05.jpg"
-                alt="Empresa 4"
-                className="empresa-logo slide"
-              />
-              <img
-                src="/intranet/images/logos_grupo_Prancheta 1.jpg"
-                alt="Empresa 5"
-                className="empresa-logo slide"
-              />
-            </div>
+      <section className="empresas-grid">
+        <div className="empresa-box">
+          <a
+            href="https://www.akrus.com.br/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              className="logo-Akrus"
+              src="/intranet/images/logo_akrus_preta.png"
+              alt="Akrus"
+            />
+          </a>
+          <div className="social-icons">
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/company/grupoakrus"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a
+              href="https://youtube.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fa-brands fa-youtube"></i>
+            </a>
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fa-brands fa-square-facebook"></i>
+            </a>
           </div>
         </div>
+
+        <div className="empresa-box">
+          <a
+            href="https://www.safrasulsementes.com.br/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              className="logo-Safrasul"
+              src="/intranet/images/logo_safrasul.png"
+              alt="Safrasul Sementes"
+            />
+          </a>
+          <div className="social-icons">
+            <a
+              href="https://www.instagram.com/safrasulsementes/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fa-brands fa-instagram"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/company/safrasul"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fa-brands fa-linkedin"></i>
+            </a>
+            <a
+              href="https://www.youtube.com/@safrasulsementes"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fa-brands fa-youtube"></i>
+            </a>
+            <a
+              href="https://www.facebook.com/safrasulsementes"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fa-brands fa-square-facebook"></i>
+            </a>
+          </div>
+        </div>
+
+        <div className="empresa-box">
+          <a
+            href="https://www.integracaosementes.com.br/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              className="logo-Integração"
+              src="/intranet/images/INTEGRAÇÃO_LOGO.png"
+              alt="Integração Sementes"
+            />
+          </a>
+          <div className="social-icons">
+            <a
+              href="https://www.instagram.com/integracaosementes/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fa-brands fa-instagram"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/company/integra%C3%A7%C3%A3o-sementes"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fa-brands fa-linkedin"></i>
+            </a>
+            <a
+              href="https://youtube.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fa-brands fa-youtube"></i>
+            </a>
+            <a
+              href="https://www.facebook.com/integracaosementes"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fa-brands fa-square-facebook"></i>
+            </a>
+          </div>
+        </div>
+
+        <div className="empresa-box">
+          <a
+            href="https://www.davanttiimplementos.com.br/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              className="logo-Davantti"
+              src="/intranet/images/LOGO_DAVANTTI.png"
+              alt="Davanti Implementos"
+            />
+          </a>
+          <div className="social-icons">
+            <a
+              href="https://www.instagram.com/davanttiimplementos/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fa-brands fa-instagram"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/company/davantti-implementos/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fa-brands fa-linkedin"></i>
+            </a>
+            <a
+              href="https://www.youtube.com/@DavanttiImplementos"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fa-brands fa-youtube"></i>
+            </a>
+            <a
+              href="https://www.facebook.com/DAVANTTIIMPLEMENTOS"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fa-brands fa-square-facebook"></i>
+            </a>
+          </div>
+        </div>
+
+        <div className="empresa-box">
+          <a
+            href="https://www.safrasulsementes.com.br/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/intranet/images/logo_saframix_preto_e_verde.png"
+              className="logo-Saframix"
+              alt="Safra Mix"
+            />
+          </a>
+          <div className="social-icons">
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fa-brands fa-instagram"></i>
+            </a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fa-brands fa-linkedin"></i>
+            </a>
+            <a
+              href="https://youtube.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fa-brands fa-youtube"></i>
+            </a>
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fa-brands fa-square-facebook"></i>
+            </a>
+          </div>
+        </div>
+
+        <div className="empresa-box">
+          <p>RESERVADO PARA A PRÓXIMA EMPRESA</p>
+          <div className="social-icons"></div>
+        </div>
       </section>
+
       <section className="fotos">
         <div className="fotos-container">
-          <h2>Fotos e Vídeos</h2>
+          <h2>Últimas postagens</h2>
           <div className="media-grid">
             <div className="media-item">
-              <img
-                src="/intranet/images/Sementes.jpg"
-                alt="Foto 1"
-                className="media-img"
-              />
+              <a
+                href="https://www.linkedin.com/posts/grupoakrus_no-grupo-akrus-acreditamos-que-a-chave-para-activity-7298715763736023040-qOZF?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEzLkX4BLljYYiL497VYDWVbV2fp0VgEv80"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/intranet/images/1740149440381.jpg"
+                  alt="Foto 1"
+                  className="media-img"
+                />
+              </a>
             </div>
             <div className="media-item">
-              <img
-                src="/intranet/images/Novilhas.jpg"
-                alt="Foto 2"
-                className="media-img"
-              />
+              <a
+                href="https://www.linkedin.com/posts/safrasul_preparodosolo-pastagemdequalidade-agrotech-activity-7257704133699223552-4eId?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEzLkX4BLljYYiL497VYDWVbV2fp0VgEv80"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/intranet/images/solo.jpg"
+                  alt="Foto 2"
+                  className="media-img"
+                />
+              </a>
             </div>
             <div className="media-item">
-              <img
-                src="/intranet/images/Sementes001.jpg"
-                alt="Foto 3"
-                className="media-img"
-              />
-            </div>
-            <div className="media-item">
-              <video className="media-video" controls>
-                <source src="video1.mp4" type="video/mp4" />
-                Seu navegador não suporta a tag de vídeo.
-              </video>
-            </div>
-            <div className="media-item">
-              <video className="media-video" controls>
-                <source src="video2.mp4" type="video/mp4" />
-                Seu navegador não suporta a tag de vídeo.
-              </video>
+              <a
+                href="https://www.linkedin.com/posts/safrasul_safrasulsementes-qualidade-produtividade-activity-7245386741489037312-K1Jq?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEzLkX4BLljYYiL497VYDWVbV2fp0VgEv80"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/intranet/images/sementers tratadas.jpg"
+                  alt="Foto 3"
+                  className="media-img"
+                />
+              </a>
             </div>
           </div>
         </div>
@@ -488,11 +595,16 @@ export default function Page() {
         <div className="footer">
           <img
             id="logofooter"
-            src="/intranet/images/logo_akrus_branco_Prancheta 1.png"
+            src="/intranet/images/logo_akrus_branco.png"
+            alt="Logo Akru"
           />
-          <img id="empresas" src="/intranet/images/assinatura_akrus[1].png" />
+          <img
+            id="empresas"
+            src="/intranet/images/assinatura_akrus.png"
+            alt="Assinatura Akrus"
+          />
         </div>
       </footer>
-    </main>
+    </>
   );
 }

@@ -1,382 +1,349 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: black;
-  background: white;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: black;
-  padding: 40px;
-  color: white;
-}
-
-.logo img {
-  width: 150px; /* Tamanho da logo, pode ser ajustado conforme necessário */
-}
-
-.nav-links ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: #f1f1f1;
-}
-
-/* Hamburger menu (invisível por padrão em desktop) */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
-
-.hamburger .bar {
-  width: 30px;
-  height: 4px;
-  background-color: white;
-  border-radius: 2px;
-}
-
-.cards {
-  background-image: url(/intranet/images/Branco-T_geral.jpg);
-  background-size: cover;
-  padding: 70px;
-}
-
-.banner {
+html,
+body {
   width: 100%;
-  height: 25vh;
-  overflow: hidden;
-}
-
-.banner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  max-width: 1080px; /* Limitar a largura máxima */
-  margin: 0 auto; /* Centralizar o container na página */
-}
-
-.box {
-  width: 47%;
-  padding: 20px;
-  text-align: center;
-  border: 1px solid #ccc;
-  border-radius: 20px 20px 0 0;
-  background-color: #f9f9f9;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  border-bottom: #0b3481 solid 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 50px;
-}
-
-.box:hover {
-  transform: scale(1.02); /* Efeito de ampliação leve */
-}
-
-.box-title {
-  margin-bottom: 15px;
-}
-.box-title a {
-  text-decoration: none;
-  color: #000;
-}
-
-.carousel-container {
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
   position: relative;
-  overflow: hidden;
-  width: 400px;
-  height: 450px;
-  border: #000000 solid 2px;
-  border-radius: 20px;
+  touch-action: pan-y;
 }
 
-.carousel {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.carousel img {
-  flex-shrink: 0;
+header {
+  position: sticky;
+  top: 0;
   width: 100%;
-  height: auto;
+  z-index: 1000;
+  background: #1d1c1c;
+  transition: background-color 0.3s ease-in-out;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  width: 100%;
+  background: inherit;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.translucent {
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+  margin-inline: 15px;
+}
+a:hover {
+  opacity: 0.7;
+}
+.logo {
+  width: 290px;
+}
+.nav-list {
+  list-style: none;
+  display: flex;
+}
+.nav-list li {
+  margin-left: 20px;
+}
+.mobile-menu {
+  display: none;
+  cursor: pointer;
+}
+.mobile-menu div {
+  width: 30px;
+  height: 3px;
+  background: #fff;
+  margin: 6px;
+  transition: 0.3s;
+}
+
+.nav-list.active {
+  transform: translateX(0);
+}
+
+.mobile-menu.active .line1 {
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.mobile-menu.active .line2 {
+  opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+  transform: rotate(45deg) translate(-6px, -6px);
+}
+
+.bannerHome {
+  background-image: url(/intranet/images/capa_linkedin_1584x396px_akrus.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 180px;
+  margin-bottom: 80px;
+}
+.description {
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 100px;
+}
+.values-container {
+  display: flex;
+  justify-content: center;
+}
+
+.mission {
+  text-align: center;
+}
+
+.vision {
+  text-align: center;
+  border-left: solid #00000050;
+  border-right: solid #00000050;
+  padding-bottom: 20px;
+}
+
+.values {
+  text-align: center;
+}
+
+.Alert {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.Alert > h1 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+  margin-bottom: 30px;
+}
+.Alert > h1:hover {
+  text-decoration: underline;
+  transition: transform 0.2s ease-out;
+  cursor: pointer;
+}
+
+.Alert-container {
+  display: flex;
+  width: 95%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+}
+.Alert-box-1 {
+  width: 360px;
+  height: 360px;
+  background-image: url(/intranet/images/topss.jpg);
+  transition: transform 0.2s ease-in-out;
+  background-size: cover;
+  border: #000 solid;
+
   border-radius: 20px;
 }
-
-button.prev,
-button.next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
+.Alert-box-1:hover {
+  transform: scale(1.02);
+}
+.Alert-box-2 {
+  width: 360px;
+  height: 360px;
+  background-image: url(/intranet/images/topss.jpg);
+  background-size: cover;
+  border-radius: 20px;
+  transition: transform 0.2s ease-in-out;
+  border: #000 solid;
+}
+.Alert-box-2:hover {
+  transform: scale(1.02);
+}
+.Alert-box-3 {
+  width: 360px;
+  height: 360px;
+  background-image: url(/intranet/images/topss.jpg);
+  background-size: cover;
+  border-radius: 20px;
+  transition: transform 0.2s ease-in-out;
+  border: #000 solid;
+}
+.Alert-box-3:hover {
+  transform: scale(1.02);
+}
+.bannerVagas {
+  margin-top: 100px;
+  padding: 130px;
+  background-image: url(/intranet/images/259420005e5574d796757ebec722ab1a.jpg);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 100px;
   cursor: pointer;
-  z-index: 10;
+  transition: transform 0.2s ease-in-out;
+}
+.bannerVagas:hover {
+  transform: scale(1.01);
 }
 
-button.prev {
-  left: 10px;
-}
-
-button.next {
-  right: 10px;
-}
-.news-header-container {
-  max-width: 1080px; /* Alinha com a largura da .large-box */
-  padding-bottom: 25px; /* Espaço entre o título e a box */
-  margin: 0 auto;
-}
-
-.news-header {
-  font-size: 24px; /* Tamanho do título */
-  font-weight: bold;
-  color: #ffffff; /* Cor do texto */
-  text-align: left; /* Alinha o texto à esquerda */
-}
-.news-header-container a {
-  text-decoration: none;
-}
 .news {
-  padding: 70px;
-  background-color: #0b3481;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 300px;
 }
-
+.news h1 a {
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+.news h1 a:hover {
+  text-decoration: underline;
+}
 .news-container {
   display: flex;
-  justify-content: space-between;
   gap: 20px;
-  max-width: 1080px;
-  margin: 0 auto;
 }
-
-.large-box {
+.news-box {
   width: 65%;
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #ffffff;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Alinhamento centralizado */
+  padding: 200px;
+  background-color: bisque;
+  background-size: cover;
+  background-image: url(/intranet/images/WALLPAPER_safrasul_nova_campanha.png);
+  background-position: center;
 }
-#tampinhas {
-  height: 300px;
-}
-
-.news-column {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.news-text {
   width: 30%;
 }
-
-.small-box {
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #ffffff;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Alinhamento centralizado */
-}
-
-.news-text {
-  text-align: justify; /* Alinha o texto de forma justificada */
-  font-size: 14px; /* Diminui o tamanho do texto */
-  line-height: 1.6; /* Aumenta o espaçamento entre as linhas para melhor leitura */
-}
-
-.news-text a {
+.news-text h2 a {
+  margin-bottom: 10px;
+  color: inherit;
   text-decoration: none;
-  color: #000;
+  padding: 0;
+  margin: 0;
 }
-.news-title {
-  text-align: center; /* Centraliza o título */
-  font-size: 20px; /* Tamanho reduzido para o título */
-  font-weight: bold;
-  color: #fff; /* Cor do título */
-  margin-bottom: 10px; /* Adiciona um espaço abaixo do título */
+.news-text h2 a:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
-.news-image {
-  display: flex;
-  justify-content: center; /* Centraliza a imagem horizontalmente */
-  align-items: center;
-  width: 100%;
+.multisections {
+  background-color: #f9f9f9;
 }
 
-.news-image img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-.cursos {
-  padding: 70px; /* Reduzido o padding para diminuir a altura total da seção */
-  background-image: url(/intranet/images/Branco-T_geral.jpg);
-  background-size: cover;
-}
-
-.cursos-container {
+.multisections-container {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   justify-content: space-between;
-  gap: 200px; /* Reduzido o espaçamento entre as boxes */
-  max-width: 1080px;
-  margin: 0 auto;
-}
-
-.left-box {
-  width: 45%; /* Box à esquerda com tamanho médio */
-  padding: 10px; /* Reduzido o padding interno da box */
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: auto; /* A altura vai se ajustar com o conteúdo */
-  transition: transform 0.2s ease-in-out;
   position: relative;
 }
-.left-box:hover {
-  transform: scale(1.03);
-}
-
-.cursos-column {
-  display: flex;
-  flex-direction: column;
-  gap: 15px; /* Reduzido o gap entre as boxes */
-  width: 50%; /* A coluna de boxes à direita ocupa 50% da largura */
-}
-
-.right-box {
-  width: 100%;
-  padding: 15px; /* Reduzido o padding interno da box */
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: auto; /* A altura vai se ajustar com o conteúdo */
+.multisections-container a {
+  text-decoration: none;
+  color: inherit;
   transition: transform 0.2s ease-in-out;
 }
-.right-box:hover {
-  transform: scale(1.03);
+.multisections-container a:hover {
+  text-decoration: none;
 }
 
-.cursos-text {
-  margin-bottom: 8px; /* Reduzido a margem inferior para o texto */
-  text-align: center; /* Centraliza o texto */
-  font-size: 0.9rem; /* Menor tamanho de fonte para compactar mais o texto */
+.multisections-box {
+  width: 300px;
+  height: 400px;
+  background-color: #fff;
+  position: relative;
+  transform: translateY(-45%);
+  z-index: 10;
+  cursor: pointer;
+  transition: transform 0.4s ease-in-out;
+}
+.multisections-box :hover {
+  transform: scale(1.01);
+}
+.multisections-box > .img-cursos {
+  height: 100%;
+  background-image: url(/intranet/images/wallpaper_akrus-02.png);
+  background-position: 0%;
+  background-size: cover;
+  border-radius: 20px;
+}
+.multisections-box > .img-Podcast {
+  height: 100%;
+  background-image: url(/intranet/images/wallpaper_akrus-02.png);
+  background-position: 0%;
+  background-size: cover;
+  border-radius: 20px;
+}
+.multisections-box > .img-Biblioteca {
+  height: 100%;
+  background-image: url(/intranet/images/wallpaper_akrus-02.png);
+  background-position: 0%;
+  background-size: cover;
+  border-radius: 20px;
+}
+.multisections-box > .img-iluminakrus {
+  height: 100%;
+  background-image: url(/intranet/images/wallpaper_akrus-02.png);
+  background-position: 0%;
+  background-size: cover;
+  border-radius: 20px;
+}
+.multisections-box > h1 {
+  text-align: center;
+  padding-bottom: 15px;
 }
 
-.cursos-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 10px;
+.multisections-box > h1:hover {
+  text-decoration: underline;
+  border: none;
 }
-
-.cursos-image img {
-  width: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-}
-#img1 {
-  height: 230px;
-  object-fit: cover;
-  width: 100%;
-}
-
 .dates {
   padding: 70px;
 }
-
 .dates-container {
-  max-width: 1080px;
+  max-width: 1200px;
   margin: 0 auto;
 }
-
 .dates-box {
   display: flex;
   justify-content: space-between;
-  gap: 4rem;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
   background-color: #f9f9f9;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-.section {
-  flex: 1;
-}
-
-.section h2 {
+.section-comemorativas h2 {
   font-size: 1.8rem;
   font-weight: 600;
   color: #333;
   margin-bottom: 10px;
 }
-
+.section-aniversariantes h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
 .dates-list {
   display: flex;
   flex-direction: column;
   gap: 15px;
   height: 205px;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
-
 .date-item {
   display: flex;
   justify-content: space-between;
@@ -394,12 +361,10 @@ button.next {
 .date-item p {
   margin: 0;
 }
-
 .name {
   font-weight: bold;
   color: #555;
 }
-
 .date {
   color: #777;
 }
@@ -413,65 +378,77 @@ button.next {
   width: 100%;
   border-radius: 25px;
 }
-.empresas {
-  padding: 0 70px 70px;
-}
-
-.empresas-container {
-  max-width: 1080px;
-  margin: 0 auto;
-}
-
-.empresas-box {
-  width: 100%;
+.empresas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px; /* Ajustei o padding para um visual mais equilibrado */
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-image: url(/intranet/images/Branco-T_geral.jpg);
-  background-size: cover;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 100px;
+}
+
+.empresa-box {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
-}
-
-.empresas-box h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 30px;
-}
-
-.empresas-carousel {
   display: flex;
-  gap: 20px; /* Reduzi a distância entre as imagens */
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.empresa-box > a > img {
+  max-width: 80%;
+  margin: 0 auto;
+}
+.empresa-box > a > img:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+.logo-Akrus {
+  padding-top: 15px;
+}
+.logo-Saframix {
+  padding-top: 20px;
+}
+.empresa-box p {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #000;
+  padding-top: 20px;
+}
+
+.social-icons {
+  display: flex;
   justify-content: center;
-  overflow: hidden;
+  gap: 20px;
+  margin-top: 15px;
+}
+.social-icons a {
+  text-decoration: none;
+  color: inherit;
+}
+.social-icons i {
+  font-size: 25px;
+  cursor: pointer;
+  transition: transform 0.3s;
 }
 
-.empresa-logo {
-  width: 400px; /* Ajustei a largura para as imagens ficarem mais compactas */
-  height: auto;
-  object-fit: contain; /* Mantém a proporção da imagem */
-  transition: transform 0.3s ease-in-out; /* A transição está mais suave */
-  border-radius: 20px;
+.social-icons i:hover {
+  transform: scale(1.1);
 }
-
-/* Efeito de hover nas logos das empresas */
-.empresa-logo:hover {
-  transform: scale(
-    1.15
-  ); /* Reduzi o efeito de aumento no hover para um visual mais sutil */
-  cursor: pointer; /* Indica que a imagem é interativa */
-}
-
 .fotos {
   padding: 20px;
   background-color: #f9f9f9;
+  padding-bottom: 100px;
 }
 
 .fotos-container {
-  max-width: 1080px;
+  max-width: 1200px;
   margin: 0 auto;
   text-align: center;
 }
@@ -485,11 +462,8 @@ button.next {
 
 .media-grid {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(250px, 1fr)
-  ); /* Grade responsiva */
-  gap: 20px; /* Espaço entre as fotos e vídeos */
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
   margin-top: 20px;
 }
 
@@ -506,24 +480,15 @@ button.next {
 }
 
 .media-item:hover {
-  transform: scale(
-    1.05
-  ); /* Leve aumento nas imagens e vídeos ao passar o mouse */
+  transform: scale(1.05);
 }
 
-.media-img,
-.media-video {
-  width: 100%; /* Ajusta a largura para 100% da div pai */
-  height: 100%; /* Garante que a altura ocupe totalmente a área disponível */
-  object-fit: cover; /* Garante que as imagens e vídeos se ajustem sem deformar */
+.media-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   border-radius: 8px;
 }
-
-.media-video {
-  max-height: 250px; /* Limita a altura do vídeo, garantindo consistência */
-  object-fit: cover; /* Garante que o vídeo ocupe totalmente a área da caixa sem deformar */
-}
-
 .footer {
   display: flex;
   background-color: #181818;
@@ -543,268 +508,268 @@ button.next {
   padding-right: 30px;
 }
 
-@media (max-width: 480px) {
-  .box {
-    width: 100%; /* Ocupa 100% da largura em telas muito pequenas */
+@media (max-width: 1024px) {
+  .empresas-grid {
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 50px;
+  }
+  .nav-list {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60vw;
+    height: 100vh;
+    background: #1d1c1c;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 900;
+    padding-bottom: 80vw;
+    padding-top: 20vw;
   }
 
-  .carousel-container {
-    height: 250px; /* Ajusta ainda mais a altura do carrossel */
+  .nav-list.active {
+    transform: translateX(0);
   }
-  .container {
-    padding: 15px; /* Reduz o padding para telas ainda menores */
+  .nav-list.active > li > a {
+    margin-inline: 0px;
+  }
+  .mobile-menu {
+    display: block;
+    z-index: 1001;
+  }
+  .logo {
+    width: 170px;
+  }
+  .bannerHome {
+    background-position: 81%;
+    padding: 60px;
+    margin-bottom: 60px;
+  }
+  .description {
+    margin-bottom: 60px;
+  }
+  .values-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .values {
+    border-bottom: #00000050 solid;
+    padding-bottom: 40px;
+  }
+  .vision {
+    border-left: none;
+    border-right: none;
+
+    padding-top: 20px;
+  }
+  .Alert > h1 {
+    text-align: center;
   }
 
-  .box,
-  .large-box,
-  .small-box {
-    width: 100%; /* Boxes ocupam 100% da largura */
-    margin-bottom: 15px; /* Adiciona um espaço entre as boxes */
+  .Alert-container {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  .Alert-box-1 {
+    width: 315px;
+    height: 315px;
   }
 
-  .carousel-container,
-  .carousel {
-    width: 100%; /* Ajusta o tamanho do carrossel */
-    height: 300px; /* Ajuste na altura */
+  .Alert-box-2 {
+    width: 315px;
+    height: 315px;
   }
 
-  .carousel img {
-    width: 100%; /* Ajusta as imagens no carrossel para a largura total */
-    height: 100%;
-    object-fit: cover;
+  .Alert-box-3 {
+    width: 315px;
+    height: 315px;
+  }
+  .bannerVagas {
+    margin-top: 100px;
+    padding: 100px;
+    margin-bottom: 80px;
   }
 
-  .empresas-box {
-    padding: 20px; /* Ajuste no padding da caixa das empresas */
-  }
-
-  .empresas-carousel {
-    gap: 10px; /* Menor espaço entre as imagens */
-  }
-
-  .empresa-logo {
-    width: 250px; /* Ajuste no tamanho das logos das empresas */
-  }
-
-  .media-item {
-    padding: 8px; /* Menor padding para telas menores */
-  }
-
-  .media-img,
-  .media-video {
-    height: auto; /* Ajusta a altura das imagens e vídeos */
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  .banner {
-    height: 200px;
-  }
-
-  .banner img {
-    object-fit: fill;
-  }
-}
-
-@media (max-width: 768px) {
-  .cards {
-    padding: 20px;
-  }
   .news {
-    padding: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 80px;
   }
-  .cursos {
-    padding: 20px;
+  .news > h1 {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .news-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  .news-box {
+    width: 100%;
+    margin-inline: 10px;
+    padding: 100px;
+  }
+  .news-text {
+    width: 100%;
+  }
+  .news-text > h2 {
+    font-size: 1rem;
+  }
+  .news-text > p {
+    font-size: 0.8rem;
+  }
+
+  .multisections-box {
+    transform: none;
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+    transition: transform 0.2s ease-in-out;
+    background-color: #f9f9f9;
+  }
+
+  .multisections-box:hover {
+    transform: scale(1.02);
+  }
+
+  .multisections-container {
+    max-width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  .multisections-box > .img-cursos,
+  .multisections-box > .img-Podcast,
+  .multisections-box > .img-Biblioteca,
+  .multisections-box > .img-iluminakrus {
+    height: 120px;
+    background-position: center;
+    border-radius: 10px;
+  }
+
+  .multisections-box > h1 {
+    font-size: 1.5rem;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .multisections-box > h1:hover {
+    text-decoration: underline;
   }
   .dates {
     padding: 20px;
   }
-  .empresas {
-    padding: 0;
-  }
-  .container {
-    flex-direction: column; /* Colocar as boxes em coluna */
-    align-items: center;
-  }
-  .news-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .large-box,
-  .news-column {
-    width: 100%;
-  }
-
-  .news-image img {
-    height: auto;
-  }
-  .cursos-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .left-box,
-  .cursos-column {
-    width: 100%; /* As boxes ocupam toda a largura em telas pequenas */
-  }
-
-  .cursos-image img {
-    height: auto; /* Ajusta automaticamente a altura da imagem */
+  .dates-container {
+    max-width: 1200px;
+    margin: 0 auto;
   }
   .dates-box {
-    flex-direction: column;
     display: flex;
-    align-items: center; /* Empilha as seções em telas menores */
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    gap: 50px;
+    align-items: center;
   }
-
-  .section {
-    width: 100%; /* As seções ocupam toda a largura em telas menores */
+  .section h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
   }
-  .empresas-box {
-    width: 100%; /* A box ocupa toda a largura em telas menores */
+  .dates-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: 205px;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
-
-  .empresas-carousel {
-    flex-direction: column; /* Organiza as imagens em coluna em telas pequenas */
-    align-items: center; /* Alinha as imagens ao centro */
-  }
-
-  .empresa-logo {
-    width: 120px; /* Imagens menores em telas pequenas */
-  }
-  .media-grid {
-    grid-template-columns: repeat(
-      auto-fill,
-      minmax(200px, 1fr)
-    ); /* Ajusta o número de colunas para telas pequenas */
-  }
-
-  .media-video {
-    max-height: 200px; /* Ajusta a altura do vídeo em telas pequenas */
-  }
-  .left-box,
-  .cursos-column {
-    width: 100%; /* As boxes ocupam toda a largura em telas pequenas */
-  }
-
-  .right-box {
-    width: 100%; /* Ajuste da largura da right-box para 100% */
-  }
-
-  .cursos-text {
-    font-size: 0.85rem; /* Reduz o tamanho da fonte para telas menores */
-  }
-
-  .media-grid {
-    grid-template-columns: 1fr; /* Em telas pequenas, exibe as fotos em uma coluna */
-  }
-
-  .media-item {
-    padding: 15px; /* Ajusta o padding para telas menores */
-  }
-
-  .media-video {
-    max-height: 200px; /* Limita a altura do vídeo */
-  }
-  .carousel-container {
-    width: 100%; /* Aumenta a largura do carrossel para ocupar 100% da tela */
-    padding: 0; /* Remove qualquer padding que possa estar causando bordas */
-    margin: 0; /* Remove a margem para ocupar toda a largura */
-  }
-
-  .carousel {
-    width: 100%; /* Faz o carrossel ocupar toda a largura */
-    display: block; /* Remove qualquer comportamento de flexbox ou grid que possa estar aplicando alinhamento */
-  }
-
-  .carousel img {
-    width: 100%; /* Ajusta as imagens para preencher toda a largura do carrossel */
-    height: auto; /* Ajusta a altura das imagens automaticamente */
-    object-fit: cover; /* Assegura que as imagens se ajustem sem distorção */
-  }
-  .container {
-    flex-direction: column; /* Alinha os boxes verticalmente em telas menores */
-    padding: 0px; /* Diminui o padding */
-    align-items: stretch; /* Remove o alinhamento central */
-  }
-
-  .box {
-    width: 100%; /* Faz os boxes ocuparem 100% da largura da tela no mobile */
-    margin-bottom: 20px; /* Espaçamento entre os boxes */
-  }
-
-  .carousel-container {
-    width: 100%; /* Faz o carrossel ocupar toda a largura do box */
-    height: 300px; /* Ajusta a altura para telas menores */
-  }
-  .nav-links {
-    display: none; /* Esconde o menu de navegação */
-  }
-
-  .hamburger {
-    display: flex; /* Exibe o ícone de hambúrguer */
-  }
-
-  .nav-links.active {
-    display: block; /* Exibe o menu quando ele estiver ativo */
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background-color: black;
-    width: 100%;
-    text-align: center;
-    padding: 20px 0;
-    z-index: 1;
-  }
-
-  .nav-links ul {
-    display: block;
-    gap: 10px;
-  }
-
-  .nav-links a {
-    font-size: 18px;
+  .date-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 10px;
-    display: block;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
   }
-  .banner {
-    height: 98px;
+  .date-item:hover {
+    transform: scale(1.03);
   }
+  .date-item p {
+    margin: 0;
+  }
+  .name {
+    font-weight: bold;
+    color: #555;
+  }
+  .date {
+    color: #777;
+  }
+  .calendario {
+    display: flex;
+    width: 200px;
+    border-radius: 25px;
+    height: 50%;
+  }
+  .calendario > img {
+    width: 100%;
+    border-radius: 25px;
+  }
+  .fotos {
+    padding-bottom: 40px;
+  }
+}
 
-  .banner img {
-    object-fit: cover;
-  }
-  .cursos-container {
-    gap: 30px;
-  }
-  .dates-box img {
-    margin-left: 15px;
+@media (max-width: 768px) {
+  .empresas-grid {
+    grid-template-columns: repeat(1, 1fr);
   }
   .footer {
-    flex-direction: column; /* Direciona os itens em coluna */
-    align-items: center; /* Alinha os itens ao centro */
-    text-align: center; /* Alinha o texto ao centro */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   #logofooter,
   #empresas {
-    padding: 5px; /* Define o preenchimento */
-    margin: 5px 0; /* Define a margem superior e inferior */
+    padding: 5px;
+    margin: 5px 0;
   }
-  .empresas {
-    padding: 0 20px 50px; /* Menos padding para telas pequenas */
-  }
+}
+@media (max-width: 576px) {
+}
 
-  .empresas-box {
-    padding: 30px; /* Reduzi o padding interno do box */
+@media (max-width: 480px) {
+  .description {
+    margin-bottom: 60px;
+    margin-inline: 20px;
   }
-
-  .empresas-carousel {
-    gap: 10px; /* Menor espaço entre as imagens */
+  .values-container {
+    flex-direction: column;
+    gap: 20px;
   }
+  .values {
+    border-bottom: #00000050 solid;
+    padding-bottom: 40px;
+  }
+  .vision {
+    border-left: none;
+    border-right: none;
 
-  .empresa-logo {
-    width: 300px; /* Ajusta o tamanho da imagem para telas menores */
+    padding-top: 20px;
   }
 }
