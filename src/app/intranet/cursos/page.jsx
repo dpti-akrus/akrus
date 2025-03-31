@@ -5,44 +5,83 @@ import React, { useEffect } from "react";
 
 export default function Page() {
   useEffect(() => {
-    // Seleciona o elemento de menu hambúrguer e as links de navegação
-    const hamburger = document.getElementById("hamburger");
-    const navLinks = document.querySelector(".nav-links");
+    const header = document.querySelector("header");
+    const nav = document.querySelector("nav");
+    let timeout;
 
-    // Função para alternar a visibilidade do menu de navegação
-    const handleHamburgerClick = () => {
-      navLinks.classList.toggle("active");
-    };
+    if (header && nav) {
+      const handleScroll = () => {
+        header.classList.add("translucent");
+        nav.classList.add("translucent");
 
-    // Adiciona evento de clique ao menu hambúrguer
-    hamburger.addEventListener("click", handleHamburgerClick);
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+          header.classList.remove("translucent");
+          nav.classList.remove("translucent");
+        }, 300);
+      };
 
-    // Função para alternar os slides
-    const nextSlide = (carouselId) => {
-      const carousel = document.getElementById(carouselId);
-      if (carousel) {
-        // Lógica para mudar os slides...
+      window.addEventListener("scroll", handleScroll);
+
+      return () => window.removeEventListener("scroll", handleScroll);
+    }
+  }, []);
+
+  useEffect(() => {
+    class MobileNavbar {
+      constructor(mobileMenuSelector, navListSelector, navLinksSelector) {
+        this.mobileMenu = document.querySelector(mobileMenuSelector);
+        this.navList = document.querySelector(navListSelector);
+        this.navLinks = document.querySelectorAll(navLinksSelector);
+        this.activeClass = "active";
+
+        this.handleClick = this.handleClick.bind(this);
+      }
+
+      handleClick() {
+        if (this.navList && this.mobileMenu) {
+          this.navList.classList.toggle(this.activeClass);
+          this.mobileMenu.classList.toggle(this.activeClass);
+        }
+      }
+
+      addClickEvent() {
+        if (this.mobileMenu) {
+          this.mobileMenu.addEventListener("click", this.handleClick);
+        }
+        if (this.navLinks.length > 0) {
+          this.navLinks.forEach((link) =>
+            link.addEventListener("click", () => {
+              if (this.navList) this.navList.classList.remove(this.activeClass);
+            })
+          );
+        }
+      }
+
+      init() {
+        if (this.mobileMenu) {
+          this.addClickEvent();
+        }
+      }
+    }
+
+    const mobileNavbar = new MobileNavbar(
+      ".mobile-menu",
+      ".nav-list",
+      ".nav-list li"
+    );
+    mobileNavbar.init();
+
+    return () => {
+      if (mobileNavbar.mobileMenu) {
+        mobileNavbar.mobileMenu.removeEventListener(
+          "click",
+          mobileNavbar.handleClick
+        );
       }
     };
-
-    // Alterna os slides a cada 10 segundos
-    const intervalId = setInterval(() => {
-      nextSlide("avisos-carousel");
-      nextSlide("vagas-carousel");
-    }, 10000);
-
-    // Função para alternar a visibilidade do menu
-    const toggleMenu = () => {
-      const navMenu = document.querySelector(".nav-menu");
-      navMenu.classList.toggle("active");
-    };
-
-    // Adiciona evento de clique ao botão de alternância do menu
-    document
-      ?.querySelector(".menu-toggle")
-      ?.addEventListener("click", toggleMenu);
-
-    // Adiciona eventos de hover aos cartões de vídeo
+  }, []);
+  useEffect(() => {
     document.querySelectorAll(".video-card").forEach((card) => {
       card.addEventListener("mouseover", () => {
         card.style.transform = "translateY(-10px)";
@@ -55,11 +94,6 @@ export default function Page() {
 
     // Cleanup para remover event listeners ao desmontar o componente
     return () => {
-      hamburger.removeEventListener("click", handleHamburgerClick);
-      clearInterval(intervalId);
-      document
-        ?.querySelector(".menu-toggle")
-        ?.removeEventListener("click", toggleMenu);
       document.querySelectorAll(".video-card").forEach((card) => {
         card.removeEventListener("mouseover", () => {});
         card.removeEventListener("mouseout", () => {});
@@ -68,36 +102,35 @@ export default function Page() {
   }, []);
   return (
     <main>
-      <header className="header">
-        <div className="logo">
-          <img
-            src="/intranet/images/logo_akrus_branco_Prancheta 1.png"
-            alt="Logo"
-          />
-        </div>
-        <nav className="nav-links">
-          <ul>
+      <header>
+        <nav>
+          <a href="/">
+            <img
+              className="logo"
+              src="/intranet/images/logo_akrus_branco.png"
+              alt="Logo Akrus"
+            />
+          </a>
+          <div className="mobile-menu">
+            <div className="line1"></div>
+            <div className="line2"></div>
+            <div className="line3"></div>
+          </div>
+          <ul className="nav-list">
             <li>
-              <a href="/intranet">Home</a>
+              <a href="/intranet">Início</a>
             </li>
             <li>
-              <a href="#">Suporte</a>
+              <a href="#">Chamados TI</a>
             </li>
             <li>
-              <a href="/intranet/politicas">Políticas</a>
+              <a href="/intranet/politicas">Políticas da empresa</a>
             </li>
             <li>
-              <a href="https://teams.microsoft.com/l/team/19%3AFDaFqDpMD2SFdY7Cbc3sffQVRb4OxGQs8NtGz3itloo1%40thread.tacv2/conversations?groupId=7d63b9f2-258f-4b95-aed8-6f49be10b56a&tenantId=00a7b357-a2ba-4b32-b04f-2fef849a08b4">
-                Teams
-              </a>
+              <a href="#">Chat TEAMS</a>
             </li>
           </ul>
         </nav>
-        <div className="hamburger" id="hamburger">
-          <span className="bar"></span>
-          <span className="bar"></span>
-          <span className="bar"></span>
-        </div>
       </header>
 
       <div className="banner">
@@ -139,6 +172,18 @@ export default function Page() {
                   allowfullscreen
                 ></iframe>
               </div>
+              <div className="video-card">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/9kjLowFN5TE?si=QA8MCu9LU-SH3-ub"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
             </div>
           </div>
 
@@ -168,6 +213,19 @@ export default function Page() {
                   title="Nova tela formar carga.mp4"
                 />
               </div>
+              <div className="video-card">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/J-EcavMIigs?si=rpb61wuVpKWjYjTH"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>{" "}
+              {/*Adicionado mais 2 vídeos. Um em cada categoria*/}
             </div>
           </div>
         </section>
@@ -182,7 +240,6 @@ export default function Page() {
           <img id="empresas" src="/intranet/images/assinatura_akrus[1].png" />
         </div>
       </footer>
-      <script src="../js/cursos.js"></script>
     </main>
   );
 }

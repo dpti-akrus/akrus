@@ -13,51 +13,75 @@ body {
 }
 
 /* Estilos para o cabeçalho */
-.header {
+
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #1d1c1c;
+  transition: background-color 0.3s ease-in-out;
+}
+
+nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: black;
-  padding: 40px;
-  color: white;
+  padding: 15px 40px;
+  width: 100%;
+  background: inherit;
+  transition: background-color 0.3s ease-in-out;
 }
 
-.logo img {
-  width: 150px; /* Tamanho da logo, pode ser ajustado conforme necessário */
+.translucent {
+  background: rgba(0, 0, 0, 0.5) !important;
 }
 
-.nav-links ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links a {
-  color: white;
+a {
+  color: #fff;
   text-decoration: none;
-  font-size: 16px;
-  transition: color 0.3s;
+  transition: 0.3s;
+  margin-inline: 15px;
 }
-
-.nav-links a:hover {
-  color: #f1f1f1;
+a:hover {
+  opacity: 0.7;
 }
-
-/* Hamburger menu (invisível por padrão em desktop) */
-.hamburger {
+.logo {
+  width: 290px;
+}
+.nav-list {
+  list-style: none;
+  display: flex;
+}
+.nav-list li {
+  margin-left: 20px;
+}
+.mobile-menu {
   display: none;
-  flex-direction: column;
-  gap: 5px;
   cursor: pointer;
 }
-
-.hamburger .bar {
+.mobile-menu div {
   width: 30px;
-  height: 4px;
-  background-color: white;
-  border-radius: 2px;
+  height: 3px;
+  background: #fff;
+  margin: 6px;
+  transition: 0.3s;
+}
+
+.nav-list.active {
+  transform: translateX(0);
+}
+
+.mobile-menu.active .line1 {
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.mobile-menu.active .line2 {
+  opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+  transform: rotate(45deg) translate(-6px, -6px);
 }
 
 /* Estilo para a seção do banner */
@@ -138,70 +162,35 @@ body {
 
 /* Ajusta o logo para telas menores */
 @media (max-width: 768px) {
-  .nav-links {
-    display: none; /* Esconde o menu de navegação */
-  }
-
-  .hamburger {
-    display: flex; /* Exibe o ícone de hambúrguer */
-  }
-
-  .nav-links.active {
-    display: block; /* Exibe o menu quando ele estiver ativo */
+  .nav-list {
     position: absolute;
-    top: 70px;
+    top: 0;
     right: 0;
-    background-color: black;
-    width: 100%;
-    text-align: center;
-    padding: 20px 0;
-    z-index: 1;
+    width: 60vw;
+    height: 100vh;
+    background: #1d1c1c;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 900;
+    padding-bottom: 80vw;
+    padding-top: 20vw;
   }
 
-  .nav-links ul {
+  .nav-list.active {
+    transform: translateX(0);
+  }
+  .nav-list.active > li > a {
+    margin-inline: 0px;
+  }
+  .mobile-menu {
     display: block;
-    gap: 10px;
+    z-index: 1001;
   }
-
-  .nav-links a {
-    font-size: 18px;
-    padding: 10px;
-    display: block;
-  }
-  .logo img {
-    max-height: 50px; /* Define a altura máxima */
-    padding-left: 20px; /* Define o preenchimento à esquerda */
-    padding-bottom: 3px; /* Define o preenchimento inferior */
-  }
-
-  .nav-menu {
-    display: none; /* Inicialmente não exibe o menu */
-    position: absolute; /* Define a posição absoluta */
-    top: 60px; /* Define a posição superior */
-    right: 0; /* Define a posição à direita */
-    background-color: #1b1b1b; /* Define a cor de fundo */
-    width: 100%; /* Define a largura */
-    padding: 20px 0; /* Define o preenchimento */
-    z-index: 1000; /* Define a ordem de empilhamento */
-  }
-
-  .nav-menu.active {
-    display: flex; /* Exibe o menu como flexível */
-    flex-direction: column; /* Direciona os itens em coluna */
-    align-items: center; /* Alinha os itens ao centro */
-  }
-
-  .nav-menu ul {
-    flex-direction: column; /* Direciona os itens em coluna */
-    align-items: center; /* Alinha os itens ao centro */
-  }
-
-  .nav-menu ul li {
-    margin: 10px 0; /* Define a margem superior e inferior */
-  }
-
-  .menu-toggle {
-    display: flex; /* Exibe o botão de alternância do menu */
+  .logo {
+    width: 170px;
   }
 }
 

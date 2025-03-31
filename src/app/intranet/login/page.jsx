@@ -45,14 +45,9 @@ export default function Page() {
 
       <section className="login-section">
         <div className="login-card">
-          <img
-            src="/intranet/images/akrus_page-0001.jpg"
-            alt="Logo"
-            className="card-logo"
-          />
           <div className="ch-akrus">
             <h2>
-              <span>INTRANET AKRUS</span>
+              <span>Acesse nossa intranet</span>
             </h2>
           </div>
           <form onSubmit={handleLogin}>

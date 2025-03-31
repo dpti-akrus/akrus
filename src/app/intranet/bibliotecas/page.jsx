@@ -4,37 +4,87 @@ import "./style.css";
 
 export default function page() {
   useEffect(() => {
-    console.log('typeof document:', typeof document)
+    console.log("typeof document:", typeof document);
 
-    const hamburger = document.getElementById("hamburger");
-    const navLinks = document.querySelector(".nav-links");
+    const header = document.querySelector("header");
+    const nav = document.querySelector("nav");
+    let timeout;
 
-    const handleHamburgerClick = () => {
-      navLinks.classList.toggle("active");
-    };
+    if (header && nav) {
+      const handleScroll = () => {
+        header.classList.add("translucent");
+        nav.classList.add("translucent");
 
-    hamburger?.addEventListener("click", handleHamburgerClick);
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+          header.classList.remove("translucent");
+          nav.classList.remove("translucent");
+        }, 300);
+      };
 
-    const toggleMenu = () => {
-      const navMenu = document.querySelector(".nav-menu");
-      navMenu.classList.toggle("active");
-    };
+      window.addEventListener("scroll", handleScroll);
 
-    document
-      ?.querySelector(".menu-toggle")
-      ?.addEventListener("click", toggleMenu);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }
+  }, []);
+
+  useEffect(() => {
+    class MobileNavbar {
+      constructor(mobileMenuSelector, navListSelector, navLinksSelector) {
+        this.mobileMenu = document.querySelector(mobileMenuSelector);
+        this.navList = document.querySelector(navListSelector);
+        this.navLinks = document.querySelectorAll(navLinksSelector);
+        this.activeClass = "active";
+
+        this.handleClick = this.handleClick.bind(this);
+      }
+
+      handleClick() {
+        if (this.navList && this.mobileMenu) {
+          this.navList.classList.toggle(this.activeClass);
+          this.mobileMenu.classList.toggle(this.activeClass);
+        }
+      }
+
+      addClickEvent() {
+        if (this.mobileMenu) {
+          this.mobileMenu.addEventListener("click", this.handleClick);
+        }
+        if (this.navLinks.length > 0) {
+          this.navLinks.forEach((link) =>
+            link.addEventListener("click", () => {
+              if (this.navList) this.navList.classList.remove(this.activeClass);
+            })
+          );
+        }
+      }
+
+      init() {
+        if (this.mobileMenu) {
+          this.addClickEvent();
+        }
+      }
+    }
+
+    const mobileNavbar = new MobileNavbar(
+      ".mobile-menu",
+      ".nav-list",
+      ".nav-list li"
+    );
+    mobileNavbar.init();
 
     return () => {
-      hamburger.removeEventListener("click", handleHamburgerClick);
-      document
-        ?.querySelector(".menu-toggle")
-        ?.removeEventListener("click", toggleMenu);
+      if (mobileNavbar.mobileMenu) {
+        mobileNavbar.mobileMenu.removeEventListener(
+          "click",
+          mobileNavbar.handleClick
+        );
+      }
     };
   }, []);
 
   function abrirCard(title, cover, direction, link) {
-    if (typeof document != 'undefined') {
-
+    if (typeof document != "undefined") {
       const card = document.getElementById("bookCard");
       document.getElementById("bookTitle").innerText = title;
       document.getElementById("bookCover").src = cover;
@@ -64,7 +114,6 @@ export default function page() {
     }, 500);
   }
 
-
   document?.addEventListener("scroll", function () {
     fecharCard();
   });
@@ -75,36 +124,45 @@ export default function page() {
 
   return (
     <main>
-      <header className="header">
-        <div className="logo">
-          <img
-            src="/intranet/images/logo_akrus_branco_Prancheta 1.png"
-            alt="Logo"
-          />
-        </div>
-        <nav className="nav-links">
-          <ul>
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <header>
+        <nav>
+          <a href="/">
+            <img
+              className="logo"
+              src="/intranet/images/logo_akrus_branco.png"
+              alt="Logo Akrus"
+            />
+          </a>
+          <div className="mobile-menu">
+            <div className="line1"></div>
+            <div className="line2"></div>
+            <div className="line3"></div>
+          </div>
+          <ul className="nav-list">
             <li>
-              <a href="/intranet">Home</a>
+              <a href="/intranet">Início</a>
             </li>
             <li>
-              <a href="#">Suporte</a>
+              <a href="#">Chamados TI</a>
             </li>
             <li>
-              <a href="/intranet/politicas">Políticas</a>
+              <a href="/intranet/politicas">Políticas da empresa</a>
             </li>
             <li>
-              <a href="https://teams.microsoft.com/l/team/19%3AFDaFqDpMD2SFdY7Cbc3sffQVRb4OxGQs8NtGz3itloo1%40thread.tacv2/conversations?groupId=7d63b9f2-258f-4b95-aed8-6f49be10b56a&tenantId=00a7b357-a2ba-4b32-b04f-2fef849a08b4">
-                Teams
-              </a>
+              <a href="#">Chat TEAMS</a>
             </li>
           </ul>
         </nav>
-        <div className="hamburger" id="hamburger">
-          <span className="bar"></span>
-          <span className="bar"></span>
-          <span className="bar"></span>
-        </div>
       </header>
 
       <div className="banner">
@@ -117,7 +175,7 @@ export default function page() {
 
       <section className="biblioteca-virtual">
         <h2 className="biblioteca-title">
-          <span>Biblioteca Virtual</span>
+          <span>Acervo</span>
         </h2>
         <p className="biblioteca-description">
           Explore nossa Biblioteca Virtual e desperte novas oportunidades! Na
@@ -309,7 +367,7 @@ export default function page() {
                 "Empatia Assertiva",
                 "/intranet/images/Lider-Incisivo.png",
                 "Liderança",
-                "https://encurtador.com.br/82w2r"
+                "https://www.amazon.com.br/Empatia-Assertiva-Incisivo-Perder-Humanidade/dp/655520219X"
               )
             }
           >
@@ -322,7 +380,7 @@ export default function page() {
         </div>
       </section>
 
-      <section className="podcasts-section">
+      {/* <section className="podcasts-section">
         <h2 className="podcasts-title">
           <span>Podcast</span>
         </h2>
@@ -509,7 +567,7 @@ export default function page() {
             <a href="" target="_blank"></a>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <div className="book-card" id="bookCard">
         <span className="close" onClick={() => fecharCard()}>

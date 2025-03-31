@@ -28,8 +28,8 @@ header {
 
 /* Estilos para a imagem do logo no cabeçalho */
 .logo img {
-  max-height: 55px; /* Define a altura máxima da imagem do logo */
-  margin: 5px; /* Adiciona uma margem de 5px ao redor da imagem */
+  max-height: 52px; /* Define a altura máxima da imagem do logo */
+  /* margin: 5px; /* Adiciona uma margem de 5px ao redor da imagem */
   padding-left: 30px; /* Adiciona preenchimento à esquerda da imagem */
   padding-bottom: 5px; /* Adiciona preenchimento na parte inferior da imagem */
 }
@@ -62,7 +62,7 @@ header {
 
 /* Estilos para o título */
 .title {
-  font-family: "Cairo", sans-serif; /* Define a fonte */
+  font-family: Arial, Helvetica, sans-serif; /* Define a fonte */
   color: #181818; /* Define a cor do texto */
   font-size: 24px; /* Define o tamanho da fonte */
   margin-top: 30px; /* Define a margem superior */
@@ -72,12 +72,12 @@ header {
 
 /* Estilos para o título da intranet */
 .ch-akrus h2 {
-  font-family: "Cairo", sans-serif; /* Define a fonte */
+  font-family: Arial, Helvetica, sans-serif; /* Define a fonte */
   color: #181818; /* Define a cor do texto */
-  font-size: 20px; /* Define o tamanho da fonte */
-  margin-bottom: 25px; /* Define a margem inferior */
+  font-size: 30px; /* Define o tamanho da fonte */
+  margin-bottom: 50px; /* Define a margem inferior */
   letter-spacing: 1px; /* Define o espaçamento entre letras */
-  animation: fadeIn 1s ease-in-out; /* Adiciona animação de fade-in */
+  /* animation: fadeIn 1s ease-in-out; /* Adiciona animação de fade-in */
 }
 
 /* Animação de fade-in */
@@ -154,10 +154,11 @@ header {
 
 /* Estilos para a logo do rodapé */
 #logofooter {
-  max-height: 55px; /* Define a altura máxima */
-  height: 55px; /* Define a altura */
-  padding-left: 30px; /* Define o preenchimento à esquerda */
-  margin: 5px; /* Define a margem */
+  /* max-height: 55px; /* Define a altura máxima */
+  /*height: 52px; /* Define a altura 
+  padding-left: 30px;  Define o preenchimento à esquerda */
+  margin-left: 14px; /* Define a margem */
+  justify-content: left;
 }
 
 /* Estilos para a seção de empresas no rodapé */

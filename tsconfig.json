@@ -1,10 +1,6 @@
 {
   "compilerOptions": {
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -22,9 +18,7 @@
       }
     ],
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"]
     },
     "target": "ES2017"
   },
@@ -36,14 +30,12 @@
     "src/app/intranet/text-h2.jsx",
     "src/app/intranet/bibliotecas/page.jsx",
     "src/app/intranet/cursos/page.jsx",
-    "src/app/intranet/iluminakros/page.jsx",
+    "src/app/intranet/iluminakrus/page.jsx",
     "src/app/intranet/login/page.jsx",
     "src/app/intranet/noticias/page.jsx",
     "src/app/intranet/politicas/page.jsx",
     "src/app/intranet/vagas/page.jsx",
     "src/app/intranet/teste/page.jsx"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }

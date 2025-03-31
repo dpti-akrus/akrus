@@ -1,253 +1,275 @@
 /* Reset básico */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #1d1c1c;
+  transition: background-color 0.3s ease-in-out;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  width: 100%;
+  background: inherit;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.translucent {
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+  margin-inline: 15px;
+}
+a:hover {
+  opacity: 0.7;
+}
+.logo {
+  width: 290px;
+}
+.nav-list {
+  list-style: none;
+  display: flex;
+}
+.nav-list li {
+  margin-left: 20px;
+}
+.mobile-menu {
+  display: none;
+  cursor: pointer;
+}
+.mobile-menu div {
+  width: 30px;
+  height: 3px;
+  background: #fff;
+  margin: 6px;
+  transition: 0.3s;
+}
+
+.nav-list.active {
+  transform: translateX(0);
+}
+
+.mobile-menu.active .line1 {
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.mobile-menu.active .line2 {
+  opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+  transform: rotate(45deg) translate(-6px, -6px);
+}
+
+.banner {
+  width: 100%;
+  display: flex;
+}
+
+.banner img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  background-size: cover;
+  padding: 7rem;
+  flex-direction: column;
+  background-image: url(/intranet/images/48982e53-ec1b-455c-84e0-c4d0be71b657.jpg);
+}
+
+.politicas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.box {
+  width: 550px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: #00000071 solid;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  align-items: center;
+  gap: 30px;
+}
+
+.box:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.8);
+}
+
+a {
+  text-decoration: none;
+}
+
+.content img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.content h1 {
+  color: initial;
+}
+
+.logo-empresa {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+.logo-empresa img {
+  background-size: cover;
+  width: 150px;
+}
+
+.box ul {
+  position: relative;
+  left: 1.5rem;
+}
+
+.empresas-container {
+  padding: 40px 20px;
+}
+
+.footer {
+  display: flex;
+  background-color: #181818;
+  height: 6rem;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logofooter {
+  height: 35px;
+  padding-left: 30px;
+}
+
+#empresas {
+  height: 30px;
+  padding-right: 30px;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Esconde o menu de navegação */
   }
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: black;
-    padding: 40px;
-    color: white;
-  }
-  
-  .logo img {
-    width: 150px; /* Tamanho da logo, pode ser ajustado conforme necessário */
-  }
-  
-  .nav-links ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s;
-  }
-  
-  .nav-links a:hover {
-    color: #f1f1f1;
-  }
-  
-  /* Hamburger menu (invisível por padrão em desktop) */
+
   .hamburger {
+    display: flex; /* Exibe o ícone de hambúrguer */
+  }
+
+  .nav-links.active {
+    display: block; /* Exibe o menu quando ele estiver ativo */
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: black;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    z-index: 1;
+  }
+
+  .nav-links ul {
+    display: block;
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+    padding: 10px;
+    display: block;
+  }
+  .logo img {
+    max-height: 50px;
+    padding-left: 20px;
+    padding-bottom: 3px;
+  }
+
+  .nav-menu {
     display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-  }
-  
-  .hamburger .bar {
-    width: 30px;
-    height: 4px;
-    background-color: white;
-    border-radius: 2px;
-  }
-  
-  .banner {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #363633;
     width: 100%;
-    display: flex;
-  }
-  
-  .banner img {
-    width: 100%;
-    object-fit: cover;
-  }
-  
-  .container {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    background-size: cover;
-    padding: 7rem;
-    flex-direction: column;
-    background-image: url(/intranet/images/48982e53-ec1b-455c-84e0-c4d0be71b657.jpg);
-  }
-  
-  .politicas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 3rem;
-    flex-direction: row;
-    justify-content: center;
-  }
-  
-  .box {
-    width: 550px;
-    background-color: #ffffff;
-    border-radius: 20px;
-    border: #00000071 solid;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-    display: flex;
-    flex-direction: column;
-    padding: 3rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    align-items: center;
-    gap: 30px;
-  }
-  
-  .box:hover {
-    transform: scale(1.02);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.8);
-  }
-  
-  a {
-    text-decoration: none;
-  }
-  
-  .content img {
-    object-fit: cover;
-    width: 100%;
-  }
-  
-  .content h1 {
-    color: initial;
-  }
-  
-  .logo-empresa {
-    display: flex;
-    position: relative;
-    justify-content: center;
-  }
-  
-  .logo-empresa img {
-    background-size: cover;
-    width: 150px;
-  }
-  
-  .box ul {
-    position: relative;
-    left: 1.5rem;
-  }
-  
-  .empresas-container {
-    padding: 40px 20px;
-  }
-  
-  .footer {
-    display: flex;
-    background-color: #181818;
-    height: 6rem;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  #logofooter {
-    height: 35px;
-    padding-left: 30px;
-  }
-  
-  #empresas {
-    height: 30px;
+    padding: 20px 0;
+    z-index: 1000;
     padding-right: 30px;
   }
-  
-  @media (max-width: 768px) {
-    .nav-links {
-      display: none; /* Esconde o menu de navegação */
-    }
-  
-    .hamburger {
-      display: flex; /* Exibe o ícone de hambúrguer */
-    }
-  
-    .nav-links.active {
-      display: block; /* Exibe o menu quando ele estiver ativo */
-      position: absolute;
-      top: 70px;
-      right: 0;
-      background-color: black;
-      width: 100%;
-      text-align: center;
-      padding: 20px 0;
-    z-index: 1;
-    }
-  
-    .nav-links ul {
-      display: block;
-      gap: 10px;
-    }
-  
-    .nav-links a {
-      font-size: 18px;
-      padding: 10px;
-      display: block;
-    }
-    .logo img {
-      max-height: 50px;
-      padding-left: 20px;
-      padding-bottom: 3px;
-    }
-  
-    .nav-menu {
-      display: none;
-      position: absolute;
-      top: 70px;
-      right: 0;
-      background-color: #363633;
-      width: 100%;
-      padding: 20px 0;
-      z-index: 1000;
-      padding-right: 30px;
-    }
-  
-    .nav-menu.active {
-      display: flex;
-    }
-  
-    .nav-menu ul {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .nav-menu ul li {
-      margin: 10px 0;
-    }
-  
-    .menu-toggle {
-      display: flex;
-    }
-  
-    .container {
-      padding: 3rem;
-    }
-  
-    .box {
-      width: 90%;
-      padding: 2rem;
-    }
-  
-    .footer {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-  
-    #logofooter,
-    #empresas {
-      padding: 5px;
-      margin: 5px 0;
-    }
+
+  .nav-menu.active {
+    display: flex;
   }
-  
-  @media (max-width: 767px) {
-    .banner {
-      height: 98px;
-    }
+
+  .nav-menu ul {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  @media (min-width: 768px) and (max-width: 1024px) {
-    .banner {
-      height: 200px;
-    }
+
+  .nav-menu ul li {
+    margin: 10px 0;
   }
-  
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .container {
+    padding: 3rem;
+  }
+
+  .box {
+    width: 90%;
+    padding: 2rem;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #logofooter,
+  #empresas {
+    padding: 5px;
+    margin: 5px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .banner {
+    height: 98px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .banner {
+    height: 200px;
+  }
+}

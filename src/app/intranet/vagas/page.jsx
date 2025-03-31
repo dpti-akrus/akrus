@@ -1,27 +1,89 @@
 "use client";
 
-import "./style.css"; // Importa o arquivo de estilos CSS
+import "./style.css";
 
-import React, { useEffect } from "react"; // Importa o React e o hook useEffect
+import React, { useEffect } from "react";
 
 export default function Page() {
-  // Define um componente funcional React chamado Page
-
-  // useEffect é usado para lidar com efeitos colaterais como adicionar event listeners
   useEffect(() => {
-    const hamburger = document.getElementById("hamburger"); // Seleciona o elemento com o id "hamburger"
-    const navLinks = document.querySelector(".nav-links"); // Seleciona o primeiro elemento com a classe "nav-links"
+    const header = document.querySelector("header");
+    const nav = document.querySelector("nav");
+    let timeout;
 
-    // Define a função que será chamada quando o elemento "hamburger" for clicado
-    const handleHamburgerClick = () => {
-      navLinks.classList.toggle("active"); // Alterna a classe "active" no elemento "navLinks"
+    if (header && nav) {
+      const handleScroll = () => {
+        header.classList.add("translucent");
+        nav.classList.add("translucent");
+
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+          header.classList.remove("translucent");
+          nav.classList.remove("translucent");
+        }, 300);
+      };
+
+      window.addEventListener("scroll", handleScroll);
+
+      return () => window.removeEventListener("scroll", handleScroll);
+    }
+  }, []);
+
+  useEffect(() => {
+    class MobileNavbar {
+      constructor(mobileMenuSelector, navListSelector, navLinksSelector) {
+        this.mobileMenu = document.querySelector(mobileMenuSelector);
+        this.navList = document.querySelector(navListSelector);
+        this.navLinks = document.querySelectorAll(navLinksSelector);
+        this.activeClass = "active";
+
+        this.handleClick = this.handleClick.bind(this);
+      }
+
+      handleClick() {
+        if (this.navList && this.mobileMenu) {
+          this.navList.classList.toggle(this.activeClass);
+          this.mobileMenu.classList.toggle(this.activeClass);
+        }
+      }
+
+      addClickEvent() {
+        if (this.mobileMenu) {
+          this.mobileMenu.addEventListener("click", this.handleClick);
+        }
+        if (this.navLinks.length > 0) {
+          this.navLinks.forEach((link) =>
+            link.addEventListener("click", () => {
+              if (this.navList) this.navList.classList.remove(this.activeClass);
+            })
+          );
+        }
+      }
+
+      init() {
+        if (this.mobileMenu) {
+          this.addClickEvent();
+        }
+      }
+    }
+
+    const mobileNavbar = new MobileNavbar(
+      ".mobile-menu",
+      ".nav-list",
+      ".nav-list li"
+    );
+    mobileNavbar.init();
+
+    return () => {
+      if (mobileNavbar.mobileMenu) {
+        mobileNavbar.mobileMenu.removeEventListener(
+          "click",
+          mobileNavbar.handleClick
+        );
+      }
     };
-
-    hamburger.addEventListener("click", handleHamburgerClick); // Adiciona o event listener ao "hamburger"
-
-    const shareButtons = document.querySelectorAll(".share-btn"); // Seleciona todos os elementos com a classe "share-btn"
-
-    // Adiciona um evento de clique a cada botão "Compartilhar"
+  }, []);
+  useEffect(() => {
+    const shareButtons = document.querySelectorAll(".share-btn");
     shareButtons.forEach((button) => {
       button.addEventListener("click", (e) => {
         // Localiza a imagem dentro da mesma box do botão clicado
@@ -39,50 +101,55 @@ export default function Page() {
         }
       });
     });
-
-    // Cleanup para remover event listeners ao desmontar o componente
     return () => {
-      hamburger.removeEventListener("click", handleHamburgerClick); // Remove o event listener do "hamburger"
       shareButtons.forEach((button) => {
-        button.removeEventListener("click", () => {}); // Remove o event listener de cada botão "Compartilhar"
+        button.removeEventListener("click", () => {});
       });
     };
-  }, []); // O array vazio [] garante que o efeito será executado apenas uma vez, após o componente ser montado
+  }, []);
 
   return (
     <main>
-      <header className="header">
-        <div className="logo">
-          <img
-            src="/intranet/images/logo_akrus_branco_Prancheta 1.png"
-            alt="Logo"
-          />
-        </div>
-        <nav className="nav-links">
-          <ul>
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <header>
+        <nav>
+          <a href="/">
+            <img
+              className="logo"
+              src="/intranet/images/logo_akrus_branco.png"
+              alt="Logo Akrus"
+            />
+          </a>
+          <div className="mobile-menu">
+            <div className="line1"></div>
+            <div className="line2"></div>
+            <div className="line3"></div>
+          </div>
+          <ul className="nav-list">
             <li>
-              <a href="/intranet">Home</a>
+              <a href="/intranet">Início</a>
             </li>
             <li>
-              <a href="https://safrasulsementes.acelerato.com/">Suporte</a>
+              <a href="#">Chamados TI</a>
             </li>
             <li>
-              <a href="/intranet/politicas">Políticas</a>
+              <a href="/intranet/politicas">Políticas da empresa</a>
             </li>
             <li>
-              <a href="https://teams.microsoft.com/l/team/19%3AFDaFqDpMD2SFdY7Cbc3sffQVRb4OxGQs8NtGz3itloo1%40thread.tacv2/conversations?groupId=7d63b9f2-258f-4b95-aed8-6f49be10b56a&tenantId=00a7b357-a2ba-4b32-b04f-2fef849a08b4">
-                Teams
-              </a>
+              <a href="#">Chat TEAMS</a>
             </li>
           </ul>
         </nav>
-        <div className="hamburger" id="hamburger">
-          <span className="bar"></span>
-          <span className="bar"></span>
-          <span className="bar"></span>
-        </div>
       </header>
-
       <div className="banner">
         <img src="/intranet/images/assinatura_akrus[1].png" alt="Banner" />
       </div>
@@ -110,13 +177,6 @@ export default function Page() {
               </div>
               <div className="box">
                 <div className="content">
-                  <img src="/intranet/images/Analista_de_Gestão.png" />
-                </div>
-                <button className="share-btn">Compartilhar</button>
-              </div>
-
-              <div className="box">
-                <div className="content">
                   <img src="/intranet/images/vaga3.jpg" alt="Imagem Vaga 1" />
                 </div>
                 <button className="share-btn">Compartilhar</button>
@@ -140,8 +200,6 @@ export default function Page() {
           />
         </div>
       </footer>
-
-      <script src="../js/vagas.js"></script>
     </main>
   );
 }

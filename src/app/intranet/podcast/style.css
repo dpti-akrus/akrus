@@ -8,12 +8,14 @@
 
 /* Estilos para o corpo da página */
 body {
-  background-image: url(/intranet/images/Preview_2.jpg); /* Define uma imagem de fundo */
-  background-size: cover; /* Faz com que a imagem de fundo cubra toda a área do corpo */
-  background-color: #fffafa; /* Define uma cor de fundo alternativa */
+  /* background-image: url(../assets/images/Preview_2.jpg);  Define uma imagem de fundo 
+    background-size: cover;  Faz com que a imagem de fundo cubra toda a área do corpo */
+  background-color: #e7e7e7; /* Define uma cor de fundo alternativa */
   overflow-x: hidden; /* Impede a rolagem horizontal */
   font-family: "Cairo", sans-serif; /* Aplica a fonte importada ao corpo */
 }
+
+/* Estilos para o cabeçalho */
 
 header {
   position: sticky;
@@ -99,7 +101,7 @@ a:hover {
 }
 
 /* Estilo para a seção de biblioteca virtual */
-.biblioteca-virtual {
+.podcast-virtual {
   text-align: center; /* Centraliza o texto dentro da seção */
   padding: 20px; /* Adiciona preenchimento interno de 20px ao redor da seção */
 }
@@ -123,27 +125,27 @@ body {
   line-height: 2; /* Define a altura da linha */
 }
 
+.podcast-virtual .podcasts-title {
+  margin-top: 25px; /* Define a margem superior. Foi ajustado pra quando o hambúrguer for acionado, não fique em cima do título. */
+}
+
 /* Estiliza os títulos das seções 'biblioteca' e 'podcasts' */
-.biblioteca-title,
 .podcasts-title {
   text-transform: uppercase; /* Transforma o texto para maiúsculas */
   letter-spacing: 0.5em; /* Define o espaçamento entre letras */
   display: inline-block; /* Define a exibição como bloco inline */
-  border: 4px double rgba(255, 255, 255, 0.25); /* Define uma borda dupla */
-  padding: 1.5em 0; /* Define o preenchimento superior e inferior */
+
+  padding: 1.2em 0; /* Define o preenchimento superior e inferior */
   position: relative; /* Define a posição como relativa */
   width: 100%; /* Define a largura como 100% */
   text-align: center; /* Alinha o texto ao centro */
-  font: 600 1em/2 "Neuton", sans-serif; /* Define a fonte e o peso */
+  font: 400 1em/1 "Neuton", sans-serif; /* Define a fonte e o peso */
   color: rgb(0, 0, 0); /* Define a cor do texto */
-  background-size: cover; /* Define o tamanho de fundo como "cover" */
-  margin-top: 25px;
 }
 
 /* Estiliza o texto dentro dos títulos 'biblioteca' e 'podcasts' */
-.biblioteca-title span,
 .podcasts-title span {
-  font: 700 1.7em/1 "Oswald", sans-serif; /* Define a fonte e o peso */
+  font: 550 1.05em/1 "Oswald", sans-serif; /* Define a fonte e o peso */
   letter-spacing: 0; /* Define o espaçamento entre letras */
   padding: 0.25em 0 0.325em; /* Define o preenchimento superior e inferior */
   display: block; /* Exibe como bloco */
@@ -182,20 +184,20 @@ body {
 }
 
 /* Estiliza a descrição da biblioteca */
-.biblioteca-description {
+.podcasts-description {
   font-size: 1.2em; /* Define o tamanho da fonte */
   color: #000000; /* Define a cor do texto */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adiciona sombra ao texto */
 }
 
 /* Estiliza a seção de livros */
-.livros-section {
+.podcasts-section {
   text-align: center; /* Alinha o texto ao centro */
   padding: 20px; /* Define o preenchimento */
 }
 
 /* Estiliza o título da seção de livros */
-.livros-title {
+.podcasts-title {
   font-size: 2em; /* Define o tamanho da fonte */
   margin-bottom: 10px; /* Define a margem inferior */
   color: #000000; /* Define a cor do texto */
@@ -222,7 +224,7 @@ body {
 }
 
 /* Estiliza o cartão de livro que aparece */
-.book-card {
+.podcast-card {
   display: none; /* Define o estado inicial como não exibido */
   position: fixed; /* Define a posição como fixa */
   top: 50%; /* Posiciona no centro vertical */
@@ -240,25 +242,25 @@ body {
 }
 
 /* Estiliza a imagem dentro do cartão de livro */
-.book-card img {
+.podcast-card img {
   max-width: 100%; /* Define a largura máxima */
   height: auto; /* Define a altura como automática */
   margin: 10px 0; /* Define a margem superior e inferior */
 }
 
 /* Estiliza o cartão de livro quando visível */
-.book-card.show {
+.podcast-card.show {
   display: block; /* Exibe o cartão */
   animation: fadeIn 0.6s forwards; /* Aplica animação de entrada */
 }
 
 /* Estiliza o cartão de livro quando invisível */
-.book-card.hide {
+.podcast-card.hide {
   animation: fadeOut 0.6s forwards; /* Aplica animação de saída */
 }
 
 /* Estiliza o contêiner de livros */
-.livros-container {
+.podcast-container {
   display: flex; /* Usa layout flexível */
   flex-wrap: wrap; /* Permite quebra de linha */
   gap: 10px; /* Define o espaçamento entre os itens */
@@ -266,7 +268,7 @@ body {
 }
 
 /* Estiliza as imagens dentro do contêiner de livros */
-.livros-container img {
+.podcast-container img {
   width: 200px; /* Define a largura */
   margin: 10px; /* Define a margem */
   cursor: pointer; /* Define o cursor como ponteiro */
@@ -276,22 +278,9 @@ body {
 }
 
 /* Estiliza a imagem ao passar o mouse */
-.livros-container img:hover {
+.podcast-container img:hover {
   transform: scale(1.05); /* Aumenta o tamanho */
   border-color: #000000; /* Altera a cor da borda */
-}
-
-/* Ajusta as imagens para telas menores */
-@media (max-width: 768px) {
-  .livros-container img {
-    width: 150px; /* Define a largura para telas menores */
-  }
-}
-
-@media (max-width: 480px) {
-  .livros-container img {
-    width: 100px; /* Define a largura para telas muito menores */
-  }
 }
 
 /* Estiliza a seção de podcasts */
@@ -299,7 +288,7 @@ body {
   top: 0; /* Define a posição superior */
   z-index: 1; /* Define a ordem de empilhamento */
   padding: 20px; /* Define o preenchimento */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra */
+  /*box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra */
 }
 
 /* Estiliza o título da seção de podcasts */
@@ -337,6 +326,40 @@ body {
   box-shadow: none; /* Remove a sombra */
 }
 
+/*Seção para as linhas que vão separar os podcasts*/
+.podcast-item {
+  position: relative;
+  padding-right: 15px; /* Espaçamento para a linha */
+}
+
+.podcast-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 25%; /*Define a distância do topo*/
+  right: -15px; /*Alinha a linha à direita do item*/
+  height: 40%; /*Ajusta a altura da linha*/
+  width: 2px; /*Ajusta a expessura da linha*/
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.3
+  ); /* Cor da linha (pode ajustar a opacidade) */
+}
+
+/* Ajusta as imagens para telas menores */
+@media (max-width: 768px) {
+  .podcast-container img {
+    width: 150px; /* Define a largura para telas menores */
+  }
+}
+
+@media (max-width: 480px) {
+  .podcast-container img {
+    width: 100px; /* Define a largura para telas muito menores */
+  }
+}
+
 /* Ajusta os itens de podcast para telas menores */
 @media (max-width: 768px) {
   .podcast-item {
@@ -362,7 +385,7 @@ body {
 
 /* Estiliza o logo do rodapé */
 #logofooter {
-  height: 35px; /* Define a altura */
+  height: 52px; /* Define a altura */
   padding-left: 30px; /* Define o preenchimento à esquerda */
 }
 
@@ -404,7 +427,24 @@ body {
   .logo {
     width: 170px;
   }
+  /* Remove a linha central */
+  .podcast-item::after {
+    display: none;
+  }
+
+  /* Linha central apenas entre colunas (opcional) 
+  .podcasts-container::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 10%;
+      bottom: 10%;
+      width: 1px;
+      background-color: rgba(0, 0, 0, 0.4);
+      transform: translateX(-10px); /* Ajuste fino 
+    }*/
 }
+
 /* Ajusta a altura do banner para telas muito pequenas */
 @media (max-width: 767px) {
   .banner {
