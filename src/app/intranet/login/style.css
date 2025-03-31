@@ -154,7 +154,7 @@ header {
 
 /* Estilos para a logo do rodapé */
 #logofooter {
-  /* max-height: 55px; /* Define a altura máxima */
+  max-height: 55px;
   /*height: 52px; /* Define a altura 
   padding-left: 30px;  Define o preenchimento à esquerda */
   margin-left: 14px; /* Define a margem */
