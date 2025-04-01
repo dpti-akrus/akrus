@@ -2,6 +2,7 @@
 
 import "./style.css";
 import React, { useEffect } from "react";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 export default function Page() {
   useEffect(() => {
@@ -83,6 +84,20 @@ export default function Page() {
       }
     };
   }, []);
+  useEffect(() => {
+    const btnTop = document.getElementById("btnTop");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        btnTop.classList.add("show");
+      } else {
+        btnTop.classList.remove("show");
+      }
+    });
+  }, []);
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <main>
@@ -126,6 +141,14 @@ export default function Page() {
           </ul>
         </nav>
       </header>
+      <button
+        id="btnTop"
+        onClick={scrollToTop}
+        className="fixed bottom-4 right-4"
+      >
+        <i className="fa-solid fa-arrow-up"></i>
+      </button>
+
       <div className="banner">
         <img src="/intranet/images/banner_site_2500x458px_fique_por_dentro-_intranet_akrus.jpg" />
       </div>

@@ -168,7 +168,7 @@ export default function page() {
       <div className="banner">
         {/* Contêiner para o banner da página */}
         <img
-          src="../assets/images/IMG_Biblioteca_Banner.jpg"
+          src="/intranet/images/IMG_Biblioteca_Banner.jpg"
           alt="Banner"
           className="banner-image"
         />
