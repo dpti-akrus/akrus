@@ -6,6 +6,8 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 
 export default function Page() {
   useEffect(() => {
+    limparEstilosLogin();
+
     const header = document.querySelector("header");
     const nav = document.querySelector("nav");
     let timeout;
@@ -82,6 +84,22 @@ export default function Page() {
       }
     };
   }, []);
+  function limparEstilosLogin() {
+    // Remove classes do body que eram usadas na página de login
+    document.body.className = "";
+
+    // Resetar estilos inline comuns (se estiverem sendo aplicados)
+    document.body.style = null;
+
+    // Procurar e remover <link> ou <style> específicos da login page
+    const estiloLogin = document.getElementById("login-style");
+    if (estiloLogin) {
+      estiloLogin.remove();
+    }
+
+    // Aplicar nova classe padrão da intranet, se quiser
+    document.body.classList.add("intranet-page");
+  }
   useEffect(() => {
     const btnTop = document.getElementById("btnTop");
 
@@ -116,7 +134,7 @@ export default function Page() {
       </head>
       <header>
         <nav>
-          <a href="/">
+          <a href="/intranet">
             <img
               className="logo"
               src="/intranet/images/logo_akrus_branco.png"
@@ -133,13 +151,15 @@ export default function Page() {
               <a href="/intranet">Início</a>
             </li>
             <li>
-              <a href="#">Chamados TI</a>
+              <a href="https://safrasulsementes.acelerato.com/">Chamados TI</a>
             </li>
             <li>
               <a href="/intranet/politicas">Políticas da empresa</a>
             </li>
             <li>
-              <a href="#">Chat TEAMS</a>
+              <a href="https://teams.microsoft.com/l/team/19%3AFDaFqDpMD2SFdY7Cbc3sffQVRb4OxGQs8NtGz3itloo1%40thread.tacv2/conversations?groupId=7d63b9f2-258f-4b95-aed8-6f49be10b56a&tenantId=00a7b357-a2ba-4b32-b04f-2fef849a08b4">
+                Chat TEAMS
+              </a>
             </li>
           </ul>
         </nav>
@@ -158,22 +178,29 @@ export default function Page() {
           <div className="mission">
             <h1>Missão</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptate, repudiandae!
+              Desenvolver negócios sustentáveis e inovadores no agronegócio, por
+              meio de gestão eficiente, gerando valor para nossos clientes,
+              parceiros e acionistas.
             </p>
           </div>
           <div className="vision">
             <h1>Visão</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptate, repudiandae!
+              Senso de dono.
+              <br /> Adaptabilidade.
+              <br /> Senso de colaboração.
+              <br /> Comunicação assertiva. <br />
+              Capacidade de execução.
             </p>
           </div>
           <div className="values">
             <h1>Valores</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptate, repudiandae!
+              Somos determinados, geramos resultado.
+              <br /> Trabalhamos com excelência.
+              <br />
+              Pessoas impulsionam o nosso negócio.
+              <br /> Temos compromisso com a sustentabilidade.
             </p>
           </div>
         </div>
@@ -197,21 +224,15 @@ export default function Page() {
           <div className="news-box"></div>
           <div className="news-text">
             <h2>
-              <a href="/intranet/noticias">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Perferendis, sint.
-              </a>
+              <a href="/intranet/noticias">Convenção Akrus 2025.</a>
             </h2>
 
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione
-              laborum accusantium, adipisci harum consectetur nesciunt vero.
-              Incidunt quidem hic consectetur, dicta excepturi mollitia,
-              accusamus repudiandae officiis, porro pariatur laborum possimus?
-              Minus, fugiat quidem esse exercitationem a officiis dolores ipsum
-              est consequuntur ipsam, possimus, magnam minima necessitatibus
-              dolorem laboriosam blanditiis maxime eligendi ipsa. Quo, rerum
-              nisi et consequuntur explicabo laborum quaerat asperiores,
+              A nossa Convenção 2025 foi daquele jeito: intensa, inspiradora e
+              cheia de troca boa! Foram três dias juntando gente de todo o
+              Brasil, com muita conversa, aprendizado e alinhamento. O
+              resultado? Mais conexão, mais motivação e uma energia lá no alto
+              pra encarar a safra que já começou com tudo...
             </p>
           </div>
         </div>

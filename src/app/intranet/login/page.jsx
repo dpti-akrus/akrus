@@ -1,6 +1,7 @@
 "use client";
 
-import "./style.css";
+import "./login.css";
+
 import { useState } from "react";
 import {
   setPersistence,
@@ -34,7 +35,11 @@ export default function Page() {
 
   return (
     <main>
-      <header>
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </head>
+      <header className="cabecalho">
         <div className="logo">
           <img
             src="/intranet/images/logo_akrus_branco_Prancheta 1.png"
@@ -79,10 +84,11 @@ export default function Page() {
       <footer>
         <div className="footer">
           <img
-            id="logofooter"
-            src="/intranet/images/logo_akrus_branco_Prancheta 1.png"
-            alt="Logo do rodapé"
+            id="empresas"
+            src="/intranet/images/assinatura_akrus[1].png"
+            alt="Assinatura footer"
           />
+
           <p></p>
         </div>
       </footer>

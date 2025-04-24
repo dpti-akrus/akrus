@@ -4,7 +4,13 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+  touch-action: pan-y;
+}
 header {
   position: sticky;
   top: 0;
@@ -211,6 +217,7 @@ section {
 
   .nav-list.active {
     transform: translateX(0);
+    gap: 40px;
   }
   .nav-list.active > li > a {
     margin-inline: 0px;

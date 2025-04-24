@@ -8,29 +8,34 @@
 
 /* Estilos para o corpo da página */
 body {
-  background-image: url(/intranet/images/Preview_2.jpg); /* Define uma imagem de fundo */
+  /*background-image: url(/intranet/images/Preview_2.jpg); /* Define uma imagem de fundo */
   background-size: cover; /* Faz com que a imagem de fundo cubra toda a área do corpo */
   background-position: right; /* Alinha a imagem de fundo à direita */
   background-color: #fffafa; /* Define uma cor de fundo alternativa */
   overflow-x: hidden; /* Impede a rolagem horizontal */
+  zoom: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+  touch-action: pan-y;
 }
 
 /* Estilos para o cabeçalho */
-header {
+.cabecalho {
   display: flex; /* Usa flexbox para layout */
   align-items: center; /* Alinha os itens verticalmente no centro */
   justify-content: center; /* Centraliza os itens */
-  background-color: #181818; /* Define a cor de fundo do cabeçalho */
+  background-color: #000; /* Define a cor de fundo do cabeçalho */
   width: 100%;
   padding: 10px 20px; /* Adiciona preenchimento interno ao cabeçalho */
-  height: 11vh; /* Define a altura do cabeçalho como 11% da altura da viewport */
+  /* Define a altura do cabeçalho como 11% da altura da viewport */
 }
 
 /* Estilos para a imagem do logo no cabeçalho */
 .logo img {
-  max-height: 52px; /* Define a altura máxima da imagem do logo */
+  max-height: 60px; /* Define a altura máxima da imagem do logo */
   /* margin: 5px; /* Adiciona uma margem de 5px ao redor da imagem */
-  padding-left: 30px; /* Adiciona preenchimento à esquerda da imagem */
+  /*padding-left: 30px; /* Adiciona preenchimento à esquerda da imagem */
   padding-bottom: 5px; /* Adiciona preenchimento na parte inferior da imagem */
 }
 
@@ -154,7 +159,7 @@ header {
 
 /* Estilos para a logo do rodapé */
 #logofooter {
-  max-height: 55px;
+  max-height: 60px;
   /*height: 52px; /* Define a altura 
   padding-left: 30px;  Define o preenchimento à esquerda */
   margin-left: 14px; /* Define a margem */

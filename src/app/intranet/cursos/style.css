@@ -10,6 +10,10 @@
 body {
   background-color: #fffafa; /* Define a cor de fundo da página */
   overflow-x: hidden; /* Impede a rolagem horizontal */
+  width: 100%;
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+  touch-action: pan-y;
 }
 
 /* Estilos para o cabeçalho */
@@ -254,6 +258,10 @@ a:hover {
 
   .banner img {
     object-fit: cover; /* Ajusta a imagem para cobrir o elemento */
+  }
+  .nav-list.active {
+    transform: translateX(0);
+    gap: 40px;
   }
 }
 

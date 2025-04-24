@@ -154,13 +154,15 @@ export default function page() {
               <a href="/intranet">Início</a>
             </li>
             <li>
-              <a href="#">Chamados TI</a>
+              <a href="https://safrasulsementes.acelerato.com/">Chamados TI</a>
             </li>
             <li>
               <a href="/intranet/politicas">Políticas da empresa</a>
             </li>
             <li>
-              <a href="#">Chat TEAMS</a>
+              <a href="https://teams.microsoft.com/l/team/19%3AFDaFqDpMD2SFdY7Cbc3sffQVRb4OxGQs8NtGz3itloo1%40thread.tacv2/conversations?groupId=7d63b9f2-258f-4b95-aed8-6f49be10b56a&tenantId=00a7b357-a2ba-4b32-b04f-2fef849a08b4">
+                Chat TEAMS
+              </a>
             </li>
           </ul>
         </nav>

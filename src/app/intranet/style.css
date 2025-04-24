@@ -4,6 +4,11 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+.intranet-page {
+  color: black;
+  font-family: "Poppins", sans-serif;
+  background-color: white;
+}
 
 body {
   width: 100%;
@@ -17,8 +22,7 @@ header {
   top: 0;
   width: 100%;
   z-index: 1000;
-  background: #1d1c1c;
-  transition: background-color 0.3s ease-in-out;
+  background: #000000;
 }
 
 nav {
@@ -113,7 +117,7 @@ a:hover {
   margin-bottom: 80px;
 }
 .description {
-  max-width: 1080px;
+  max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 100px;
@@ -125,9 +129,12 @@ a:hover {
 
 .mission {
   text-align: center;
+  flex: 1;
+  padding-right: 15px;
 }
 
 .vision {
+  flex: 1;
   text-align: center;
   border-left: solid #00000050;
   border-right: solid #00000050;
@@ -136,6 +143,8 @@ a:hover {
 
 .values {
   text-align: center;
+  flex: 1;
+  padding-left: 15px;
 }
 
 .Alert {
@@ -242,7 +251,7 @@ a:hover {
   padding: 200px;
   background-color: bisque;
   background-size: cover;
-  background-image: url(/intranet/images/WALLPAPER_safrasul_nova_campanha.png);
+  background-image: url(/intranet/images/thallison.jpg);
   background-position: center;
 }
 .news-text {
@@ -554,6 +563,7 @@ a:hover {
 
   .nav-list.active {
     transform: translateX(0);
+    gap: 40px;
   }
   .nav-list.active > li > a {
     margin-inline: 0px;
@@ -614,6 +624,7 @@ a:hover {
     margin-top: 100px;
     padding: 100px;
     margin-bottom: 80px;
+    margin-inline: 10px;
   }
 
   .news {
@@ -776,20 +787,36 @@ a:hover {
 @media (max-width: 480px) {
   .description {
     margin-bottom: 60px;
-    margin-inline: 20px;
+    margin-inline: 50px;
   }
   .values-container {
     flex-direction: column;
     gap: 20px;
+    margin-inline: 35px;
   }
   .values {
     border-bottom: #00000050 solid;
     padding-bottom: 40px;
+    padding-left: 0px;
   }
   .vision {
     border-left: none;
     border-right: none;
 
     padding-top: 20px;
+  }
+  .description {
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+  }
+  .values-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .mission {
+    padding-right: 0px;
   }
 }

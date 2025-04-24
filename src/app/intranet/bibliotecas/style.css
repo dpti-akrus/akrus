@@ -13,6 +13,10 @@ body {
   background-color: #fffafa; /* Define uma cor de fundo alternativa */
   overflow-x: hidden; /* Impede a rolagem horizontal */
   font-family: "Cairo", sans-serif; /* Aplica a fonte importada ao corpo */
+  width: 100%;
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+  touch-action: pan-y;
 }
 
 header {
@@ -424,6 +428,10 @@ body {
 
   .banner img {
     object-fit: cover; /* Ajusta a imagem para cobrir o elemento */
+  }
+  .nav-list.active {
+    transform: translateX(0);
+    gap: 40px;
   }
 }
 

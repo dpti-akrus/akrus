@@ -113,7 +113,7 @@ export default function Page() {
       </head>
       <header>
         <nav>
-          <a href="/">
+          <a href="/intranet">
             <img
               className="logo"
               src="/intranet/images/logo_akrus_branco.png"
@@ -130,13 +130,15 @@ export default function Page() {
               <a href="/intranet">Início</a>
             </li>
             <li>
-              <a href="#">Chamados TI</a>
+              <a href="https://safrasulsementes.acelerato.com/">Chamados TI</a>
             </li>
             <li>
               <a href="/intranet/politicas">Políticas da empresa</a>
             </li>
             <li>
-              <a href="#">Chat TEAMS</a>
+              <a href="https://teams.microsoft.com/l/team/19%3AFDaFqDpMD2SFdY7Cbc3sffQVRb4OxGQs8NtGz3itloo1%40thread.tacv2/conversations?groupId=7d63b9f2-258f-4b95-aed8-6f49be10b56a&tenantId=00a7b357-a2ba-4b32-b04f-2fef849a08b4">
+                Chat TEAMS
+              </a>
             </li>
           </ul>
         </nav>
@@ -157,6 +159,81 @@ export default function Page() {
         <div className="h2">
           <h2>Notícias</h2>
         </div>
+
+        <section className="convencao">
+          <div className="top-row-convencao">
+            <div className="top-box-convencao image-box-convencao">
+              <img src="/intranet/images/unidos.jpg" alt="Imagem do topo" />
+            </div>
+            <div className="top-box-convencao text-box-convencao">
+              <h2>Convenção 2025</h2>
+              <p>
+                A nossa Convenção 2025 foi daquele jeito: intensa, inspiradora e
+                cheia de troca boa! Foram três dias juntando gente de todo o
+                Brasil, com muita conversa, aprendizado e alinhamento. O
+                resultado? Mais conexão, mais motivação e uma energia lá no alto
+                pra encarar a safra que já começou com tudo!
+                <br /> Durante o mês de abril, realizamos um dos maiores eventos
+                do Grupo Akrus: a nossa Convenção Anual! Reunimos colaboradores
+                de diferentes regiões do Brasil, entre eles time comercial,
+                diretores, coordenadores e gerentes, para três dias de muito
+                aprendizado, alinhamento estratégico e troca de experiências.
+                Foi um momento marcante na nossa trajetória, reforçando a força
+                da nossa cultura, o valor das pessoas e a união que move o nosso
+                grupo. Começamos nossa safra com o pé direito, preparados e
+                motivados para tudo o que 2025 nos reserva 🚀
+              </p>
+            </div>
+          </div>
+
+          <div className="three-box-row-convencao">
+            <div className="small-box-convencao">
+              <img
+                src="/intranet/images/somosakrus.jpg"
+                alt="Imagem Pequena 1"
+              />
+            </div>
+            <div className="small-box-convencao">
+              <img
+                src="/intranet/images/thallison.jpg"
+                alt="Imagem Pequena 2"
+              />
+            </div>
+            <div className="small-box-convencao">
+              <img src="/intranet/images/avante.jpg" alt="Imagem Pequena 3" />
+            </div>
+          </div>
+        </section>
+        <section className="cultura">
+          <div className="top-row-convencao">
+            <div className="top-box-convencao image-box-convencao">
+              <img
+                src="/intranet/images/img3Cultura.jpg"
+                alt="Imagem do topo"
+              />
+            </div>
+            <div className="top-box-convencao text-box-convencao">
+              <h2>Cultura Akrus</h2>
+              <p>
+                Akrus Fortalece Cultura Empresarial em Encontro Marcante em
+                Formosa Formosa, GO – 16 de abril de 2025 – A Akrus promoveu um
+                importante evento de alinhamento e fortalecimento de sua cultura
+                empresarial na última quarta-feira, dia 16 de abril, reunindo
+                todos os colaboradores da unidade de Formosa. O encontro,
+                realizado no espaço Wizard, das 13h às 18h, representou uma
+                oportunidade valiosa para a equipe mergulhar nos valores,
+                objetivos e na visão de futuro da empresa. Conforme o
+                planejamento da liderança, a participação de todos os
+                colaboradores de Formosa demonstra o comprometimento da Akrus em
+                construir uma base sólida de entendimento e sinergia entre seus
+                membros. Durante o evento, os presentes puderam participar de
+                discussões e atividades voltadas para a internalização dos
+                princípios que norteiam a organização e para a compreensão das
+                metas que impulsionam o seu crescimento.
+              </p>
+            </div>
+          </div>
+        </section>
         <section className="top-section">
           <div className="top-row">
             <div className="top-box image-box">
