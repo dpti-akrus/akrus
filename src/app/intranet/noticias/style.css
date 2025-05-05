@@ -11,8 +11,6 @@ body {
 
   overscroll-behavior-x: none;
   touch-action: pan-y;
-}
-body {
   background-color: #f0f0f0;
   zoom: 100%;
   color: black;

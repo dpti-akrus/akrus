@@ -111,7 +111,7 @@ a:hover {
   visibility: visible;
 }
 .bannerHome {
-  background-image: url(/intranet/images/capa_linkedin_1584x396px_akrus.jpg);
+  background-image: url(/intranet/images/SejamBemVindos.png);
   background-size: cover;
   background-position: center;
   padding: 180px;
@@ -213,7 +213,8 @@ a:hover {
 .bannerVagas {
   margin-top: 100px;
   padding: 130px;
-  background-image: url(/intranet/images/259420005e5574d796757ebec722ab1a.jpg);
+  background-image: url(/intranet/images/AKRUS1920x420-banner-vagas-80.jpg);
+  background-size: cover;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -305,21 +306,21 @@ a:hover {
 }
 .multisections-box > .img-cursos {
   height: 100%;
-  background-image: url(/intranet/images/wallpaper_akrus-02.png);
+  background-image: url(/intranet/images/AKRUS400x520-icones-home-cursos-80.jpg);
   background-position: 0%;
   background-size: cover;
   border-radius: 20px;
 }
 .multisections-box > .img-Podcast {
   height: 100%;
-  background-image: url(/intranet/images/wallpaper_akrus-02.png);
+  background-image: url(/intranet/images/AKRUS400x520-icones-home-podcasts-80.jpg);
   background-position: 0%;
   background-size: cover;
   border-radius: 20px;
 }
 .multisections-box > .img-Biblioteca {
   height: 100%;
-  background-image: url(/intranet/images/wallpaper_akrus-02.png);
+  background-image: url(/intranet/images/AKRUS400x520-icones-home-biblioteca-80.jpg);
   background-position: 0%;
   background-size: cover;
   border-radius: 20px;
@@ -678,13 +679,29 @@ a:hover {
     padding: 0 20px;
   }
 
-  .multisections-box > .img-cursos,
-  .multisections-box > .img-Podcast,
-  .multisections-box > .img-Biblioteca,
+  .multisections-box > .img-cursos {
+    height: 120px;
+    background-position: center;
+    border-radius: 10px;
+    background-image: url(/intranet/images/AKRUS450x150-icones-home-cursos-80.jpg);
+  }
+  .multisections-box > .img-Podcast {
+    height: 120px;
+    background-position: center;
+    border-radius: 10px;
+    background-image: url(/intranet/images/AKRUS450x150-icones-home-podcastas-80.jpg);
+  }
+  .multisections-box > .img-Biblioteca {
+    height: 120px;
+    background-position: center;
+    border-radius: 10px;
+    background-image: url(/intranet/images/AKRUS450x150-icones-home-biblioteca-80.jpg);
+  }
   .multisections-box > .img-iluminakrus {
     height: 120px;
     background-position: center;
     border-radius: 10px;
+    background-image: url(/intranet/images/);
   }
 
   .multisections-box > h1 {

@@ -8,12 +8,11 @@
 
 /* Estilos para o corpo da página */
 body {
-  background-color: #fffafa; /* Define a cor de fundo da página */
-  overflow-x: hidden; /* Impede a rolagem horizontal */
   width: 100%;
   overflow-x: hidden;
   overscroll-behavior-x: none;
   touch-action: pan-y;
+  touch-action: manipulation;
 }
 
 /* Estilos para o cabeçalho */

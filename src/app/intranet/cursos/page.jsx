@@ -137,7 +137,7 @@ export default function Page() {
 
       <div className="banner">
         <img
-          src="/intranet/images/Akrus_Cursos.png"
+          src="/intranet/images/AKRUS1920x420-banner-cursos-80.jpg"
           alt="Banner"
           className="banner-image"
         />

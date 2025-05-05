@@ -137,7 +137,7 @@ export default function page() {
     <main>
       <header>
         <nav>
-          <a href="/">
+          <a href="/intranet">
             <img
               className="logo"
               src="/intranet/images/logo_akrus_branco.png"
@@ -170,7 +170,7 @@ export default function page() {
       <div className="banner">
         {/* Contêiner para o banner da página */}
         <img
-          src="/intranet/images/IMG_Biblioteca_Banner.jpg"
+          src="/intranet/images/AKRUS1920x420-banner-podcasts-80.jpg"
           alt="Banner"
           className="banner-image"
         />

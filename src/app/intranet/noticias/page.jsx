@@ -152,7 +152,7 @@ export default function Page() {
       </button>
 
       <div className="banner">
-        <img src="/intranet/images/banner_site_2500x458px_fique_por_dentro-_intranet_akrus.jpg" />
+        <img src="/intranet/images/AKRUS1920x420-banner-noticias-80.jpg" />
       </div>
 
       <div className="container">
