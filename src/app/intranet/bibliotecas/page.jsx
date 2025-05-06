@@ -134,255 +134,259 @@ export default function page() {
           rel="stylesheet"
         />
       </head>
-      <header>
-        <nav>
-          <a href="/intranet">
-            <img
-              className="logo"
-              src="/intranet/images/logo_akrus_branco.png"
-              alt="Logo Akrus"
-            />
-          </a>
-          <div className="mobile-menu">
-            <div className="line1"></div>
-            <div className="line2"></div>
-            <div className="line3"></div>
-          </div>
-          <ul className="nav-list">
-            <li>
-              <a href="/intranet">Início</a>
-            </li>
-            <li>
-              <a href="https://safrasulsementes.acelerato.com/">Chamados TI</a>
-            </li>
-            <li>
-              <a href="/intranet/politicas">Políticas da empresa</a>
-            </li>
-            <li>
-              <a href="https://teams.microsoft.com/l/team/19%3AFDaFqDpMD2SFdY7Cbc3sffQVRb4OxGQs8NtGz3itloo1%40thread.tacv2/conversations?groupId=7d63b9f2-258f-4b95-aed8-6f49be10b56a&tenantId=00a7b357-a2ba-4b32-b04f-2fef849a08b4">
-                Chat TEAMS
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </header>
+      <body>
+        <header>
+          <nav>
+            <a href="/intranet">
+              <img
+                className="logo"
+                src="/intranet/images/logo_akrus_branco.png"
+                alt="Logo Akrus"
+              />
+            </a>
+            <div className="mobile-menu">
+              <div className="line1"></div>
+              <div className="line2"></div>
+              <div className="line3"></div>
+            </div>
+            <ul className="nav-list">
+              <li>
+                <a href="/intranet">Início</a>
+              </li>
+              <li>
+                <a href="https://safrasulsementes.acelerato.com/">
+                  Chamados TI
+                </a>
+              </li>
+              <li>
+                <a href="/intranet/politicas">Políticas da empresa</a>
+              </li>
+              <li>
+                <a href="https://teams.microsoft.com/l/team/19%3AFDaFqDpMD2SFdY7Cbc3sffQVRb4OxGQs8NtGz3itloo1%40thread.tacv2/conversations?groupId=7d63b9f2-258f-4b95-aed8-6f49be10b56a&tenantId=00a7b357-a2ba-4b32-b04f-2fef849a08b4">
+                  Chat TEAMS
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </header>
 
-      <div className="banner">
-        <img
-          src="/intranet/images/IMG_Biblioteca_Banner.jpg"
-          alt="Banner"
-          className="banner-image"
-        />
-      </div>
-
-      <section className="biblioteca-virtual">
-        <h2 className="biblioteca-title">
-          <span>Acervo</span>
-        </h2>
-        <p className="biblioteca-description">
-          Explore nossa Biblioteca Virtual e desperte novas oportunidades! Na
-          Biblioteca Virtual da Akrus, você não só encontra uma vasta seleção de
-          livros para expandir seus horizontes, mas também abre portas para
-          oportunidades de crescimento dentro do nosso grupo. Acreditamos que o
-          conhecimento é o melhor combustível para o sucesso, e é por isso que
-          estamos comprometidos em oferecer recursos de leitura de qualidade
-          para todos os membros da nossa comunidade. Queremos que você se sinta
-          inspirado(a) a explorar novos temas, adquirir novas habilidades e
-          ampliar sua visão de mundo. Compartilhe conosco sua jornada, inclusive
-          enviando livros que gostaria de ver em nossa Biblioteca Virtual!
-        </p>
-      </section>
-
-      <section className="livros-section">
-        <h2 className="livros-title"></h2>
-        <div className="livros-container">
-          <div
-            className="livro-item"
-            onClick={() =>
-              abrirCard(
-                "Anti-Frágil",
-                "/intranet/images/Livro-01_Anti-Frágil.png",
-                "Inteligência Emocional",
-                "https://www.amazon.com.br/Antifr%C3%A1gil-Nova-edi%C3%A7%C3%A3o-Coisas-beneficiam/dp/8547001085"
-              )
-            }
-          >
-            <img
-              src="/intranet/images/Livro-01_Anti-Frágil.png"
-              alt="Livro 1"
-              className="livro"
-            />
-          </div>
-
-          <div
-            className="livro-item"
-            onClick={() =>
-              abrirCard(
-                "Comunicação Não Violenta",
-                "/intranet/images/Comunicação-N_V.png",
-                "Inteligência Emocional",
-                "https://encurtador.com.br/2hz1I"
-              )
-            }
-          >
-            <img
-              src="/intranet/images/Comunicação-N_V.png"
-              alt="Livro 2"
-              className="livro"
-            />
-          </div>
-
-          <div
-            className="livro-item"
-            onClick={() =>
-              abrirCard(
-                "A Coragem de Ser Imperfeito",
-                "/intranet/images/A coragem de ser imperfeito.png",
-                "Inteligência Emocional",
-                "https://www.amazon.com.br/coragem-ser-imperfeito-Bren%C3%A9-Brown/dp/8543104335"
-              )
-            }
-          >
-            <img
-              src="/intranet/images/A coragem de ser imperfeito.png"
-              alt="Livro 3"
-              className="livro"
-            />
-          </div>
-
-          <div
-            className="livro-item"
-            onClick={() =>
-              abrirCard(
-                "A Única Coisa",
-                "/intranet/images/A única coisa.png",
-                "Inteligência Emocional",
-                "https://encurtador.com.br/9Yokl"
-              )
-            }
-          >
-            <img
-              src="/intranet/images/A única coisa.png"
-              alt="Livro 4"
-              className="livro"
-            />
-          </div>
-
-          <div
-            className="livro-item"
-            onClick={() =>
-              abrirCard(
-                "Inteligência Positiva",
-                "/intranet/images/Inteligência positiva.png",
-                "Inteligência Emocional",
-                "https://www.amazon.com.br/Intelig%C3%AAncia-positiva-Shirzad-Chamine/dp/8539004623"
-              )
-            }
-          >
-            <img
-              src="/intranet/images/Inteligência positiva.png"
-              alt="Livro 5"
-              className="livro"
-            />
-          </div>
+        <div className="banner">
+          <img
+            src="/intranet/images/IMG_Biblioteca_Banner.jpg"
+            alt="Banner"
+            className="banner-image"
+          />
         </div>
-      </section>
 
-      <section className="livros-section">
-        <h2 className="livros-title"></h2>
-        <div className="livros-container">
-          <div
-            className="livro-item"
-            onClick={() =>
-              abrirCard(
-                "Gestão do Amanhã",
-                "/intranet/images/Gestão_do_Amanhã.png",
-                "Liderança",
-                "https://abrir.link/jRZmd"
-              )
-            }
-          >
-            <img
-              src="/intranet/images/Gestão_do_Amanhã.png"
-              alt="Livro 6"
-              className="livro"
-            />
-          </div>
-          <div
-            className="livro-item"
-            onClick={() =>
-              abrirCard(
-                "17 princípios do trabalho em equipe",
-                "/intranet/images/17-Princípios.png",
-                "Liderança",
-                "https://www.amazon.com.br/princ%C3%ADpios-trabalho-Cole%C3%A7%C3%A3o-Lideran%C3%A7a-Maxwell-ebook/dp/B009K8MSPI"
-              )
-            }
-          >
-            <img
-              src="/intranet/images/17-Princípios.png"
-              alt="Livro 7"
-              className="livro"
-            />
-          </div>
+        <section className="biblioteca-virtual">
+          <h2 className="biblioteca-title">
+            <span>Acervo</span>
+          </h2>
+          <p className="biblioteca-description">
+            Explore nossa Biblioteca Virtual e desperte novas oportunidades! Na
+            Biblioteca Virtual da Akrus, você não só encontra uma vasta seleção
+            de livros para expandir seus horizontes, mas também abre portas para
+            oportunidades de crescimento dentro do nosso grupo. Acreditamos que
+            o conhecimento é o melhor combustível para o sucesso, e é por isso
+            que estamos comprometidos em oferecer recursos de leitura de
+            qualidade para todos os membros da nossa comunidade. Queremos que
+            você se sinta inspirado(a) a explorar novos temas, adquirir novas
+            habilidades e ampliar sua visão de mundo. Compartilhe conosco sua
+            jornada, inclusive enviando livros que gostaria de ver em nossa
+            Biblioteca Virtual!
+          </p>
+        </section>
 
-          <div
-            className="livro-item"
-            onClick={() =>
-              abrirCard(
-                "A Coragem para Liderar",
-                "/intranet/images/Coragem_P-Liderar.png",
-                "Liderança",
-                "https://www.amazon.com.br/coragem-para-liderar-Bren%C3%A9-Brown/dp/8546501750"
-              )
-            }
-          >
-            <img
-              src="/intranet/images/Coragem_P-Liderar.png"
-              alt="Livro 8"
-              className="livro"
-            />
-          </div>
+        <section className="livros-section">
+          <h2 className="livros-title"></h2>
+          <div className="livros-container">
+            <div
+              className="livro-item"
+              onClick={() =>
+                abrirCard(
+                  "Anti-Frágil",
+                  "/intranet/images/Livro-01_Anti-Frágil.png",
+                  "Inteligência Emocional",
+                  "https://www.amazon.com.br/Antifr%C3%A1gil-Nova-edi%C3%A7%C3%A3o-Coisas-beneficiam/dp/8547001085"
+                )
+              }
+            >
+              <img
+                src="/intranet/images/Livro-01_Anti-Frágil.png"
+                alt="Livro 1"
+                className="livro"
+              />
+            </div>
 
-          <div
-            className="livro-item"
-            onClick={() =>
-              abrirCard(
-                "Liderança: A inteligência E. ",
-                "/intranet/images/Liderança- A int.png",
-                "Liderança",
-                "https://www.amazon.com.br/Lideran%C3%A7a-intelig%C3%AAncia-emocional-forma%C3%A7%C3%A3o-sucesso-ebook/dp/B00SVEDD8S"
-              )
-            }
-          >
-            <img
-              src="/intranet/images/Liderança- A int.png"
-              alt="Livro 9"
-              className="livro"
-            />
-          </div>
+            <div
+              className="livro-item"
+              onClick={() =>
+                abrirCard(
+                  "Comunicação Não Violenta",
+                  "/intranet/images/Comunicação-N_V.png",
+                  "Inteligência Emocional",
+                  "https://encurtador.com.br/2hz1I"
+                )
+              }
+            >
+              <img
+                src="/intranet/images/Comunicação-N_V.png"
+                alt="Livro 2"
+                className="livro"
+              />
+            </div>
 
-          <div
-            className="livro-item"
-            onClick={() =>
-              abrirCard(
-                "Empatia Assertiva",
-                "/intranet/images/Lider-Incisivo.png",
-                "Liderança",
-                "https://www.amazon.com.br/Empatia-Assertiva-Incisivo-Perder-Humanidade/dp/655520219X"
-              )
-            }
-          >
-            <img
-              src="/intranet/images/Lider-Incisivo.png"
-              alt="Livro 10"
-              className="livro"
-            />
-          </div>
-        </div>
-      </section>
+            <div
+              className="livro-item"
+              onClick={() =>
+                abrirCard(
+                  "A Coragem de Ser Imperfeito",
+                  "/intranet/images/A coragem de ser imperfeito.png",
+                  "Inteligência Emocional",
+                  "https://www.amazon.com.br/coragem-ser-imperfeito-Bren%C3%A9-Brown/dp/8543104335"
+                )
+              }
+            >
+              <img
+                src="/intranet/images/A coragem de ser imperfeito.png"
+                alt="Livro 3"
+                className="livro"
+              />
+            </div>
 
-      {/* <section className="podcasts-section">
+            <div
+              className="livro-item"
+              onClick={() =>
+                abrirCard(
+                  "A Única Coisa",
+                  "/intranet/images/A única coisa.png",
+                  "Inteligência Emocional",
+                  "https://encurtador.com.br/9Yokl"
+                )
+              }
+            >
+              <img
+                src="/intranet/images/A única coisa.png"
+                alt="Livro 4"
+                className="livro"
+              />
+            </div>
+
+            <div
+              className="livro-item"
+              onClick={() =>
+                abrirCard(
+                  "Inteligência Positiva",
+                  "/intranet/images/Inteligência positiva.png",
+                  "Inteligência Emocional",
+                  "https://www.amazon.com.br/Intelig%C3%AAncia-positiva-Shirzad-Chamine/dp/8539004623"
+                )
+              }
+            >
+              <img
+                src="/intranet/images/Inteligência positiva.png"
+                alt="Livro 5"
+                className="livro"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section className="livros-section">
+          <h2 className="livros-title"></h2>
+          <div className="livros-container">
+            <div
+              className="livro-item"
+              onClick={() =>
+                abrirCard(
+                  "Gestão do Amanhã",
+                  "/intranet/images/Gestão_do_Amanhã.png",
+                  "Liderança",
+                  "https://abrir.link/jRZmd"
+                )
+              }
+            >
+              <img
+                src="/intranet/images/Gestão_do_Amanhã.png"
+                alt="Livro 6"
+                className="livro"
+              />
+            </div>
+            <div
+              className="livro-item"
+              onClick={() =>
+                abrirCard(
+                  "17 princípios do trabalho em equipe",
+                  "/intranet/images/17-Princípios.png",
+                  "Liderança",
+                  "https://www.amazon.com.br/princ%C3%ADpios-trabalho-Cole%C3%A7%C3%A3o-Lideran%C3%A7a-Maxwell-ebook/dp/B009K8MSPI"
+                )
+              }
+            >
+              <img
+                src="/intranet/images/17-Princípios.png"
+                alt="Livro 7"
+                className="livro"
+              />
+            </div>
+
+            <div
+              className="livro-item"
+              onClick={() =>
+                abrirCard(
+                  "A Coragem para Liderar",
+                  "/intranet/images/Coragem_P-Liderar.png",
+                  "Liderança",
+                  "https://www.amazon.com.br/coragem-para-liderar-Bren%C3%A9-Brown/dp/8546501750"
+                )
+              }
+            >
+              <img
+                src="/intranet/images/Coragem_P-Liderar.png"
+                alt="Livro 8"
+                className="livro"
+              />
+            </div>
+
+            <div
+              className="livro-item"
+              onClick={() =>
+                abrirCard(
+                  "Liderança: A inteligência E. ",
+                  "/intranet/images/Liderança- A int.png",
+                  "Liderança",
+                  "https://www.amazon.com.br/Lideran%C3%A7a-intelig%C3%AAncia-emocional-forma%C3%A7%C3%A3o-sucesso-ebook/dp/B00SVEDD8S"
+                )
+              }
+            >
+              <img
+                src="/intranet/images/Liderança- A int.png"
+                alt="Livro 9"
+                className="livro"
+              />
+            </div>
+
+            <div
+              className="livro-item"
+              onClick={() =>
+                abrirCard(
+                  "Empatia Assertiva",
+                  "/intranet/images/Lider-Incisivo.png",
+                  "Liderança",
+                  "https://www.amazon.com.br/Empatia-Assertiva-Incisivo-Perder-Humanidade/dp/655520219X"
+                )
+              }
+            >
+              <img
+                src="/intranet/images/Lider-Incisivo.png"
+                alt="Livro 10"
+                className="livro"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* <section className="podcasts-section">
         <h2 className="podcasts-title">
           <span>Podcast</span>
         </h2>
@@ -571,34 +575,35 @@ export default function page() {
         </div>
       </section> */}
 
-      <div className="book-card" id="bookCard">
-        <span className="close" onClick={() => fecharCard()}>
-          &times;
-        </span>
+        <div className="book-card" id="bookCard">
+          <span className="close" onClick={() => fecharCard()}>
+            &times;
+          </span>
 
-        <h3 id="bookTitle"></h3>
+          <h3 id="bookTitle"></h3>
 
-        <img id="bookCover" src="" alt="Capa do Livro" />
+          <img id="bookCover" src="" alt="Capa do Livro" />
 
-        <div className="book-info">
-          <p id="bookDirection"></p>
+          <div className="book-info">
+            <p id="bookDirection"></p>
 
-          <a id="bookLink" href="#" target="_blank">
-            Comprar
-          </a>
+            <a id="bookLink" href="#" target="_blank">
+              Comprar
+            </a>
+          </div>
         </div>
-      </div>
 
-      <footer>
-        <div className="footer">
-          <img
-            id="logofooter"
-            src="/intranet/images/logo_akrus_branco_Prancheta 1.png"
-          />
+        <footer>
+          <div className="footer">
+            <img
+              id="logofooter"
+              src="/intranet/images/logo_akrus_branco_Prancheta 1.png"
+            />
 
-          <img id="empresas" src="/intranet/images/assinatura_akrus[1].png" />
-        </div>
-      </footer>
+            <img id="empresas" src="/intranet/images/assinatura_akrus[1].png" />
+          </div>
+        </footer>
+      </body>
     </main>
   );
 }

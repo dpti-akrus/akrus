@@ -1,12 +1,11 @@
-/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-html,
+
 body {
-  width: 100%;
   overflow-x: hidden;
   overscroll-behavior-x: none;
   touch-action: pan-y;
@@ -96,11 +95,6 @@ a:hover {
   width: 800px;
 }
 
-section {
-  background-image: url(/intranet/images/Branco-T_geral.jpg);
-  background-size: cover;
-}
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -182,7 +176,6 @@ section {
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 #logofooter {
@@ -252,7 +245,7 @@ section {
     padding: 2rem;
   }
 
-  .footer {
+  footer {
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -265,6 +258,17 @@ section {
   }
 }
 @media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #logofooter,
+  #empresas {
+    padding: 5px;
+    margin: 5px 0;
+  }
 }
 
 @media (max-width: 576px) {

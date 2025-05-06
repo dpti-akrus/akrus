@@ -102,146 +102,150 @@ export default function Page() {
   }, []);
   return (
     <main>
-      <header>
-        <nav>
-          <a href="/intranet">
-            <img
-              className="logo"
-              src="/intranet/images/logo_akrus_branco.png"
-              alt="Logo Akrus"
-            />
-          </a>
-          <div className="mobile-menu">
-            <div className="line1"></div>
-            <div className="line2"></div>
-            <div className="line3"></div>
-          </div>
-          <ul className="nav-list">
-            <li>
-              <a href="/intranet">Início</a>
-            </li>
-            <li>
-              <a href="https://safrasulsementes.acelerato.com/">Chamados TI</a>
-            </li>
-            <li>
-              <a href="/intranet/politicas">Políticas da empresa</a>
-            </li>
-            <li>
-              <a href="https://teams.microsoft.com/l/team/19%3AFDaFqDpMD2SFdY7Cbc3sffQVRb4OxGQs8NtGz3itloo1%40thread.tacv2/conversations?groupId=7d63b9f2-258f-4b95-aed8-6f49be10b56a&tenantId=00a7b357-a2ba-4b32-b04f-2fef849a08b4">
-                Chat TEAMS
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </header>
-
-      <div className="banner">
-        <img
-          src="/intranet/images/AKRUS1920x420-banner-cursos-80.jpg"
-          alt="Banner"
-          className="banner-image"
-        />
-      </div>
-
-      <main>
-        <section className="courses-section">
-          <h2 className="section-title">Cursos</h2>
-
-          <div className="category-01">
-            <h3>Comercial</h3>
-            <div className="videos">
-              <div className="video-card">
-                <iframe
-                  width="560"
-                  height="315"
-                  src="https://www.youtube.com/embed/9kjLowFN5TE?si=QA8MCu9LU-SH3-ub"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen
-                ></iframe>
-              </div>
-              <div className="video-card">
-                <iframe
-                  width="560"
-                  height="315"
-                  src="https://www.youtube.com/embed/9kjLowFN5TE?si=nyyGdZs5zoPwd6YC"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen
-                ></iframe>
-              </div>
-              <div className="video-card">
-                <iframe
-                  width="560"
-                  height="315"
-                  src="https://www.youtube.com/embed/9kjLowFN5TE?si=QA8MCu9LU-SH3-ub"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen
-                ></iframe>
-              </div>
+      <body>
+        <header>
+          <nav>
+            <a href="/intranet">
+              <img
+                className="logo"
+                src="/intranet/images/logo_akrus_branco.png"
+                alt="Logo Akrus"
+              />
+            </a>
+            <div className="mobile-menu">
+              <div className="line1"></div>
+              <div className="line2"></div>
+              <div className="line3"></div>
             </div>
-          </div>
+            <ul className="nav-list">
+              <li>
+                <a href="/intranet">Início</a>
+              </li>
+              <li>
+                <a href="https://safrasulsementes.acelerato.com/">
+                  Chamados TI
+                </a>
+              </li>
+              <li>
+                <a href="/intranet/politicas">Políticas da empresa</a>
+              </li>
+              <li>
+                <a href="https://teams.microsoft.com/l/team/19%3AFDaFqDpMD2SFdY7Cbc3sffQVRb4OxGQs8NtGz3itloo1%40thread.tacv2/conversations?groupId=7d63b9f2-258f-4b95-aed8-6f49be10b56a&tenantId=00a7b357-a2ba-4b32-b04f-2fef849a08b4">
+                  Chat TEAMS
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </header>
 
-          <div className="category-02">
-            <h3>Logística</h3>
-            <div className="videos">
-              <div className="video-card">
-                <iframe
-                  width="560"
-                  height="315"
-                  src="https://www.youtube.com/embed/J-EcavMIigs?si=rpb61wuVpKWjYjTH"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen
-                ></iframe>
-              </div>
-              <div className="video-card">
-                <iframe
-                  src="https://sementessafrasul-my.sharepoint.com/personal/ti3_akrus_com_br/_layouts/15/embed.aspx?UniqueId=a3f9b729-9518-41cf-aac4-03d1c508fa44&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create"
-                  width="640"
-                  height="360"
-                  frameBorder="0"
-                  scrolling="no"
-                  allowFullScreen
-                  title="Nova tela formar carga.mp4"
-                />
-              </div>
-              <div className="video-card">
-                <iframe
-                  width="560"
-                  height="315"
-                  src="https://www.youtube.com/embed/J-EcavMIigs?si=rpb61wuVpKWjYjTH"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen
-                ></iframe>
-              </div>{" "}
-              {/*Adicionado mais 2 vídeos. Um em cada categoria*/}
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <footer>
-        <div className="footer">
+        <div className="banner">
           <img
-            id="logofooter"
-            src="/intranet/images/logo_akrus_branco_Prancheta 1.png"
+            src="/intranet/images/AKRUS1920x420-banner-cursos-80.jpg"
+            alt="Banner"
+            className="banner-image"
           />
-          <img id="empresas" src="/intranet/images/assinatura_akrus[1].png" />
         </div>
-      </footer>
+
+        <main>
+          <section className="courses-section">
+            <h2 className="section-title">Cursos</h2>
+
+            <div className="category-01">
+              <h3>Comercial</h3>
+              <div className="videos">
+                <div className="video-card">
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/9kjLowFN5TE?si=QA8MCu9LU-SH3-ub"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div className="video-card">
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/9kjLowFN5TE?si=nyyGdZs5zoPwd6YC"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div className="video-card">
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/9kjLowFN5TE?si=QA8MCu9LU-SH3-ub"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div className="category-02">
+              <h3>Logística</h3>
+              <div className="videos">
+                <div className="video-card">
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/J-EcavMIigs?si=rpb61wuVpKWjYjTH"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div className="video-card">
+                  <iframe
+                    src="https://sementessafrasul-my.sharepoint.com/personal/ti3_akrus_com_br/_layouts/15/embed.aspx?UniqueId=a3f9b729-9518-41cf-aac4-03d1c508fa44&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create"
+                    width="640"
+                    height="360"
+                    frameBorder="0"
+                    scrolling="no"
+                    allowFullScreen
+                    title="Nova tela formar carga.mp4"
+                  />
+                </div>
+                <div className="video-card">
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/J-EcavMIigs?si=rpb61wuVpKWjYjTH"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                  ></iframe>
+                </div>{" "}
+                {/*Adicionado mais 2 vídeos. Um em cada categoria*/}
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <footer>
+          <div className="footer">
+            <img
+              id="logofooter"
+              src="/intranet/images/logo_akrus_branco_Prancheta 1.png"
+            />
+            <img id="empresas" src="/intranet/images/assinatura_akrus[1].png" />
+          </div>
+        </footer>
+      </body>
     </main>
   );
 }
