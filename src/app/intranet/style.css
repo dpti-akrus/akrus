@@ -109,12 +109,14 @@ a:hover {
   visibility: visible;
 }
 .bannerHome {
-  background-image: url(/intranet/images/SejamBemVindos.png);
+  background-image: url(/intranet/images/homeintranet.png);
   background-size: cover;
-  background-position: center;
-  padding: 180px;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
 }
+
 .description {
   max-width: 1100px;
   margin-left: auto;
@@ -575,10 +577,7 @@ a:hover {
   .logo {
     width: 170px;
   }
-  .bannerHome {
-    padding: 49px;
-    margin-bottom: 60px;
-  }
+
   .description {
     margin-bottom: 40px;
   }
@@ -783,6 +782,16 @@ a:hover {
 }
 
 @media (max-width: 768px) {
+  .bannerHome {
+    margin-bottom: 60px;
+    width: 100%;
+    height: 270px;
+    overflow: hidden;
+    background-image: url(/intranet/images/bannerhomemobile.png);
+    background-position: 0%;
+    background-size: cover;
+  }
+
   .empresas-grid {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -803,17 +812,21 @@ a:hover {
   .values-container {
     flex-direction: column;
     gap: 20px;
-    margin-inline: 35px;
+    margin-inline: 25px;
+    display: flex;
+    justify-content: center;
   }
   .values {
     border-bottom: #00000050 solid;
     padding-bottom: 40px;
     padding-left: 0px;
+    text-align: start;
   }
+
   .vision {
     border-left: none;
     border-right: none;
-
+    text-align: start;
     padding-top: 20px;
   }
   .description {
@@ -822,12 +835,9 @@ a:hover {
     margin-right: auto;
     margin-bottom: 60px;
   }
-  .values-container {
-    display: flex;
-    justify-content: center;
-  }
 
   .mission {
     padding-right: 0px;
+    text-align: start;
   }
 }

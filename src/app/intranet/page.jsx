@@ -192,11 +192,8 @@ export default function Page() {
             <div className="vision">
               <h1>Visão</h1>
               <p>
-                Senso de dono.
-                <br /> Adaptabilidade.
-                <br /> Senso de colaboração.
-                <br /> Comunicação assertiva. <br />
-                Capacidade de execução.
+                Senso de dono, Adaptabilidade, Senso de colaboração, Comunicação
+                assertiva, Capacidade de execução.
               </p>
             </div>
             <div className="values">
@@ -206,7 +203,8 @@ export default function Page() {
                 <br /> Trabalhamos com excelência.
                 <br />
                 Pessoas impulsionam o nosso negócio.
-                <br /> Temos compromisso com a sustentabilidade.
+                <br />
+                Temos compromisso com a sustentabilidade.
               </p>
             </div>
           </div>

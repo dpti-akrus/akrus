@@ -8,11 +8,9 @@
 
 /* Estilos para o corpo da página */
 body {
-  width: 100%;
   overflow-x: hidden;
   overscroll-behavior-x: none;
   touch-action: pan-y;
-  touch-action: manipulation;
 }
 
 /* Estilos para o cabeçalho */
