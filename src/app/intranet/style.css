@@ -3,13 +3,16 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+  touch-action: pan-y;
+  touch-action: manipulation;
 }
 .intranet-page {
   color: black;
   font-family: "Poppins", sans-serif;
   background-color: white;
 }
-
 body {
   width: 100%;
   overflow-x: hidden;
@@ -578,7 +581,7 @@ a:hover {
     width: 170px;
   }
   .bannerHome {
-    padding: 45px;
+    padding: 49px;
     margin-bottom: 60px;
   }
   .description {
