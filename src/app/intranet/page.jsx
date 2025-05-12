@@ -214,7 +214,7 @@ export default function Page() {
           <div className="Alert-container">
             <div className="Alert-box-1"></div>
             <div className="Alert-box-2"></div>
-            <div className="Alert-box-3"></div>
+            {/*<div className="Alert-box-3"></div>*/}
           </div>
         </section>
         <a href="/intranet/vagas">
@@ -349,8 +349,8 @@ export default function Page() {
                 />
               </div>
               <div className="section-comemorativas">
+                <h2>Datas Comemorativas</h2>
                 <div className="dates-list">
-                  <h2>Datas Comemorativas</h2>
                   <div className="date-item">
                     <p className="name">Carnaval</p>
                     <p className="date">03 de Março</p>

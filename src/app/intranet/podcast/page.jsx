@@ -170,7 +170,7 @@ export default function page() {
             </ul>
           </nav>
         </header>
-        <div className="banner">
+        <div className="bannerPd">
           {/* Contêiner para o banner da página */}
           <img
             src="/intranet/images/AKRUS1920x420-banner-podcasts-80.jpg"
@@ -384,14 +384,14 @@ export default function page() {
           <div className="footer">
             <img
               id="logofooter"
-              src="../assets/images/logo_akrus_branco_Prancheta 1.png"
+              src="/intranet/images/logo_akrus_branco_Prancheta 1.png"
               alt="Logo Footer"
             />
 
             {/* Imagem da assinatura da empresa */}
             <img
               id="empresas"
-              src="../assets/images/assinatura_akrus[1].png"
+              src="/intranet/images/assinatura_akrus[1].png"
               alt="Assinatura"
             />
           </div>

@@ -118,7 +118,7 @@ a:hover {
 }
 
 .description {
-  max-width: 1100px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 100px;
@@ -129,21 +129,20 @@ a:hover {
 }
 
 .mission {
-  text-align: center;
   flex: 1;
   padding-right: 15px;
 }
 
 .vision {
   flex: 1;
-  text-align: center;
+
   border-left: solid #00000050;
   border-right: solid #00000050;
+  padding-inline: 30px;
   padding-bottom: 20px;
 }
 
 .values {
-  text-align: center;
   flex: 1;
   padding-left: 15px;
 }
@@ -169,14 +168,14 @@ a:hover {
   display: flex;
   width: 95%;
   flex-wrap: wrap;
-  justify-content: space-between;
+  gap: 30px;
   margin-left: auto;
   margin-right: auto;
 }
 .Alert-box-1 {
   width: 360px;
   height: 360px;
-  background-image: url(/intranet/images/topss.jpg);
+  background-image: url(/intranet/images/diadasmaes.jpg);
   transition: transform 0.2s ease-in-out;
   background-size: cover;
   border: #000 solid;
@@ -537,8 +536,8 @@ a:hover {
 }
 
 #empresas {
-  height: 30px;
-  padding-right: 30px;
+  height: 55px;
+  padding-right: 80px;
 }
 
 @media (max-width: 1024px) {
@@ -740,7 +739,6 @@ a:hover {
     gap: 15px;
     height: 205px;
     overflow-y: scroll;
-    overflow-x: hidden;
   }
   .date-item {
     display: flex;
@@ -787,7 +785,7 @@ a:hover {
     width: 100%;
     height: 270px;
     overflow: hidden;
-    background-image: url(/intranet/images/bannerhomemobile.png);
+    background-image: url(/intranet/images/imgMobile.png);
     background-position: 0%;
     background-size: cover;
   }
@@ -798,20 +796,23 @@ a:hover {
   .footer {
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    padding: 10px;
   }
 
-  #logofooter,
-  #empresas {
+  #logofooter {
     padding: 5px;
     margin: 5px 0;
+  }
+  #empresas {
+    height: 30px;
+    padding-right: 0px;
   }
 }
 
 @media (max-width: 480px) {
   .values-container {
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
     margin-inline: 25px;
     display: flex;
     justify-content: center;
@@ -828,6 +829,9 @@ a:hover {
     border-right: none;
     text-align: start;
     padding-top: 20px;
+    padding-inline: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
   }
   .description {
     max-width: 1080px;

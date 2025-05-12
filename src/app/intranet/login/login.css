@@ -11,7 +11,7 @@ body {
   /*background-image: url(/intranet/images/Preview_2.jpg); /* Define uma imagem de fundo */
   background-size: cover; /* Faz com que a imagem de fundo cubra toda a área do corpo */
   background-position: right; /* Alinha a imagem de fundo à direita */
-  background-color: #fffafa; /* Define uma cor de fundo alternativa */
+  background-color: #ffffff; /* Define uma cor de fundo alternativa */
   overflow-x: hidden; /* Impede a rolagem horizontal */
   zoom: 100%;
   width: 100%;
@@ -201,16 +201,18 @@ body {
 
 @media (max-width: 768px) {
   .footer {
-    flex-direction: column; /* Direciona os itens em coluna */
-    align-items: center; /* Alinha os itens ao centro */
-    text-align: center; /* Alinha o texto ao centro */
-    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
   }
 
-  #logofooter,
+  #logofooter {
+    padding: 5px;
+    margin: 5px 0;
+  }
   #empresas {
-    padding: 5px; /* Define o preenchimento */
-    margin: 5px 0; /* Define as margens superior e inferior */
+    height: 30px;
+    padding-right: 0px;
   }
 }
 
