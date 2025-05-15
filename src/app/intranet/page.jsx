@@ -316,30 +316,6 @@ export default function Page() {
                     <p className="name">Fernanda Paula </p>
                     <p className="date">17 de Março</p>
                   </div>
-                  <div className="date-item">
-                    <p className="name">Thaynara Muhl</p>
-                    <p className="date">19 de Março</p>
-                  </div>
-                  <div className="date-item">
-                    <p className="name">Marcio Salto</p>
-                    <p className="date">19 de Março</p>
-                  </div>
-                  <div className="date-item">
-                    <p className="name">Isaac Benicio</p>
-                    <p className="date">22 de Março</p>
-                  </div>
-                  <div className="date-item">
-                    <p className="name">Gissiene Gouveia</p>
-                    <p className="date">25 de Março</p>
-                  </div>
-                  <div className="date-item">
-                    <p className="name">Luana Cristina</p>
-                    <p className="date">27 de Março</p>
-                  </div>
-                  <div className="date-item">
-                    <p className="name">Fagner Bispo </p>
-                    <p className="date">27 de Março</p>
-                  </div>
                 </div>
               </div>
               <div className="calendario">
