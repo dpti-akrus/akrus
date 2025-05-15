@@ -269,52 +269,52 @@ export default function Page() {
                 <h2>Aniversariantes do Mês</h2>
                 <div className="dates-list">
                   <div className="date-item">
-                    <p className="name">Igor Maia</p>
-                    <p className="date">01 de Março</p>
+                    <p className="name">Alexandre Martins</p>
+                    <p className="date">01 de Maio</p>
                   </div>
                   <div className="date-item">
-                    <p className="name">Andre luiz Lopes</p>
-                    <p className="date">02 de Março</p>
+                    <p className="name">Debora Crisostomo</p>
+                    <p className="date">01 de Maio</p>
                   </div>
                   <div className="date-item">
-                    <p className="name">Adriana Santos</p>
-                    <p className="date">03 de Março</p>
+                    <p className="name">Tiago Figueiredo</p>
+                    <p className="date">02 de Maio</p>
                   </div>
                   <div className="date-item">
-                    <p className="name">Tallison Muhl</p>
-                    <p className="date">03 de Março</p>
+                    <p className="name">Kawan Rodrigues</p>
+                    <p className="date">02 de Maio</p>
                   </div>
                   <div className="date-item">
-                    <p className="name">Igor Davi</p>
-                    <p className="date">05 de Março</p>
+                    <p className="name">Wesley Martins</p>
+                    <p className="date">06 de Maio</p>
                   </div>
                   <div className="date-item">
-                    <p className="name">Kamilla Munhoz</p>
-                    <p className="date">06 de Março</p>
+                    <p className="name">Douglas Willian</p>
+                    <p className="date">10 de Maio</p>
                   </div>
                   <div className="date-item">
-                    <p className="name">Poliana das Graças</p>
-                    <p className="date">09 de Março</p>
+                    <p className="name">Antonio Lopo</p>
+                    <p className="date">15 de Maio</p>
                   </div>
                   <div className="date-item">
-                    <p className="name">Getulio do Amaral</p>
-                    <p className="date">12 de Março</p>
+                    <p className="name">Taya de Menezes</p>
+                    <p className="date">16 de Maio</p>
                   </div>
                   <div className="date-item">
-                    <p className="name">Gilson Gonçalves</p>
-                    <p className="date">15 de Março</p>
+                    <p className="name">Maicon dos Santos</p>
+                    <p className="date">24 de Maio</p>
                   </div>
                   <div className="date-item">
-                    <p className="name">Gustavo Pires</p>
-                    <p className="date">15 de Março</p>
+                    <p className="name">Alexandre Laurindo</p>
+                    <p className="date">28 de Maio</p>
                   </div>
                   <div className="date-item">
-                    <p className="name">Tiago Coelho</p>
-                    <p className="date">16 de Março</p>
+                    <p className="name">Natalia Muhl</p>
+                    <p className="date">29 de Maio</p>
                   </div>
                   <div className="date-item">
-                    <p className="name">Fernanda Paula </p>
-                    <p className="date">17 de Março</p>
+                    <p className="name">Fausto Godoi </p>
+                    <p className="date">30 de Maio</p>
                   </div>
                 </div>
               </div>
@@ -328,12 +328,12 @@ export default function Page() {
                 <h2>Datas Comemorativas</h2>
                 <div className="dates-list">
                   <div className="date-item">
-                    <p className="name">Carnaval</p>
-                    <p className="date">03 de Março</p>
+                    <p className="name">Dia do Trabalhador</p>
+                    <p className="date">01 de Maio</p>
                   </div>
                   <div className="date-item">
                     <p className="name">Dia das mulheres</p>
-                    <p className="date">08 de Março</p>
+                    <p className="date">11 de Maio</p>
                   </div>
                 </div>
               </div>

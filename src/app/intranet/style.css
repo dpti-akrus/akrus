@@ -121,7 +121,7 @@ a:hover {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 100px;
+  margin-bottom: 110px;
 }
 .values-container {
   display: flex;
@@ -319,14 +319,14 @@ a:hover {
 }
 .multisections-box > .img-Biblioteca {
   height: 100%;
-  background-image: url(/intranet/images/AKRUS400x520-icones-home-biblioteca-80.jpg);
+  background-image: url(/intranet/images/biblioteca.png);
   background-position: 0%;
   background-size: cover;
   border-radius: 20px;
 }
 .multisections-box > .img-iluminakrus {
   height: 100%;
-  background-image: url(/intranet/images/wallpaper_akrus-02.png);
+  background-image: url(/intranet/images/iluminakrus.png);
   background-position: 0%;
   background-size: cover;
   border-radius: 20px;
@@ -785,7 +785,7 @@ a:hover {
     width: 100%;
     height: 270px;
     overflow: hidden;
-    background-image: url(/intranet/images/imgMobile.png);
+    background-image: url(/intranet/images/BannerMobile.png);
     background-position: 0%;
     background-size: cover;
   }

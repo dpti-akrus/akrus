@@ -159,7 +159,7 @@ export default function Page() {
           </nav>
         </header>
         <div className="banner">
-          <img src="/intranet/images/assinatura_akrus[1].png" alt="Banner" />
+          <img src="/intranet/images/assinatura_akrus.png" alt="Banner" />
         </div>
 
         <section>
