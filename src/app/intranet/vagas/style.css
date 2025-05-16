@@ -102,6 +102,7 @@ a:hover {
   flex-wrap: wrap;
   padding: 20px;
   flex-direction: column;
+  height: 100vh;
 }
 
 .title {
@@ -272,6 +273,10 @@ a:hover {
     height: 30px;
     padding-right: 0px;
   }
+}
+.banner img {
+  height: 50px;
+  width: 350px;
 }
 
 @media (max-width: 576px) {

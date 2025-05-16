@@ -10,6 +10,7 @@ body {
   overflow-x: hidden;
   overscroll-behavior-x: none;
   touch-action: pan-y;
+  height: 100%;
 }
 
 header {
@@ -85,6 +86,7 @@ a:hover {
 .banner {
   width: 100%;
   display: flex;
+  margin-bottom: 100px;
 }
 
 .banner img {
@@ -93,11 +95,10 @@ a:hover {
 }
 
 .container {
-  width: 100%;
-
-  padding: 7rem;
-  flex-direction: column;
-  background-image: url(/intranet/images/48982e53-ec1b-455c-84e0-c4d0be71b657.jpg);
+  display: flex;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .politicas {
@@ -105,11 +106,10 @@ a:hover {
   flex-wrap: wrap;
   gap: 3rem;
   flex-direction: row;
-  justify-content: center;
+  width: 100%;
 }
 
 .box {
-  width: 550px;
   background-color: #ffffff;
   border-radius: 20px;
   border: #00000071 solid;
@@ -164,9 +164,10 @@ a {
   display: flex;
   background-color: #181818;
   height: 6rem;
-  width: 100%;
+
   justify-content: space-between;
   align-items: center;
+  margin-top: 100px;
 }
 
 #logofooter {
@@ -254,6 +255,7 @@ a {
     flex-direction: column;
     align-items: center;
     padding: 10px;
+    bottom: 0;
   }
 
   #logofooter {
