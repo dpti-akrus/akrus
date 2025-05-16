@@ -242,7 +242,7 @@ export default function Page() {
               id="logofooter"
               src="/intranet/images/logo_akrus_branco_Prancheta 1.png"
             />
-            <img id="empresas" src="/intranet/images/assinatura_akrus[1].png" />
+            <img id="empresas" src="/intranet/images/assinatura_akrus.png" />
           </div>
         </footer>
       </body>

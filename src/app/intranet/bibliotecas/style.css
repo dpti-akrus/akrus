@@ -8,849 +8,197 @@
 
 /* Estilos para o corpo da página */
 body {
-  background-image: url(/intranet/images/Preview_2.jpg); /* Define uma imagem de fundo */
-  background-size: cover; /* Faz com que a imagem de fundo cubra toda a área do corpo */
-  background-color: #fffafa; /* Define uma cor de fundo alternativa */
-  overflow-x: hidden; /* Impede a rolagem horizontal */
-  font-family: "Cairo", sans-serif; /* Aplica a fonte importada ao corpo */
-  width: 100%;
-  overflow-x: hidden;
-  overscroll-behavior-x: none;
-  touch-action: pan-y;
-}
-
-header {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  background: #1d1c1c;
-  transition: background-color 0.3s ease-in-out;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-  width: 100%;
-  background: inherit;
-  transition: background-color 0.3s ease-in-out;
-}
-
-.translucent {
-  background: rgba(0, 0, 0, 0.5) !important;
-}
-
-a {
-  color: #fff;
-  text-decoration: none;
-  transition: 0.3s;
-  margin-inline: 15px;
-}
-a:hover {
-  opacity: 0.7;
-}
-.logo {
-  width: 290px;
-}
-.nav-list {
-  list-style: none;
-  display: flex;
-}
-.nav-list li {
-  margin-left: 20px;
-}
-.mobile-menu {
-  display: none;
-  cursor: pointer;
-}
-.mobile-menu div {
-  width: 30px;
-  height: 3px;
-  background: #fff;
-  margin: 6px;
-  transition: 0.3s;
-}
-
-.nav-list.active {
-  transform: translateX(0);
-}
-
-.mobile-menu.active .line1 {
-  transform: rotate(-45deg) translate(-6px, 6px);
-}
-
-.mobile-menu.active .line2 {
-  opacity: 0;
-}
-
-.mobile-menu.active .line3 {
-  transform: rotate(45deg) translate(-6px, -6px);
-}
-/* Estilo para a seção do banner */
-.banner {
-  width: 100%; /* Define a largura do banner como 100% do contêiner pai */
-  height: 24vh; /* Define a altura do banner como 24% da altura da viewport */
-  overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do banner */
-}
-
-/* Estilo para a imagem dentro do banner */
-.banner img {
-  width: 100%; /* Define a largura da imagem como 100% do contêiner do banner */
-  height: 100%; /* Define a altura da imagem como 100% do contêiner do banner */
-  object-fit: cover; /* Faz com que a imagem cubra o contêiner, mantendo a proporção */
-}
-
-/* Estilo para a seção de biblioteca virtual */
-.biblioteca-virtual {
-  text-align: center; /* Centraliza o texto dentro da seção */
-  padding: 20px; /* Adiciona preenchimento interno de 20px ao redor da seção */
-}
-
-/* Define a cor de fundo da página */
-body {
-  background-color: #f7f7f7;
-  font-family: "Cairo", sans-serif; /* Define a fonte globalmente */
-}
-
-/* Estiliza o título principal */
-.title {
-  text-align: center; /* Alinha o texto ao centro */
-  color: #fff; /* Define a cor do texto como branco */
-  display: flex; /* Usa layout flexível */
-  flex-direction: column; /* Direciona os itens em coluna */
-  align-items: center; /* Alinha os itens ao centro */
-  justify-content: center; /* Justifica os itens ao centro */
-  height: 100vh; /* Define a altura como 100% da altura da tela */
-  letter-spacing: 1px; /* Define o espaçamento entre letras */
-  line-height: 2; /* Define a altura da linha */
-}
-
-/* Estiliza os títulos das seções 'biblioteca' e 'podcasts' */
-.biblioteca-title,
-.podcasts-title {
-  text-transform: uppercase; /* Transforma o texto para maiúsculas */
-  letter-spacing: 0.5em; /* Define o espaçamento entre letras */
-  display: inline-block; /* Define a exibição como bloco inline */
-  border: 4px double rgba(255, 255, 255, 0.25); /* Define uma borda dupla */
-  padding: 1.5em 0; /* Define o preenchimento superior e inferior */
-  position: relative; /* Define a posição como relativa */
-  width: 100%; /* Define a largura como 100% */
-  text-align: center; /* Alinha o texto ao centro */
-  font: 600 1em/2 "Neuton", sans-serif; /* Define a fonte e o peso */
-  color: rgb(0, 0, 0); /* Define a cor do texto */
-  background-size: cover; /* Define o tamanho de fundo como "cover" */
-  margin-top: 25px;
-}
-
-/* Estiliza o texto dentro dos títulos 'biblioteca' e 'podcasts' */
-.biblioteca-title span,
-.podcasts-title span {
-  font: 700 1.7em/1 "Oswald", sans-serif; /* Define a fonte e o peso */
-  letter-spacing: 0; /* Define o espaçamento entre letras */
-  padding: 0.25em 0 0.325em; /* Define o preenchimento superior e inferior */
-  display: block; /* Exibe como bloco */
-  margin: 0 auto; /* Define margem automática */
-  text-shadow: 0 0 80px rgba(0, 0, 0, 0.5); /* Adiciona sombra ao texto */
-}
-
-/* Define a animação de movimento de fundo */
-@keyframes aitf {
-  0% {
-    background-position: 0% 50%; /* Posição inicial do fundo */
-  }
-  100% {
-    background-position: 100% 50%; /* Posição final do fundo */
-  }
-}
-
-/* Estiliza o botão de modo branco */
-.white-mode {
-  text-decoration: none; /* Remove sublinhado */
-  padding: 7px 10px; /* Define o preenchimento */
-  background-color: #122; /* Define a cor de fundo */
-  border-radius: 3px; /* Define o raio da borda */
-  color: #fff; /* Define a cor do texto */
-  transition: 0.35s ease-in-out; /* Define a transição */
-  position: absolute; /* Define a posição como absoluta */
-  left: 15px; /* Define a posição à esquerda */
-  bottom: 15px; /* Define a posição inferior */
-  font-family: "Montserrat"; /* Define a fonte */
-}
-
-/* Estiliza o botão ao passar o mouse */
-.white-mode:hover {
-  background-color: #fff; /* Altera a cor de fundo ao passar o mouse */
-  color: #122; /* Altera a cor do texto ao passar o mouse */
-}
-
-/* Estiliza a descrição da biblioteca */
-.biblioteca-description {
-  font-size: 1.2em; /* Define o tamanho da fonte */
-  color: #000000; /* Define a cor do texto */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adiciona sombra ao texto */
-}
-
-/* Estiliza a seção de livros */
-.livros-section {
-  text-align: center; /* Alinha o texto ao centro */
-  padding: 20px; /* Define o preenchimento */
-}
-
-/* Estiliza o título da seção de livros */
-.livros-title {
-  font-size: 2em; /* Define o tamanho da fonte */
-  margin-bottom: 10px; /* Define a margem inferior */
-  color: #000000; /* Define a cor do texto */
-}
-
-/* Define a animação de desvanecimento */
-@keyframes fadeIn {
-  from {
-    opacity: 0; /* Posição inicial da opacidade */
-  }
-  to {
-    opacity: 1; /* Posição final da opacidade */
-  }
-}
-
-/* Define a animação de desvanecimento */
-@keyframes fadeOut {
-  from {
-    opacity: 1; /* Posição inicial da opacidade */
-  }
-  to {
-    opacity: 0; /* Posição final da opacidade */
-  }
-}
-
-/* Estiliza o cartão de livro que aparece */
-.book-card {
-  display: none; /* Define o estado inicial como não exibido */
-  position: fixed; /* Define a posição como fixa */
-  top: 50%; /* Posiciona no centro vertical */
-  left: 50%; /* Posiciona no centro horizontal */
-  transform: translate(-50%, -50%); /* Centraliza o modal */
-  width: 300px; /* Define a largura */
-  background-color: white; /* Define a cor de fundo */
-  border: 1px solid #ccc; /* Define a borda */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra */
-  z-index: 1000; /* Define o índice z */
-  padding: 20px; /* Define o preenchimento */
-  border-radius: 8px; /* Define o raio da borda */
-  opacity: 1; /* Define a opacidade */
-  transition: opacity 0.6s ease; /* Define a transição de opacidade */
-}
-
-/* Estiliza a imagem dentro do cartão de livro */
-.book-card img {
-  max-width: 100%; /* Define a largura máxima */
-  height: auto; /* Define a altura como automática */
-  margin: 10px 0; /* Define a margem superior e inferior */
-}
-
-/* Estiliza o cartão de livro quando visível */
-.book-card.show {
-  display: block; /* Exibe o cartão */
-  animation: fadeIn 0.6s forwards; /* Aplica animação de entrada */
-}
-
-/* Estiliza o cartão de livro quando invisível */
-.book-card.hide {
-  animation: fadeOut 0.6s forwards; /* Aplica animação de saída */
-}
-
-/* Estiliza o contêiner de livros */
-.livros-container {
-  display: flex; /* Usa layout flexível */
-  flex-wrap: wrap; /* Permite quebra de linha */
-  gap: 10px; /* Define o espaçamento entre os itens */
-  justify-content: center; /* Centraliza os itens */
-}
-
-/* Estiliza as imagens dentro do contêiner de livros */
-.livros-container img {
-  width: 200px; /* Define a largura */
-  margin: 10px; /* Define a margem */
-  cursor: pointer; /* Define o cursor como ponteiro */
-  border: 1px solid rgba(230, 230, 230, 0.8); /* Define a borda */
-  border-radius: 15px; /* Define o raio da borda */
-  transition: transform 0.5s, border-color 0.3s; /* Define a transição */
-}
-
-/* Estiliza a imagem ao passar o mouse */
-.livros-container img:hover {
-  transform: scale(1.05); /* Aumenta o tamanho */
-  border-color: #000000; /* Altera a cor da borda */
-}
-
-/* Ajusta as imagens para telas menores */
-@media (max-width: 768px) {
-  .livros-container img {
-    width: 150px; /* Define a largura para telas menores */
-  }
-}
-
-@media (max-width: 480px) {
-  .livros-container img {
-    width: 100px; /* Define a largura para telas muito menores */
-  }
-}
-
-/* Estiliza a seção de podcasts */
-.podcasts-section {
-  top: 0; /* Define a posição superior */
-  z-index: 1; /* Define a ordem de empilhamento */
-  padding: 20px; /* Define o preenchimento */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra */
-}
-
-/* Estiliza o título da seção de podcasts */
-.podcasts-title {
-  text-align: center; /* Alinha o texto ao centro */
-  margin-bottom: 20px; /* Define a margem inferior */
-}
-
-/* Estiliza o contêiner de podcasts */
-.podcasts-container {
-  display: flex; /* Usa layout flexível */
-  flex-wrap: wrap; /* Permite quebra de linha */
-  justify-content: center; /* Centraliza os itens */
-  gap: 20px; /* Define o espaçamento entre os itens */
-}
-
-/* Estiliza os itens de podcast */
-.podcast-item {
-  width: calc(20% - 20px); /* Calcula a largura */
-  margin: 1px; /* Define a margem */
-  transition: transform 0.4s, box-shadow 0.3s; /* Define a transição */
-  max-width: 230px; /* Define a largura máxima */
-}
-
-/* Estiliza a imagem dentro dos itens de podcast */
-.podcast-item img {
-  width: 230px; /* Define a largura */
-  height: 100%; /* Define a altura */
-  border-radius: 15px; /* Define o raio da borda */
-}
-
-/* Estiliza os itens de podcast ao passar o mouse */
-.podcast-item:hover {
-  transform: scale(1.04); /* Aumenta o tamanho */
-  box-shadow: none; /* Remove a sombra */
-}
-
-/* Ajusta os itens de podcast para telas menores */
-@media (max-width: 768px) {
-  .podcast-item {
-    width: 220px; /* Define a largura para telas menores */
-  }
-}
-
-@media (max-width: 480px) {
-  .podcast-item {
-    width: calc(100% - 10px); /* Define a largura para telas muito menores */
-  }
-}
-
-/* Estiliza o rodapé */
-.footer {
-  display: flex; /* Usa layout flexível */
-  background-color: #181818; /* Define a cor de fundo */
-  height: 6rem; /* Define a altura */
-  width: 100%; /* Define a largura */
-  justify-content: space-between; /* Espaça os itens */
-  align-items: center; /* Alinha os itens ao centro */
-}
-
-/* Estiliza o logo do rodapé */
-#logofooter {
-  height: 35px; /* Define a altura */
-  padding-left: 30px; /* Define o preenchimento à esquerda */
-}
-
-/* Estiliza a seção de empresas no rodapé */
-#empresas {
-  height: 30px; /* Define a altura */
-  padding-right: 30px; /* Define o preenchimento à direita */
-}
-
-/* Ajusta o logo para telas menores */
-@media (max-width: 768px) {
-  .nav-list {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 60vw;
-    height: 100vh;
-    background: #1d1c1c;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-    z-index: 900;
-    padding-bottom: 80vw;
-    padding-top: 20vw;
-  }
-
-  .nav-list.active {
-    transform: translateX(0);
-  }
-  .nav-list.active > li > a {
-    margin-inline: 0px;
-  }
-  .mobile-menu {
-    display: block;
-    z-index: 1001;
-  }
-  .logo {
-    width: 170px;
-  }
-} /* Estilos gerais para todos os elementos */
-* {
-  margin: 0; /* Remove a margem padrão de todos os elementos */
-  padding: 0; /* Remove o preenchimento padrão de todos os elementos */
-  box-sizing: border-box; /* Inclui padding e bordas na largura e altura total do elemento */
-  font-family: "Inter", sans-serif; /* Define a fonte padrão para todos os elementos */
-}
-
-/* Estilos para o corpo da página */
-body {
   /*background-image: url(/intranet/images/Preview_2.jpg); /* Define uma imagem de fundo */
   background-size: cover; /* Faz com que a imagem de fundo cubra toda a área do corpo */
-  background-color: #fffafa; /* Define uma cor de fundo alternativa */
+  background-position: right; /* Alinha a imagem de fundo à direita */
+  background-color: #ffffff; /* Define uma cor de fundo alternativa */
   overflow-x: hidden; /* Impede a rolagem horizontal */
-  font-family: "Cairo", sans-serif; /* Aplica a fonte importada ao corpo */
+  zoom: 100%;
   width: 100%;
   overflow-x: hidden;
   overscroll-behavior-x: none;
   touch-action: pan-y;
 }
 
-header {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  background: #1d1c1c;
-  transition: background-color 0.3s ease-in-out;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-  width: 100%;
-  background: inherit;
-  transition: background-color 0.3s ease-in-out;
-}
-
-.translucent {
-  background: rgba(0, 0, 0, 0.5) !important;
-}
-
-a {
-  color: #fff;
-  text-decoration: none;
-  transition: 0.3s;
-  margin-inline: 15px;
-}
-a:hover {
-  opacity: 0.7;
-}
-.logo {
-  width: 290px;
-}
-.nav-list {
-  list-style: none;
-  display: flex;
-}
-.nav-list li {
-  margin-left: 20px;
-}
-.mobile-menu {
-  display: none;
-  cursor: pointer;
-}
-.mobile-menu div {
-  width: 30px;
-  height: 3px;
-  background: #fff;
-  margin: 6px;
-  transition: 0.3s;
-}
-
-.nav-list.active {
-  transform: translateX(0);
-}
-
-.mobile-menu.active .line1 {
-  transform: rotate(-45deg) translate(-6px, 6px);
-}
-
-.mobile-menu.active .line2 {
-  opacity: 0;
-}
-
-.mobile-menu.active .line3 {
-  transform: rotate(45deg) translate(-6px, -6px);
-}
-/* Estilo para a seção do banner */
-.banner {
-  width: 100%; /* Define a largura do banner como 100% do contêiner pai */
-  height: 24vh; /* Define a altura do banner como 24% da altura da viewport */
-  overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do banner */
-}
-
-/* Estilo para a imagem dentro do banner */
-.banner img {
-  width: 100%; /* Define a largura da imagem como 100% do contêiner do banner */
-  height: 270px; /* Define a altura da imagem como 100% do contêiner do banner */
-  object-fit: cover; /* Faz com que a imagem cubra o contêiner, mantendo a proporção */
-}
-
-/* Estilo para a seção de biblioteca virtual */
-.biblioteca-virtual {
-  text-align: center; /* Centraliza o texto dentro da seção */
-  padding: 20px; /* Adiciona preenchimento interno de 20px ao redor da seção */
-}
-
-/* Define a cor de fundo da página */
-body {
-  background-color: #f7f7f7;
-  font-family: "Cairo", sans-serif; /* Define a fonte globalmente */
-}
-
-/* Estiliza o título principal */
-.title {
-  text-align: center; /* Alinha o texto ao centro */
-  color: #fff; /* Define a cor do texto como branco */
-  display: flex; /* Usa layout flexível */
-  flex-direction: column; /* Direciona os itens em coluna */
-  align-items: center; /* Alinha os itens ao centro */
-  justify-content: center; /* Justifica os itens ao centro */
-  height: 100vh; /* Define a altura como 100% da altura da tela */
-  letter-spacing: 1px; /* Define o espaçamento entre letras */
-  line-height: 2; /* Define a altura da linha */
-}
-
-/* Estiliza os títulos das seções 'biblioteca' e 'podcasts' */
-.biblioteca-title,
-.podcasts-title {
-  text-transform: uppercase; /* Transforma o texto para maiúsculas */
-  letter-spacing: 0.5em; /* Define o espaçamento entre letras */
-  display: inline-block; /* Define a exibição como bloco inline */
-  /*border: 4px double rgba(255, 255, 255, 0.25); /* Define uma borda dupla */
-  padding: 1.5em 0; /* Define o preenchimento superior e inferior */
-  position: relative; /* Define a posição como relativa */
-  width: 100%; /* Define a largura como 100% */
-  text-align: center; /* Alinha o texto ao centro */
-  font: 600 1em/2 "Neuton", sans-serif; /* Define a fonte e o peso */
-  color: rgb(0, 0, 0); /* Define a cor do texto */
-  background-size: cover; /* Define o tamanho de fundo como "cover" */
-  margin-top: 25px;
-}
-
-/* Estiliza o texto dentro dos títulos 'biblioteca' e 'podcasts' */
-.biblioteca-title span,
-.podcasts-title span {
-  font: 700 1.7em/1 "Oswald", sans-serif; /* Define a fonte e o peso */
-  letter-spacing: 0; /* Define o espaçamento entre letras */
-  padding: 0.25em 0 0.325em; /* Define o preenchimento superior e inferior */
-  display: block; /* Exibe como bloco */
-  margin: 0 auto; /* Define margem automática */
-  text-shadow: 0 0 80px rgba(0, 0, 0, 0.5); /* Adiciona sombra ao texto */
-}
-
-/* Define a animação de movimento de fundo */
-@keyframes aitf {
-  0% {
-    background-position: 0% 50%; /* Posição inicial do fundo */
-  }
-  100% {
-    background-position: 100% 50%; /* Posição final do fundo */
-  }
-}
-
-/* Estiliza o botão de modo branco */
-.white-mode {
-  text-decoration: none; /* Remove sublinhado */
-  padding: 7px 10px; /* Define o preenchimento */
-  background-color: #122; /* Define a cor de fundo */
-  border-radius: 3px; /* Define o raio da borda */
-  color: #fff; /* Define a cor do texto */
-  transition: 0.35s ease-in-out; /* Define a transição */
-  position: absolute; /* Define a posição como absoluta */
-  left: 15px; /* Define a posição à esquerda */
-  bottom: 15px; /* Define a posição inferior */
-  font-family: "Montserrat"; /* Define a fonte */
-}
-
-/* Estiliza o botão ao passar o mouse */
-.white-mode:hover {
-  background-color: #fff; /* Altera a cor de fundo ao passar o mouse */
-  color: #122; /* Altera a cor do texto ao passar o mouse */
-}
-
-/* Estiliza a descrição da biblioteca */
-.biblioteca-description {
-  font-size: 1.2em; /* Define o tamanho da fonte */
-  color: #000000; /* Define a cor do texto */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adiciona sombra ao texto */
-}
-
-/* Estiliza a seção de livros */
-.livros-section {
-  text-align: center; /* Alinha o texto ao centro */
-  padding: 20px; /* Define o preenchimento */
-}
-
-/* Estiliza o título da seção de livros */
-.livros-title {
-  font-size: 2em; /* Define o tamanho da fonte */
-  margin-bottom: 10px; /* Define a margem inferior */
-  color: #000000; /* Define a cor do texto */
-}
-
-/* Define a animação de desvanecimento */
-@keyframes fadeIn {
-  from {
-    opacity: 0; /* Posição inicial da opacidade */
-  }
-  to {
-    opacity: 1; /* Posição final da opacidade */
-  }
-}
-
-/* Define a animação de desvanecimento */
-@keyframes fadeOut {
-  from {
-    opacity: 1; /* Posição inicial da opacidade */
-  }
-  to {
-    opacity: 0; /* Posição final da opacidade */
-  }
-}
-
-/* Estiliza o cartão de livro que aparece */
-.book-card {
-  display: none; /* Define o estado inicial como não exibido */
-  position: fixed; /* Define a posição como fixa */
-  top: 50%; /* Posiciona no centro vertical */
-  left: 50%; /* Posiciona no centro horizontal */
-  transform: translate(-50%, -50%); /* Centraliza o modal */
-  width: 300px; /* Define a largura */
-  background-color: white; /* Define a cor de fundo */
-  border: 1px solid #ccc; /* Define a borda */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra */
-  z-index: 1000; /* Define o índice z */
-  padding: 20px; /* Define o preenchimento */
-  border-radius: 8px; /* Define o raio da borda */
-  opacity: 1; /* Define a opacidade */
-  transition: opacity 0.6s ease; /* Define a transição de opacidade */
-}
-
-/* Estiliza a imagem dentro do cartão de livro */
-.book-card img {
-  max-width: 100%; /* Define a largura máxima */
-  height: auto; /* Define a altura como automática */
-  margin: 10px 0; /* Define a margem superior e inferior */
-}
-
-/* Estiliza o cartão de livro quando visível */
-.book-card.show {
-  display: block; /* Exibe o cartão */
-  animation: fadeIn 0.6s forwards; /* Aplica animação de entrada */
-}
-
-/* Estiliza o cartão de livro quando invisível */
-.book-card.hide {
-  animation: fadeOut 0.6s forwards; /* Aplica animação de saída */
-}
-
-/* Estiliza o contêiner de livros */
-.livros-container {
-  display: flex; /* Usa layout flexível */
-  flex-wrap: wrap; /* Permite quebra de linha */
-  gap: 10px; /* Define o espaçamento entre os itens */
+/* Estilos para o cabeçalho */
+.cabecalho {
+  display: flex; /* Usa flexbox para layout */
+  align-items: center; /* Alinha os itens verticalmente no centro */
   justify-content: center; /* Centraliza os itens */
+  background-color: #000; /* Define a cor de fundo do cabeçalho */
+  width: 100%;
+  padding: 10px 20px; /* Adiciona preenchimento interno ao cabeçalho */
+  /* Define a altura do cabeçalho como 11% da altura da viewport */
 }
 
-/* Estiliza as imagens dentro do contêiner de livros */
-.livros-container img {
-  width: 200px; /* Define a largura */
-  margin: 10px; /* Define a margem */
-  cursor: pointer; /* Define o cursor como ponteiro */
-  border: 1px solid rgba(230, 230, 230, 0.8); /* Define a borda */
-  border-radius: 15px; /* Define o raio da borda */
-  transition: transform 0.5s, border-color 0.3s; /* Define a transição */
+/* Estilos para a imagem do logo no cabeçalho */
+.logo img {
+  max-height: 70px; /* Define a altura máxima da imagem do logo */
+  /* margin: 5px; /* Adiciona uma margem de 5px ao redor da imagem */
+  /*padding-left: 30px; /* Adiciona preenchimento à esquerda da imagem */
+  padding-bottom: 5px; /* Adiciona preenchimento na parte inferior da imagem */
 }
 
-/* Estiliza a imagem ao passar o mouse */
-.livros-container img:hover {
-  transform: scale(1.05); /* Aumenta o tamanho */
-  border-color: #000000; /* Altera a cor da borda */
-}
-
-/* Ajusta as imagens para telas menores */
-@media (max-width: 768px) {
-  .livros-container img {
-    width: 150px; /* Define a largura para telas menores */
-  }
-}
-
-@media (max-width: 480px) {
-  .livros-container img {
-    width: 100px; /* Define a largura para telas muito menores */
-  }
-}
-
-/* Estiliza a seção de podcasts */
-.podcasts-section {
-  top: 0; /* Define a posição superior */
-  z-index: 1; /* Define a ordem de empilhamento */
-  padding: 20px; /* Define o preenchimento */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra */
-}
-
-/* Estiliza o título da seção de podcasts */
-.podcasts-title {
+/* Estilos para o cartão de login */
+.login-card {
+  background-color: #ffffff; /* Define a cor de fundo do cartão */
+  border-radius: 10px; /* Define o raio das bordas */
+  padding: 40px 20px; /* Define o preenchimento interno */
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.6); /* Adiciona uma sombra */
   text-align: center; /* Alinha o texto ao centro */
+  max-width: 600px; /* Define a largura máxima */
+  width: 100%; /* Define a largura como 100% */
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.login-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Estilos para a logo do cartão */
+.card-logo {
+  max-width: 200px; /* Define a largura máxima */
+  margin-top: -15px; /* Define a margem superior negativa */
   margin-bottom: 20px; /* Define a margem inferior */
 }
 
-/* Estiliza o contêiner de podcasts */
-.podcasts-container {
-  display: flex; /* Usa layout flexível */
-  flex-wrap: wrap; /* Permite quebra de linha */
-  justify-content: center; /* Centraliza os itens */
-  gap: 20px; /* Define o espaçamento entre os itens */
+/* Estilos para o título */
+.title {
+  font-family: Arial, Helvetica, sans-serif; /* Define a fonte */
+  color: #181818; /* Define a cor do texto */
+  font-size: 24px; /* Define o tamanho da fonte */
+  margin-top: 30px; /* Define a margem superior */
+  margin-bottom: 20px; /* Define a margem inferior */
+  letter-spacing: 1px; /* Define o espaçamento entre letras */
 }
 
-/* Estiliza os itens de podcast */
-.podcast-item {
-  width: calc(20% - 20px); /* Calcula a largura */
-  margin: 1px; /* Define a margem */
-  transition: transform 0.4s, box-shadow 0.3s; /* Define a transição */
-  max-width: 230px; /* Define a largura máxima */
+/* Estilos para o título da intranet */
+.ch-akrus h2 {
+  font-family: Arial, Helvetica, sans-serif; /* Define a fonte */
+  color: #181818; /* Define a cor do texto */
+  font-size: 30px; /* Define o tamanho da fonte */
+  margin-bottom: 50px; /* Define a margem inferior */
+  letter-spacing: 1px; /* Define o espaçamento entre letras */
+  /* animation: fadeIn 1s ease-in-out; /* Adiciona animação de fade-in */
 }
 
-/* Estiliza a imagem dentro dos itens de podcast */
-.podcast-item img {
-  width: 230px; /* Define a largura */
-  height: 100%; /* Define a altura */
-  border-radius: 15px; /* Define o raio da borda */
-}
-
-/* Estiliza os itens de podcast ao passar o mouse */
-.podcast-item:hover {
-  transform: scale(1.04); /* Aumenta o tamanho */
-  box-shadow: none; /* Remove a sombra */
-}
-
-/* Ajusta os itens de podcast para telas menores */
-@media (max-width: 768px) {
-  .podcast-item {
-    width: 220px; /* Define a largura para telas menores */
+/* Animação de fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Define opacidade inicial */
+  }
+  to {
+    opacity: 1; /* Define opacidade final */
   }
 }
 
-@media (max-width: 480px) {
-  .podcast-item {
-    width: calc(100% - 10px); /* Define a largura para telas muito menores */
-  }
+/* Estilos para o campo de entrada de texto */
+.input-field1 {
+  width: 100%; /* Define a largura */
+  padding: 10px; /* Define o preenchimento interno */
+  margin: 10px 0; /* Define margens superior e inferior */
+  margin-top: -20px; /* Define margem superior negativa */
+  border-radius: 15px; /* Define o raio das bordas */
+  border: 1px solid #000000; /* Define a borda */
+  outline: none; /* Remove o contorno padrão */
+  font-size: 16px; /* Define o tamanho da fonte */
 }
 
-/* Estiliza o rodapé */
+/* Estilos para o campo de entrada de senha */
+.input-field2 {
+  width: 100%; /* Define a largura */
+  padding: 10px; /* Define o preenchimento interno */
+  margin: 10px 0; /* Define margens superior e inferior */
+  margin-top: -20px; /* Define margem superior negativa */
+  border-radius: 15px; /* Define o raio das bordas */
+  border: 1px solid #000000; /* Define a borda */
+  outline: none; /* Remove o contorno padrão */
+  font-size: 16px; /* Define o tamanho da fonte */
+}
+
+/* Estilos para o botão de envio */
+.submit-button {
+  padding: 8px 20px; /* Define o preenchimento interno */
+  background-color: #000; /* Define a cor de fundo */
+  color: #fff; /* Define a cor do texto */
+  border: none; /* Remove a borda padrão */
+  border-radius: 25px; /* Define o raio das bordas */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra */
+  font-size: 16px; /* Define o tamanho da fonte */
+  cursor: pointer; /* Define o cursor como ponteiro */
+  margin-top: 15px; /* Define a margem superior */
+  transition: background-color 0.4s; /* Adiciona transição de cor de fundo */
+}
+
+/* Estilos para o estado de hover do botão de envio */
+.submit-button:hover {
+  background-color: #3a3a3a; /* Altera a cor de fundo ao passar o mouse */
+  box-shadow: black; /* Altera a sombra */
+}
+.button-link {
+  color: #fff; /* Define a cor do texto */
+  text-decoration: none; /* Remove o sublinhado */
+  display: block; /* Faz o link ocupar todo o espaço do botão */
+  width: 100%; /* Define a largura como 100% */
+  height: 100%; /* Define a altura como 100% */
+  line-height: 1.5; /* Define a altura da linha */
+}
+
+/* Estilos para o rodapé */
 .footer {
-  display: flex; /* Usa layout flexível */
+  display: flex; /* Usa flexbox para layout */
   background-color: #181818; /* Define a cor de fundo */
   height: 6rem; /* Define a altura */
   width: 100%; /* Define a largura */
-  justify-content: space-between; /* Espaça os itens */
+  justify-content: center; /* Centraliza os itens */
   align-items: center; /* Alinha os itens ao centro */
 }
 
-/* Estiliza o logo do rodapé */
+/* Estilos para a logo do rodapé */
 #logofooter {
-  height: 35px; /* Define a altura */
-  padding-left: 30px; /* Define o preenchimento à esquerda */
+  max-height: 60px;
+  /*height: 52px; /* Define a altura 
+  padding-left: 30px;  Define o preenchimento à esquerda */
+  margin-left: 14px; /* Define a margem */
+  justify-content: left;
 }
 
-/* Estiliza a seção de empresas no rodapé */
+/* Estilos para a seção de empresas no rodapé */
 #empresas {
-  height: 30px; /* Define a altura */
-  padding-right: 30px; /* Define o preenchimento à direita */
+  height: 56px; /* Define a altura */
+  padding-right: 75px; /* Define o preenchimento à direita */
 }
 
-/* Ajusta o logo para telas menores */
-@media (max-width: 768px) {
-  .nav-list {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 60vw;
-    height: 100vh;
-    background: #1d1c1c;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-    z-index: 900;
-    padding-bottom: 80vw;
-    padding-top: 20vw;
-  }
-
-  .nav-list.active {
-    transform: translateX(0);
-  }
-  .nav-list.active > li > a {
-    margin-inline: 0px;
-  }
-  .mobile-menu {
-    display: block;
-    z-index: 1001;
-  }
+/* Estilos responsivos para telas menores */
+@media (max-width: 600px) {
   .logo {
-    width: 170px;
-  }
-}
-/* Ajusta a altura do banner para telas muito pequenas */
-@media (max-width: 767px) {
-  .banner {
-    width: 100%; /* Define a largura do banner como 100% do contêiner pai */
-    height: 17vh; /* Define a altura do banner como 24% da altura da viewport */
-    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do banner */
+    width: auto; /* Define a largura automaticamente */
   }
 
-  .banner img {
-    width: 100%;
-    height: 150px;
-    object-fit: fill; /* Ajusta a imagem para cobrir o elemento, mas sem cortar.
-    O object-fit em modo cover estava cortando alguns banners. */
-  }
-}
-
-/* Ajusta a altura do banner para telas pequenas */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .banner {
-    height: 100px; /* Define a altura */
+  .login-card {
+    max-width: 80%; /* Define a largura máxima */
+    padding: 20px 15px; /* Define o preenchimento interno */
   }
 
-  .banner img {
-    object-fit: cover; /* Ajusta a imagem para cobrir o elemento */
+  .title {
+    font-size: 20px; /* Define o tamanho da fonte */
+    margin-bottom: 30px; /* Define a margem inferior */
   }
-  .nav-list.active {
-    transform: translateX(0);
-    gap: 40px;
+
+  .ch-akrus h2 {
+    font-size: 18px; /* Define o tamanho da fonte */
+    margin-bottom: 20px; /* Define a margem inferior */
+  }
+
+  .submit-button {
+    padding: 8px 15px; /* Define o preenchimento interno */
+    font-size: 14px; /* Define o tamanho da fonte */
   }
 }
 
-/* Ajusta o rodapé para telas menores */
 @media (max-width: 768px) {
   .footer {
     flex-direction: column;
@@ -868,43 +216,13 @@ body {
   }
 }
 
-/* Ajusta a altura do banner para telas muito pequenas */
-@media (max-width: 767px) {
-  .banner {
-    height: 90px; /* Define a altura */
-  }
-
-  .banner img {
-    object-fit: cover; /* Ajusta a imagem para cobrir o elemento */
-  }
+footer {
+  width: 100%;
 }
 
-/* Ajusta a altura do banner para telas pequenas */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .banner {
-    height: 100px; /* Define a altura */
-  }
-
-  .banner img {
-    object-fit: cover; /* Ajusta a imagem para cobrir o elemento */
-  }
-  .nav-list.active {
-    transform: translateX(0);
-    gap: 40px;
-  }
-}
-
-/* Ajusta o rodapé para telas menores */
-@media (max-width: 768px) {
-  .footer {
-    flex-direction: column; /* Direciona os itens em coluna */
-    align-items: center; /* Alinha os itens ao centro */
-    text-align: center; /* Alinha o texto ao centro */
-  }
-
-  #logofooter,
-  #empresas {
-    padding: 5px; /* Define o preenchimento */
-    margin: 5px 0; /* Define a margem superior e inferior */
-  }
+main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
