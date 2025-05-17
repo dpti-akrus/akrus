@@ -90,11 +90,10 @@ a:hover {
   align-items: center;
 }
 
-.banner img {
-  height: 80px;
-  width: 800px;
+#imgbanner {
+  height: auto;
+  width: 700px;
 }
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -102,7 +101,6 @@ a:hover {
   flex-wrap: wrap;
   padding: 20px;
   flex-direction: column;
-  height: 100vh;
 }
 
 .title {
