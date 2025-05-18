@@ -161,7 +161,7 @@ export default function Page() {
               />
               <img
                 id="empresas"
-                src="/intranet/images/assinatura_akrus[1].png"
+                src="/intranet/images/assinatura_akrus.png"
                 alt="Assinatura"
               />
             </div>

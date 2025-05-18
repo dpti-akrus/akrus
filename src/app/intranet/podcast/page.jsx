@@ -170,7 +170,7 @@ export default function page() {
             </ul>
           </nav>
         </header>
-        <div className="bannerPd">
+        <div className="banner">
           {/* Contêiner para o banner da página */}
           <img
             src="/intranet/images/AKRUS1920x420-banner-podcasts-80.jpg"

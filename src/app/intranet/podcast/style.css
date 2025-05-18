@@ -1,228 +1,420 @@
 /* Estilos gerais para todos os elementos */
 * {
-  margin: 0; /* Remove a margem padrão de todos os elementos */
-  padding: 0; /* Remove o preenchimento padrão de todos os elementos */
-  box-sizing: border-box; /* Inclui padding e bordas na largura e altura total do elemento */
-  font-family: "Inter", sans-serif; /* Define a fonte padrão para todos os elementos */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
 
 /* Estilos para o corpo da página */
 body {
-  /*background-image: url(/intranet/images/Preview_2.jpg); /* Define uma imagem de fundo */
-  background-size: cover; /* Faz com que a imagem de fundo cubra toda a área do corpo */
-  background-position: right; /* Alinha a imagem de fundo à direita */
-  background-color: #ffffff; /* Define uma cor de fundo alternativa */
-  overflow-x: hidden; /* Impede a rolagem horizontal */
-  zoom: 100%;
-  width: 100%;
+  background-color: #e7e7e7;
   overflow-x: hidden;
+  font-family: "Cairo", sans-serif;
+  width: 100%;
   overscroll-behavior-x: none;
   touch-action: pan-y;
 }
 
 /* Estilos para o cabeçalho */
-.cabecalho {
-  display: flex; /* Usa flexbox para layout */
-  align-items: center; /* Alinha os itens verticalmente no centro */
-  justify-content: center; /* Centraliza os itens */
-  background-color: #000; /* Define a cor de fundo do cabeçalho */
+header {
+  position: sticky;
+  top: 0;
   width: 100%;
-  padding: 10px 20px; /* Adiciona preenchimento interno ao cabeçalho */
-  /* Define a altura do cabeçalho como 11% da altura da viewport */
+  z-index: 1000;
+  background: #1d1c1c;
+  transition: background-color 0.3s ease-in-out;
 }
 
-/* Estilos para a imagem do logo no cabeçalho */
-.logo img {
-  max-height: 70px; /* Define a altura máxima da imagem do logo */
-  /* margin: 5px; /* Adiciona uma margem de 5px ao redor da imagem */
-  /*padding-left: 30px; /* Adiciona preenchimento à esquerda da imagem */
-  padding-bottom: 5px; /* Adiciona preenchimento na parte inferior da imagem */
-}
-
-/* Estilos para o cartão de login */
-.login-card {
-  background-color: #ffffff; /* Define a cor de fundo do cartão */
-  border-radius: 10px; /* Define o raio das bordas */
-  padding: 40px 20px; /* Define o preenchimento interno */
-  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.6); /* Adiciona uma sombra */
-  text-align: center; /* Alinha o texto ao centro */
-  max-width: 600px; /* Define a largura máxima */
-  width: 100%; /* Define a largura como 100% */
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.login-section {
-  width: 100%;
+nav {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  width: 100%;
+  background: inherit;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.translucent {
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+  margin-inline: 15px;
+}
+#podcastLink{
+  color: #000000;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+.logo {
+  width: 290px;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+}
+
+.nav-list li {
+  margin-left: 20px;
+}
+
+.mobile-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.mobile-menu div {
+  width: 30px;
+  height: 3px;
+  background: #fff;
+  margin: 6px;
+  transition: 0.3s;
+}
+
+.nav-list.active {
+  transform: translateX(0);
+}
+
+.mobile-menu.active .line1 {
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.mobile-menu.active .line2 {
+  opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+  transform: rotate(45deg) translate(-6px, -6px);
+}
+
+/* Estilo para a seção do banner */
+.banner {
+  width: 100%;
+  height: 26vh;
+  overflow: hidden;
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Estilo para a seção de podcasts */
+.podcast-virtual {
+  text-align: center;
+  padding: 20px;
+}
+
+.podcast-virtual .podcasts-title {
+  margin-top: 25px;
+}
+
+.title {
+  text-align: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  letter-spacing: 1px;
+  line-height: 2;
+}
+
+.podcasts-title {
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  display: inline-block;
+  padding: 1.2em 0;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  font: 400 1em/1 "Neuton", sans-serif;
+  color: rgb(0, 0, 0);
+}
+
+.podcasts-title span {
+  font: 550 1.05em/1 "Oswald", sans-serif;
+  letter-spacing: 0;
+  padding: 0.25em 0 0.325em;
+  display: block;
+  margin: 0 auto;
+  text-shadow: 0 0 80px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes aitf {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.white-mode {
+  text-decoration: none;
+  padding: 7px 10px;
+  background-color: #122;
+  border-radius: 3px;
+  color: #fff;
+  transition: 0.35s ease-in-out;
+  position: absolute;
+  left: 15px;
+  bottom: 15px;
+  font-family: "Montserrat";
+}
+
+.white-mode:hover {
+  background-color: #fff;
+  color: #122;
+}
+
+.podcasts-description {
+  font-size: 1.2em;
+  color: #000000;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.podcasts-section {
+  text-align: center;
+  padding: 20px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.podcast-card {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  padding: 20px;
+  border-radius: 8px;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+.podcast-card img {
+  max-width: 100%;
+  height: auto;
+  margin: 10px 0;
+}
+
+.podcast-card.show {
+  display: block;
+  animation: fadeIn 0.6s forwards;
+}
+
+.podcast-card.hide {
+  animation: fadeOut 0.6s forwards;
+}
+
+.podcast-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   justify-content: center;
 }
 
-/* Estilos para a logo do cartão */
-.card-logo {
-  max-width: 200px; /* Define a largura máxima */
-  margin-top: -15px; /* Define a margem superior negativa */
-  margin-bottom: 20px; /* Define a margem inferior */
+.podcast-container img {
+  width: 200px;
+  margin: 10px;
+  cursor: pointer;
+  border: 1px solid rgba(230, 230, 230, 0.8);
+  border-radius: 15px;
+  transition: transform 0.5s, border-color 0.3s;
 }
 
-/* Estilos para o título */
-.title {
-  font-family: Arial, Helvetica, sans-serif; /* Define a fonte */
-  color: #181818; /* Define a cor do texto */
-  font-size: 24px; /* Define o tamanho da fonte */
-  margin-top: 30px; /* Define a margem superior */
-  margin-bottom: 20px; /* Define a margem inferior */
-  letter-spacing: 1px; /* Define o espaçamento entre letras */
+.podcast-container img:hover {
+  transform: scale(1.05);
+  border-color: #000000;
 }
 
-/* Estilos para o título da intranet */
-.ch-akrus h2 {
-  font-family: Arial, Helvetica, sans-serif; /* Define a fonte */
-  color: #181818; /* Define a cor do texto */
-  font-size: 30px; /* Define o tamanho da fonte */
-  margin-bottom: 50px; /* Define a margem inferior */
-  letter-spacing: 1px; /* Define o espaçamento entre letras */
-  /* animation: fadeIn 1s ease-in-out; /* Adiciona animação de fade-in */
+.podcasts-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
-/* Animação de fade-in */
-@keyframes fadeIn {
-  from {
-    opacity: 0; /* Define opacidade inicial */
-  }
-  to {
-    opacity: 1; /* Define opacidade final */
-  }
+.podcast-item {
+  width: calc(20% - 20px);
+  margin: 1px;
+  transition: transform 0.4s, box-shadow 0.3s;
+  max-width: 230px;
+  position: relative;
+  padding-right: 15px;
 }
 
-/* Estilos para o campo de entrada de texto */
-.input-field1 {
-  width: 100%; /* Define a largura */
-  padding: 10px; /* Define o preenchimento interno */
-  margin: 10px 0; /* Define margens superior e inferior */
-  margin-top: -20px; /* Define margem superior negativa */
-  border-radius: 15px; /* Define o raio das bordas */
-  border: 1px solid #000000; /* Define a borda */
-  outline: none; /* Remove o contorno padrão */
-  font-size: 16px; /* Define o tamanho da fonte */
+.podcast-item img {
+  width: 230px;
+  height: 100%;
+  border-radius: 15px;
 }
 
-/* Estilos para o campo de entrada de senha */
-.input-field2 {
-  width: 100%; /* Define a largura */
-  padding: 10px; /* Define o preenchimento interno */
-  margin: 10px 0; /* Define margens superior e inferior */
-  margin-top: -20px; /* Define margem superior negativa */
-  border-radius: 15px; /* Define o raio das bordas */
-  border: 1px solid #000000; /* Define a borda */
-  outline: none; /* Remove o contorno padrão */
-  font-size: 16px; /* Define o tamanho da fonte */
+.podcast-item:hover {
+  transform: scale(1.04);
+  box-shadow: none;
 }
 
-/* Estilos para o botão de envio */
-.submit-button {
-  padding: 8px 20px; /* Define o preenchimento interno */
-  background-color: #000; /* Define a cor de fundo */
-  color: #fff; /* Define a cor do texto */
-  border: none; /* Remove a borda padrão */
-  border-radius: 25px; /* Define o raio das bordas */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra */
-  font-size: 16px; /* Define o tamanho da fonte */
-  cursor: pointer; /* Define o cursor como ponteiro */
-  margin-top: 15px; /* Define a margem superior */
-  transition: background-color 0.4s; /* Adiciona transição de cor de fundo */
+/* Linha de separação entre os cards. Não aparece no celular
+.podcast-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 25%;
+  right: -15px;
+  height: 40%;
+  width: 2px;
+  background-color: rgba(0, 0, 0, 0.3);
 }
-
-/* Estilos para o estado de hover do botão de envio */
-.submit-button:hover {
-  background-color: #3a3a3a; /* Altera a cor de fundo ao passar o mouse */
-  box-shadow: black; /* Altera a sombra */
-}
-.button-link {
-  color: #fff; /* Define a cor do texto */
-  text-decoration: none; /* Remove o sublinhado */
-  display: block; /* Faz o link ocupar todo o espaço do botão */
-  width: 100%; /* Define a largura como 100% */
-  height: 100%; /* Define a altura como 100% */
-  line-height: 1.5; /* Define a altura da linha */
-}
-
-/* Estilos para o rodapé */
+*/
 .footer {
-  display: flex; /* Usa flexbox para layout */
-  background-color: #181818; /* Define a cor de fundo */
-  height: 6rem; /* Define a altura */
-  width: 100%; /* Define a largura */
-  justify-content: center; /* Centraliza os itens */
-  align-items: center; /* Alinha os itens ao centro */
+  display: flex;
+  background-color: #181818;
+  height: 6rem;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Estilos para a logo do rodapé */
 #logofooter {
-  max-height: 60px;
-  /*height: 52px; /* Define a altura 
-  padding-left: 30px;  Define o preenchimento à esquerda */
-  margin-left: 14px; /* Define a margem */
-  justify-content: left;
+  height: 52px;
+  padding-left: 30px;
 }
 
-/* Estilos para a seção de empresas no rodapé */
 #empresas {
-  height: 56px; /* Define a altura */
-  padding-right: 75px; /* Define o preenchimento à direita */
+  height: 55px;
+  padding-right: 75px;
 }
 
-/* Estilos responsivos para telas menores */
-@media (max-width: 600px) {
-  .logo {
-    width: auto; /* Define a largura automaticamente */
-  }
-
-  .login-card {
-    max-width: 80%; /* Define a largura máxima */
-    padding: 20px 15px; /* Define o preenchimento interno */
-  }
-
-  .title {
-    font-size: 20px; /* Define o tamanho da fonte */
-    margin-bottom: 30px; /* Define a margem inferior */
-  }
-
-  .ch-akrus h2 {
-    font-size: 18px; /* Define o tamanho da fonte */
-    margin-bottom: 20px; /* Define a margem inferior */
-  }
-
-  .submit-button {
-    padding: 8px 15px; /* Define o preenchimento interno */
-    font-size: 14px; /* Define o tamanho da fonte */
-  }
-}
-
+/* Media Queries */
 @media (max-width: 768px) {
+  .nav-list {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60vw;
+    height: 100vh;
+    background: #1d1c1c;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 900;
+    padding-bottom: 80vw;
+    padding-top: 20vw;
+  }
+
+  .nav-list.active {
+    transform: translateX(0);
+  }
+  
+  .nav-list.active > li > a {
+    margin-inline: 0px;
+  }
+  
+  .mobile-menu {
+    display: block;
+    z-index: 1001;
+  }
+  
+  .logo {
+    width: 170px;
+  }
+  
+  .podcast-container img {
+    width: 150px;
+  }
+  
+  .podcast-item {
+    width: 220px;
+  }
+  
+  .podcast-item::after {
+    display: none;
+  }
+  
   .footer {
     flex-direction: column;
     align-items: center;
     padding: 10px;
   }
-
+  
   #logofooter {
     padding: 5px;
     margin: 5px 0;
   }
+  
   #empresas {
     height: 30px;
     padding-right: 0px;
   }
 }
 
-footer {
-  width: 100%;
+@media (max-width: 480px) {
+  .podcast-container img {
+    width: 100px;
+  }
+  
+  .podcast-item {
+    width: calc(100% - 10px);
+  }
 }
 
-main {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+@media (max-width: 767px) {
+  .banner {
+    height: 17vh;
+  }
+
+  .banner img {
+    height: 150px;
+    object-fit: fill;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .banner {
+    height: 100px;
+  }
+
+  .banner img {
+    object-fit: cover;
+  }
+  
+  .nav-list.active {
+    transform: translateX(0);
+    gap: 40px;
+  }
 }
