@@ -162,8 +162,8 @@ export default function page() {
                 <a href="/intranet/politicas">Políticas da empresa</a>
               </li>
               <li>
-                <a href="https://teams.microsoft.com/l/team/19%3AFDaFqDpMD2SFdY7Cbc3sffQVRb4OxGQs8NtGz3itloo1%40thread.tacv2/conversations?groupId=7d63b9f2-258f-4b95-aed8-6f49be10b56a&tenantId=00a7b357-a2ba-4b32-b04f-2fef849a08b4">
-                  Chat TEAMS
+                <a href="https://www.linkedin.com/company/grupoakrus">
+                  LinkedIn
                 </a>
               </li>
             </ul>

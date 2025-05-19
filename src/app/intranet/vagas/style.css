@@ -280,6 +280,10 @@ a:hover {
 
 @media (max-width: 576px) {
   /* Ajustes para dispositivos móveis */
+
+  #imgbanner {
+    width: 400px;
+  }
   .title h1 {
     font-size: 20px;
   }

@@ -691,13 +691,13 @@ a:hover {
     height: 120px;
     background-position: center;
     border-radius: 10px;
-    background-image: url(/intranet/images/AKRUS450x150-icones-home-biblioteca-80.jpg);
+    background-image: url(/intranet/images/bibliotecamobile.png);
   }
   .multisections-box > .img-iluminakrus {
     height: 120px;
     background-position: center;
     border-radius: 10px;
-    background-image: url(/intranet/images/AKRUS450x150-icones-home-biblioteca-80.jpg);
+    background-image: url(/intranet/images/iluminakrusmobile.png);
   }
 
   .multisections-box > h1 {

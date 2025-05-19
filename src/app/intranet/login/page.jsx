@@ -19,12 +19,10 @@ export default function Page() {
   async function handleLogin(e) {
     e.preventDefault();
 
-    console.log(user);
     await setPersistence(firebaseAuth, browserLocalPersistence);
 
     signInWithEmailAndPassword(firebaseAuth, user.email, user.password)
       .then((result) => {
-        console.log("deu certo", result);
         router.push("/intranet");
       })
       .catch((e) => {
