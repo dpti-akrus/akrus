@@ -225,7 +225,7 @@ export default function page() {
                   "Comunicação Não Violenta",
                   "/intranet/images/Comunicação-N_V.png",
                   "Inteligência Emocional",
-                  "https://encurtador.com.br/2hz1I"
+                  "https://www.amazon.com.br/Comunica%C3%A7%C3%A3o-n%C3%A3o-violenta-relacionamentos-profissionais/dp/8571832641/ref=asc_df_8571832641?mcid=a3cbccf2f2ca3a6c93ba9b0aa6f2879a&tag=googleshopp00-20&linkCode=df0&hvadid=709857900369&hvpos=&hvnetw=g&hvrand=8433631846901053582&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9101762&hvtargid=pla-1368992523055&psc=1&language=pt_BR&gad_source=1  "
                 )
               }
             >
@@ -261,7 +261,7 @@ export default function page() {
                   "A Única Coisa",
                   "/intranet/images/A única coisa.png",
                   "Inteligência Emocional",
-                  "https://encurtador.com.br/9Yokl"
+                  "https://www.amazon.com.br/%C3%9Anica-Coisa-surpreendentemente-resultados-extraordin%C3%A1rios/dp/6555641231/ref=asc_df_6555641231?mcid=22ee7d7b08423c6b9ef70d2df745b379&tag=googleshopp00-20&linkCode=df0&hvadid=709857900444&hvpos=&hvnetw=g&hvrand=10191323570403766787&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9101762&hvtargid=pla-1187265334033&psc=1&language=pt_BR&gad_source=1"
                 )
               }
             >

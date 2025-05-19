@@ -196,7 +196,9 @@ a:hover {
   padding-right: 75px; /* Define o preenchimento à direita */
 }
 
-/* Ajusta o logo para telas menores */
+/* Media Queries Atualizadas */
+
+/* Ajusta o layout para telas menores que 768px */
 @media (max-width: 768px) {
   .nav-list {
     position: absolute;
@@ -218,52 +220,57 @@ a:hover {
   .nav-list.active {
     transform: translateX(0);
   }
+  
   .nav-list.active > li > a {
     margin-inline: 0px;
   }
+  
   .mobile-menu {
     display: block;
     z-index: 1001;
   }
+  
   .logo {
     width: 170px;
+  }
+
+  /* Ajustes para os vídeos - ATUALIZADO */
+  .videos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 0 15px;
+  }
+  
+  .video-card {
+    max-width: 100%;
+    width: 100%;
   }
 }
 
 /* Ajusta a altura do banner para telas muito pequenas */
 @media (max-width: 767px) {
   .banner {
-    height: 90px; /* Define a altura */
-    height: 17vh; /* Define a altura do banner como 24% da altura da viewport */
-    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do banner */
+    height: 17vh;
   }
 
   .banner img {
-    width: 100%;
     height: 150px;
-    object-fit: fill; /* Ajusta a imagem para cobrir o elemento, mas sem cortar.
-    O object-fit em modo cover estava cortando alguns banners. */
+    object-fit: fill;
   }
 }
-/*@media (max-width: 767px) {
-  .banner {
-    height: 90px; /* Define a altura 
-  }
-  .banner img {
-    object-fit: cover; /* Ajusta a imagem para cobrir o elemento
-    
-    */
-/*Estado anterior à alteração do object-fit*/
 
-/* Ajusta a altura do banner para telas pequenas */
+/* Ajusta a altura do banner para telas médias */
 @media (min-width: 768px) and (max-width: 1024px) {
   .banner {
-    height: 200px; /* Define a altura */
+    height: 200px;
   }
 
   .banner img {
-    object-fit: cover; /* Ajusta a imagem para cobrir o elemento */
+    object-fit: cover;
   }
+  
   .nav-list.active {
     transform: translateX(0);
     gap: 40px;
@@ -273,132 +280,31 @@ a:hover {
 /* Ajusta o rodapé para telas menores */
 @media (max-width: 768px) {
   .footer {
-    flex-direction: column; /* Direciona os itens em coluna */
-    align-items: center; /* Alinha os itens ao centro */
-    text-align: center; /* Alinha o texto ao centro */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
   }
 
   #logofooter,
   #empresas {
-    padding: 5px; /* Define o preenchimento */
-    margin: 5px 0; /* Define a margem superior e inferior */
-  }
-}
-/*} Grande parte dos códigos, que está 'Duplicado' está nesse media aqui*/
-
-/* Ajusta os cartões de vídeo para telas muito menores */
-@media (max-width: 480px) {
-  .video-card {
-    max-width: 90%; /* Define a largura máxima */
-  }
-}
-
-/* Estiliza o rodapé */
-.footer {
-  display: flex; /* Usa layout flexível */
-  background-color: #181818; /* Define a cor de fundo */
-  height: 6rem; /* Define a altura */
-  width: 100%; /* Define a largura */
-  justify-content: space-between; /* Espaça os itens */
-  align-items: center; /* Alinha os itens ao centro */
-}
-
-/* Estiliza o logo do rodapé */
-#logofooter {
-  height: 45px; /* Define a altura */
-  padding-left: 30px; /* Define o preenchimento à esquerda */
-}
-
-/* Estiliza a seção de empresas no rodapé */
-#empresas {
-  height: 55px; /* Define a altura */
-  padding-right: 75px; /* Define o preenchimento à direita */
-}
-
-/* Ajusta o logo para telas menores */
-@media (max-width: 768px) {
-  .nav-list {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 60vw;
-    height: 100vh;
-    background: #1d1c1c;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-    z-index: 900;
-    padding-bottom: 80vw;
-    padding-top: 20vw;
-  }
-
-  .nav-list.active {
-    transform: translateX(0);
-  }
-  .nav-list.active > li > a {
-    margin-inline: 0px;
-  }
-  .mobile-menu {
-    display: block;
-    z-index: 1001;
-  }
-  .logo {
-    width: 170px;
-  }
-}
-
-/* Ajusta a altura do banner para telas muito pequenas */
-@media (max-width: 767px) {
-  .banner {
-    height: 90px; /* Define a altura */
-  }
-
-  .banner img {
-    object-fit: fill; /* Ajusta a imagem para cobrir o elemento, mas sem cortar.
-    O object-fit em modo cover estava cortando alguns banners. */
-  }
-}
-/*@media (max-width: 767px) {
-  .banner {
-    height: 90px; /* Define a altura 
-  }
-  .banner img {
-    object-fit: cover; /* Ajusta a imagem para cobrir o elemento
-    
-    */
-/*Estado anterior à alteração do object-fit*/
-
-/* Ajusta a altura do banner para telas pequenas */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .banner {
-    height: 200px; /* Define a altura */
-  }
-
-  .banner img {
-    object-fit: cover; /* Ajusta a imagem para cobrir o elemento */
-  }
-  .nav-list.active {
-    transform: translateX(0);
-    gap: 40px;
-  }
-}
-
-/* Ajusta o rodapé para telas menores */
-@media (max-width: 768px) {
-  .footer {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-  }
-
-  #logofooter {
     padding: 5px;
     margin: 5px 0;
   }
+  
   #empresas {
     height: 30px;
     padding-right: 0px;
+  }
+}
+
+/* Ajustes finos para telas muito pequenas - ATUALIZADO */
+@media (max-width: 480px) {
+  .videos {
+    padding: 0 10px;
+  }
+  
+  .video-card {
+    max-width: 100%;
   }
 }

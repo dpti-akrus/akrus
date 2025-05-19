@@ -8,7 +8,7 @@
 
 /* Estilos para o corpo da página */
 body {
-  background-color: #e7e7e7;
+  background-color: #ffffff;
   overflow-x: hidden;
   font-family: "Cairo", sans-serif;
   width: 100%;
@@ -251,7 +251,7 @@ a:hover {
   width: 200px;
   margin: 10px;
   cursor: pointer;
-  border: 1px solid rgba(230, 230, 230, 0.8);
+  border: 1px solid rgb(255, 255, 255);
   border-radius: 15px;
   transition: transform 0.5s, border-color 0.3s;
 }
