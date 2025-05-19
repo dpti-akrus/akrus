@@ -177,6 +177,12 @@ export default function Page() {
                 </div>
                 <button className="share-btn">Compartilhar</button>
               </div>
+              <div className="box">
+                <div className="content">
+                  <img src="/intranet/images/VagaRH.jpeg" />
+                </div>
+                <button className="share-btn">Compartilhar</button>
+              </div>
             </div>
           </div>
         </section>
