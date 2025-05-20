@@ -135,7 +135,7 @@ export default function Page() {
           </header>
           <div className="banner">
             <img
-              src="/intranet/images/banner_site_2500x458px_iluminakrus_intranet_akrus.jpg"
+              src="/intranet/images/ILUMIN_Inter.jpg"
               alt="Banner"
               className="banner-image"
             />
