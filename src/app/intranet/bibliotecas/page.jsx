@@ -172,7 +172,7 @@ export default function page() {
 
         <div className="banner">
           <img
-            src="/intranet/images/bannerbiblioteca.jpg"
+            src="/intranet/images/bannerbiblioteca.png"
             alt="Banner"
             className="banner-image"
           />
