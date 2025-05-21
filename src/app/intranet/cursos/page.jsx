@@ -169,19 +169,7 @@ export default function Page() {
                   <iframe
                     width="560"
                     height="315"
-                    src="https://www.youtube.com/embed/9kjLowFN5TE?si=nyyGdZs5zoPwd6YC"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-                <div className="video-card">
-                  <iframe
-                    width="560"
-                    height="315"
-                    src="https://www.youtube.com/embed/9kjLowFN5TE?si=QA8MCu9LU-SH3-ub"
+                    src="https://www.youtube.com/embed/s9n4NPNVGcY?si=U9lno7aEjgA52sGi"
                     title="YouTube video player"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -207,29 +195,7 @@ export default function Page() {
                     allowfullscreen
                   ></iframe>
                 </div>
-                <div className="video-card">
-                  <iframe
-                    src="https://sementessafrasul-my.sharepoint.com/personal/ti3_akrus_com_br/_layouts/15/embed.aspx?UniqueId=a3f9b729-9518-41cf-aac4-03d1c508fa44&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create"
-                    width="640"
-                    height="360"
-                    frameBorder="0"
-                    scrolling="no"
-                    allowFullScreen
-                    title="Nova tela formar carga.mp4"
-                  />
-                </div>
-                <div className="video-card">
-                  <iframe
-                    width="560"
-                    height="315"
-                    src="https://www.youtube.com/embed/J-EcavMIigs?si=rpb61wuVpKWjYjTH"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen
-                  ></iframe>
-                </div>{" "}
+
                 {/*Adicionado mais 2 vídeos. Um em cada categoria*/}
               </div>
             </div>
