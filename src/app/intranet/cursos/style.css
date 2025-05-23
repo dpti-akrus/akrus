@@ -4,7 +4,7 @@
   padding: 0; /* Remove o preenchimento padrão de todos os elementos */
   box-sizing: border-box; /* Inclui padding e bordas na largura e altura total do elemento */
   font-family: "Inter", sans-serif; /* Define a fonte padrão para todos os elementos */
-  overflow-x: hidden;
+  
 }
 
 /* Estilos para o corpo da página */
