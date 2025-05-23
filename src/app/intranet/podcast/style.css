@@ -99,7 +99,7 @@ a:hover {
 /* Estilo para a seção do banner */
 .banner {
   width: 100%;
-  height: 26vh;
+  height: 36vh;
   overflow: hidden;
 }
 
@@ -281,6 +281,7 @@ a:hover {
   width: 230px;
   height: 100%;
   border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .podcast-item:hover {

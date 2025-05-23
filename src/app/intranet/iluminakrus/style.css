@@ -87,7 +87,7 @@ a:hover {
 /* Estilo para a seção do banner */
 .banner {
   width: 100%; /* Define a largura do banner como 100% do contêiner pai */
-  height: 24vh; /* Define a altura do banner como 24% da altura da viewport */
+  height: 34vh; /* Define a altura do banner como 24% da altura da viewport */
   overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do banner */
 }
 
