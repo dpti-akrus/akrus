@@ -8,7 +8,7 @@
 }
 
 /* Estilos para o corpo da página */
-body {
+html,body {
   overflow-x: hidden;
   overscroll-behavior-x: none;
   touch-action: pan-y;
@@ -110,7 +110,7 @@ a:hover {
   gap: 40px; /* Define o espaçamento entre os itens */
   display: flex; /* Usa layout flexível */
   flex-direction: column; /* Direciona os itens em coluna */
-  overflow-x: hidden; 
+  /*overflow-x: hidden;*/
   margin-inline: auto;
   max-width: 1200px; /* Alinha os itens ao centro */
 }
@@ -136,7 +136,7 @@ a:hover {
   gap: 25px; /* Define o espaçamento entre os itens */
   width: 100%; /* Define a largura como 100% */
   overflow-y: hidden; /* Oculta o conteúdo que ultrapassa os limites no eixo Y */
-  overflow-x: hidden; 
+  
 }
 
 /* Estiliza os cartões de vídeo */
@@ -161,13 +161,12 @@ a:hover {
   }
 }
 
-/* Ajusta os cartões de vídeo para telas menores */
-@media (max-width: 768px) {
+
   .video-card {
     max-width: 300px; /* Define a largura máxima */
     gap: 20px; /* Define o espaçamento entre os itens */
   }
-}
+
 
 /* Ajusta os cartões de vídeo para telas muito menores */
 @media (max-width: 480px) {
