@@ -146,6 +146,17 @@ body {
   height: 100%; /* Define a altura como 100% */
   line-height: 1.5; /* Define a altura da linha */
 }
+.forgot-password {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.forgot-password a {
+  color: #022347;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 14px;
+}
 
 /* Estilos para o rodapé */
 .footer {

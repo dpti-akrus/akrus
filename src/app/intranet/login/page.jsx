@@ -7,8 +7,10 @@ import {
   setPersistence,
   browserLocalPersistence,
   signInWithEmailAndPassword,
+  sendPasswordResetEmail,
 } from "firebase/auth";
 import { firebaseAuth } from "../../firebase";
+
 import { useRouter } from "next/navigation";
 
 export default function Page() {
@@ -75,6 +77,36 @@ export default function Page() {
                 Entrar
               </button>
             </div>
+
+            <p className="forgot-password">
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (!user.email) {
+                    alert(
+                      "Digite seu e-mail no campo acima para redefinir a senha."
+                    );
+                    return;
+                  }
+
+                  sendPasswordResetEmail(firebaseAuth, user.email)
+                    .then(() => {
+                      alert(
+                        "Enviamos um link para redefinição de senha. Verifique seu e-mail."
+                      );
+                    })
+                    .catch((error) => {
+                      console.error("Erro ao enviar link:", error);
+                      alert(
+                        "Erro ao enviar link. Verifique se o e-mail está correto."
+                      );
+                    });
+                }}
+              >
+                Redefinir senha
+              </a>
+            </p>
           </form>
         </div>
       </section>
