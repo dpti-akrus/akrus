@@ -269,52 +269,56 @@ export default function Page() {
                 <h2>Aniversariantes do Mês</h2>
                 <div className="dates-list">
                   <div className="date-item">
-                    <p className="name">Alexandre Martins</p>
-                    <p className="date">01 de Maio</p>
+                    <p className="name">Elismar Santos</p>
+                    <p className="date">03 de Junho</p>
                   </div>
                   <div className="date-item">
-                    <p className="name">Debora Crisostomo</p>
-                    <p className="date">01 de Maio</p>
+                    <p className="name">Marcione Pereira</p>
+                    <p className="date">03 de Junho</p>
                   </div>
                   <div className="date-item">
-                    <p className="name">Tiago Figueiredo</p>
-                    <p className="date">02 de Maio</p>
+                    <p className="name">Claudia Rosani Kuhn</p>
+                    <p className="date">04 de Junho</p>
                   </div>
                   <div className="date-item">
-                    <p className="name">Kawan Rodrigues</p>
-                    <p className="date">02 de Maio</p>
+                    <p className="name">Elaine Vaz Justino</p>
+                    <p className="date">05 de Junho</p>
                   </div>
                   <div className="date-item">
-                    <p className="name">Wesley Martins</p>
-                    <p className="date">06 de Maio</p>
+                    <p className="name">Gelmar Muhl</p>
+                    <p className="date">09 de Junho</p>
                   </div>
                   <div className="date-item">
-                    <p className="name">Douglas Willian</p>
-                    <p className="date">10 de Maio</p>
+                    <p className="name">Wezere Neres</p>
+                    <p className="date">10 de Junho</p>
                   </div>
                   <div className="date-item">
-                    <p className="name">Antonio Lopo</p>
-                    <p className="date">15 de Maio</p>
+                    <p className="name">Anderson Zitei</p>
+                    <p className="date">13 de Junho</p>
                   </div>
                   <div className="date-item">
-                    <p className="name">Taya de Menezes</p>
-                    <p className="date">16 de Maio</p>
+                    <p className="name">Antônio Gonçalves da Silva</p>
+                    <p className="date">13 de Junho</p>
                   </div>
                   <div className="date-item">
-                    <p className="name">Maicon dos Santos</p>
-                    <p className="date">24 de Maio</p>
+                    <p className="name">Eliana Souza</p>
+                    <p className="date">15 de Junho</p>
                   </div>
                   <div className="date-item">
-                    <p className="name">Alexandre Laurindo</p>
-                    <p className="date">28 de Maio</p>
+                    <p className="name">Kevyn Leandro da Silva</p>
+                    <p className="date">18 de Junho</p>
                   </div>
                   <div className="date-item">
-                    <p className="name">Natalia Muhl</p>
-                    <p className="date">29 de Maio</p>
+                    <p className="name">Juscelino Teixeira</p>
+                    <p className="date">23 de Junho</p>
                   </div>
                   <div className="date-item">
-                    <p className="name">Fausto Godoi </p>
-                    <p className="date">30 de Maio</p>
+                    <p className="name">Ezequiel Pereira </p>
+                    <p className="date">29 de Junho</p>
+                  </div>
+                  <div className="date-item">
+                    <p className="name">Renato Alves</p>
+                    <p className="date">30 de Junho</p>
                   </div>
                 </div>
               </div>
@@ -328,12 +332,8 @@ export default function Page() {
                 <h2>Datas Comemorativas</h2>
                 <div className="dates-list">
                   <div className="date-item">
-                    <p className="name">Dia do Trabalhador</p>
-                    <p className="date">01 de Maio</p>
-                  </div>
-                  <div className="date-item">
-                    <p className="name">Dia das mulheres</p>
-                    <p className="date">11 de Maio</p>
+                    <p className="name">Corpus Christi</p>
+                    <p className="date">19 de Junho</p>
                   </div>
                 </div>
               </div>
