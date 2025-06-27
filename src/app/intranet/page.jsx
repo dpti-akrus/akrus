@@ -155,7 +155,10 @@ export default function Page() {
                 <a href="/intranet">Início</a>
               </li>
               <li>
-                <a href="https://safrasulsementes.acelerato.com/">
+                <a
+                  href="https://safrasulsementes.acelerato.com/"
+                  target="_blank"
+                >
                   Chamados TI
                 </a>
               </li>
@@ -163,7 +166,10 @@ export default function Page() {
                 <a href="/intranet/politicas">Políticas da empresa</a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/company/grupoakrus">
+                <a
+                  href="https://www.linkedin.com/company/grupoakrus"
+                  target="_blank"
+                >
                   LinkedIn
                 </a>
               </li>
